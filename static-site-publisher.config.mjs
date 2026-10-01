@@ -2,7 +2,7 @@ export default {
   configVersion: 1,
   site: {
     name: 'Turntide Islands',
-    baseIri: 'https://turntide-islands.561.group/',
+    baseIri: 'https://turntide.561.group/',
     language: 'en-US',
     license: 'All rights reserved',
     menu: [
