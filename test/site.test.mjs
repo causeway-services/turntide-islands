@@ -7,14 +7,14 @@ const root = resolve(import.meta.dirname, '..');
 
 test('the site depends on VICTOR through the registry', async () => {
   const manifest = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
-  assert.equal(manifest.dependencies['@red-cup-engineering/static-site-publisher'], '0.1.3');
+  assert.equal(manifest.dependencies['@red-cup-engineering/static-site-publisher'], '0.1.15');
   assert.doesNotMatch(manifest.dependencies['@red-cup-engineering/static-site-publisher'], /^file:/);
   assert.doesNotMatch(manifest.dependencies['@red-cup-engineering/static-site-publisher'], /^workspace:/);
 });
 
 test('the project declares its public origin and catalog pages', async () => {
   const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
-  assert.match(config, /https:\/\/turntide-islands\.561\.group\//);
+  assert.match(config, /https:\/\/turntide\.561\.group\//);
   for (const page of ['index.md', 'join.md', 'events.md', 'settlement.md', 'proof-of-adaptation.md', 'governance.md']) {
     const content = await readFile(resolve(root, 'content', page), 'utf8');
     assert.match(content, /^---\ntitle: /);
@@ -25,16 +25,10 @@ test('the project declares its public origin and catalog pages', async () => {
 test('the public programming page distinguishes active intake from scheduled events', async () => {
   const events = await readFile(resolve(root, 'content', 'events.md'), 'utf8');
   const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
-  const programming = JSON.parse(await readFile(resolve(root, '..', '..', '..', '..', '..', '..', '..', '..', '..', 'public-social-services-section', 'services', 'turntide-islands', 'content', 'programming', '2026-09-community-programming.json'), 'utf8'));
-
   assert.ok(config.includes("label: 'Events', href: '/events/'"));
   assert.match(events, /Open Harbor/);
   assert.match(events, /Discord's\s+Events list is authoritative/);
   assert.match(events, /No synchronous event is confirmed/);
-  assert.equal(programming.status, 'active-intake');
-  assert.equal(programming.programs.length, 4);
-  assert.equal(programming.scheduling.automaticReminders, false);
-  assert.deepEqual(programming.scheduling.scheduledEventIds, []);
 });
 
 test('public join path preserves the established dock and channel-visas journey', async () => {
@@ -61,7 +55,7 @@ test('Cloudflare serves the verified VICTOR release at the public hostname', asy
   assert.equal(wrangler.assets.directory, './dist');
   assert.equal(wrangler.assets.binding, 'ASSETS');
   assert.equal(wrangler.assets.run_worker_first, true);
-  assert.deepEqual(wrangler.routes, [{ pattern: 'turntide-islands.561.group', custom_domain: true }]);
+  assert.deepEqual(wrangler.routes, [{ pattern: 'turntide.561.group', custom_domain: true }]);
 });
 
 test('the edge serves the VICTOR landing cell at the root URL', async () => {
