@@ -38,8 +38,8 @@ program being offered here.
 
 Read [[join|how to join and what to expect]].
 
-The [[events|September community-programming intake]] is open for gathering
-hosts, practical questions, member projects, and place-based field notes.
+Read [[events|Events and community programming]] for dated programming
+cycles, their status, and how to propose a gathering.
 
 # What is here
 
@@ -47,8 +47,8 @@ hosts, practical questions, member projects, and place-based field notes.
   Islands holds itself accountable.
 - [[proof-of-adaptation|Proof of Adaptation]] describes the proposed
   evidence-and-work loop for local practice.
-- [[events|Events and community programming]] records active invitations and
-  distinguishes intake from confirmed human-hosted gatherings.
+- [[events|Events and community programming]] keeps the dated programming
+  record and explains how human-hosted gatherings are confirmed.
 - [[governance|Governance]] distinguishes standing commitments from future
   directions.
 

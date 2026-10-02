@@ -43,9 +43,10 @@ The settlement's public account explains why the community makes these
 distinctions: [[settlement|read the settlement record]]. For the proposed
 evidence loop, see [[proof-of-adaptation|Proof of Adaptation]].
 
-To propose a gathering, practical question, project, or field note, see the
-active [[events|community-programming intake]].
+See [[events|Events and community programming]] for dated cycle records
+and how to propose a gathering, practical question, project, or field note.
 
 > [!note] A clear present tense
 > Joining Discord lets you take part in the community that exists today. It
-> does not activate a DAO, token, paid membership, or field trial.
+> does not activate a DAO, token, paid membership, field trial, or a new
+> programming cycle.

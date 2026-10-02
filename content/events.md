@@ -10,9 +10,12 @@ tags:
 - programming
 ---
 
-Turntide Islands is opening a four-week community-programming intake for
-September 2026. This is a real invitation to shape and host useful community
-work. It is not an invented calendar of meetings that no human agreed to run.
+Turntide Islands opened a four-week community-programming intake for
+September 2026. That intake period ended on September 30, 2026. No successor
+cycle is asserted here without a new decision from local community authority.
+
+This page keeps the September cycle as a public record. It does not silently
+roll that invitation forward into October.
 
 # September intake cycle
 
@@ -37,9 +40,10 @@ new arrivals and its established welcome flow.
 In `#location`, share a place-based observation, practice, or source-linked
 note, distinguishing observation from inference.
 
-[Join the Discord](https://discord.gg/zHRy3RQgkD) to take part. A proposal can
-be asynchronous; nobody has to volunteer as a live host to contribute a
-question, project, or field note.
+[Join the Discord](https://discord.gg/zHRy3RQgkD) to participate in the
+community and discuss future programming. A proposal can be asynchronous;
+nobody has to volunteer as a live host to contribute a question, project, or
+field note.
 
 # Propose a gathering
 
@@ -65,5 +69,7 @@ Ordinary conversation is not automatically copied into an archive or analytics
 cohort.
 
 > [!note] Current status
-> The September intake is active. No synchronous event is confirmed until it
-> appears in Discord's Events list with a human organizer.
+> The September 2026 intake period has ended. No successor cycle is asserted
+> until local community authority explicitly closes, extends, replaces, or
+> opens a new cycle. No synchronous event is confirmed until it appears in
+> Discord's Events list with a human organizer.

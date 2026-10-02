@@ -22,11 +22,12 @@ test('the project declares its public origin and catalog pages', async () => {
   }
 });
 
-test('the public programming page distinguishes active intake from scheduled events', async () => {
+test('the public programming page distinguishes elapsed intake from scheduled events', async () => {
   const events = await readFile(resolve(root, 'content', 'events.md'), 'utf8');
   const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
   assert.ok(config.includes("label: 'Events', href: '/events/'"));
   assert.match(events, /Open Harbor/);
+  assert.match(events, /September 2026 intake period has ended/);
   assert.match(events, /Discord's\s+Events list is authoritative/);
   assert.match(events, /No synchronous event is confirmed/);
 });

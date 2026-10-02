@@ -19,9 +19,10 @@ future program.
 The active public doorway is [the Turntide Islands Discord](https://discord.gg/xZHxzDz4zv).
 New arrivals follow the established `#dock` welcome and `#channel-visas` role
 selection. [[join|Read how to join]] before entering. Members can discuss
-questions, sources, projects, and place-based observations. The
-[[events|community-programming intake]] invites proposals; a gathering is
-confirmed only when a human organizer schedules it in Discord Events.
+questions, sources, projects, and place-based observations.
+[[events|Events and community programming]] holds the dated cycle records
+and gathering proposal process. A gathering is confirmed only when a human
+organizer schedules it in Discord Events.
 
 # Knowledge Vault
 
