@@ -80,9 +80,10 @@ publicly available. Its [separate public status page](https://pool.turntide.561.
 is the surface to observe when independently reachable; until deployment and
 public observation are received, this Turntide page does not present Tidepool
 admission or routing as an available community offering. The governing
-specifications remain drafts, and current source records empty roster and
-cycle lists. Turntide membership is not Tidepool membership; this page does not
-solicit funds or admission requests.
+specifications remain drafts. No current authoritative pool disclosure has
+yet been received by the public projection, so this site does not infer whether
+the underlying pool has admitted members or closed cycles. Turntide membership
+is not Tidepool membership; this page does not solicit funds or admission requests.
 
 # Other proposed offerings
 
