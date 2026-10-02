@@ -73,10 +73,15 @@ and governance decisions are admitted and published.
 
 Tidepool is a related directed-yield pool being developed by Causeway
 Services. Its proposed membership and governance process is separate from the
-Turntide community. Its [separate public status page](https://pool.turntide.561.group/)
-records that the governing specifications remain drafts, the published roster
-and cycle lists are empty, and no public admission or routing action is
-available. Turntide membership is not Tidepool membership; this page does not
+Turntide community. Current source for Tidepool includes configured pool
+parameters plus code paths for admission requests and wallet routing, but
+source and configuration are not evidence that those paths are deployed or
+publicly available. Its [separate public status page](https://pool.turntide.561.group/)
+is the surface to observe when independently reachable; until deployment and
+public observation are received, this Turntide page does not present Tidepool
+admission or routing as an available community offering. The governing
+specifications remain drafts, and current source records empty roster and
+cycle lists. Turntide membership is not Tidepool membership; this page does not
 solicit funds or admission requests.
 
 # Other proposed offerings

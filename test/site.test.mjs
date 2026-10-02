@@ -65,3 +65,11 @@ test('the edge serves the VICTOR landing cell at the root URL', async () => {
   assert.match(worker, /new URL\('\/index\/index\.html', url\)/);
   assert.match(worker, /env\.ASSETS\.fetch/);
 });
+
+
+test('Tidepool projection does not promote source capability to public availability', async () => {
+  const products = await readFile(resolve(root, 'content', 'products.md'), 'utf8');
+  assert.match(products, /source and configuration are not evidence that those paths are deployed or\s+publicly available/);
+  assert.match(products, /does not present Tidepool\s+admission or routing as an available community offering/);
+  assert.doesNotMatch(products, /no public admission or routing action is\s+available/);
+});
