@@ -74,6 +74,6 @@ considered.
   question. It does not republish a member's Discord words or treat a Discord
   post as consent.
 
-To improve it, [join Turntide](https://discord.gg/xZHxzDz4zv) and bring a
-source or a general observation to `#question-quarry`. A steward must ask
+To improve it, [[join|join Turntide]] and bring a source or a general
+observation to `#question-quarry`. A steward must ask
 separately before publishing a member's words or a site-specific observation.

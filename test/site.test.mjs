@@ -32,14 +32,22 @@ test('the public programming page distinguishes elapsed intake from scheduled ev
   assert.match(events, /No synchronous event is confirmed/);
 });
 
-test('public join path preserves the established dock and channel-visas journey', async () => {
+test('the Join page is the single public carrier for the Discord invite', async () => {
   const index = await readFile(resolve(root, 'content', 'index.md'), 'utf8');
   const join = await readFile(resolve(root, 'content', 'join.md'), 'utf8');
+  const events = await readFile(resolve(root, 'content', 'events.md'), 'utf8');
+  const products = await readFile(resolve(root, 'content', 'products.md'), 'utf8');
+  const drainage = await readFile(resolve(root, 'content', 'duluth-garden-drainage.md'), 'utf8');
+  const rainGarden = await readFile(resolve(root, 'content', 'rain-garden-question.md'), 'utf8');
   const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
   const invite = 'https://discord.gg/zHRy3RQgkD';
+  const directInvite = /https:\/\/discord\.gg\//;
 
-  assert.match(index, new RegExp(invite));
   assert.match(join, new RegExp(invite));
+  for (const page of [index, events, products, drainage, rainGarden]) {
+    assert.doesNotMatch(page, directInvite);
+    assert.match(page, /\[\[join\|/);
+  }
   assert.match(index, /#dock/);
   assert.match(index, /#channel-visas/);
   assert.match(join, /#dock/);

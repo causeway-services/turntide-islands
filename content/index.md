@@ -22,9 +22,10 @@ plans as present facts.
 # Join the conversation
 
 The community's present public doorway is Discord. If you want to meet people,
-ask a question, or follow the work as it develops, [join Turntide
-Islands](https://discord.gg/zHRy3RQgkD). The invite is permanent and leads to
-the community's `#dock` arrival channel.
+ask a question, or follow the work as it develops, [[join|join Turntide
+Islands]]. The Join page carries the current external doorway so other public
+pages do not duplicate an invite URL. That doorway leads to the community's
+`#dock` arrival channel.
 
 New arrivals first read the established welcome in `#dock` and react with its
 designated emoji. That verification opens the next step: `#channel-visas`,

@@ -40,8 +40,8 @@ new arrivals and its established welcome flow.
 In `#location`, share a place-based observation, practice, or source-linked
 note, distinguishing observation from inference.
 
-[Join the Discord](https://discord.gg/zHRy3RQgkD) to participate in the
-community and discuss future programming. A proposal can be asynchronous;
+[[join|Join Turntide Islands]] to participate in the community and discuss
+future programming. A proposal can be asynchronous;
 nobody has to volunteer as a live host to contribute a question, project, or
 field note.
 

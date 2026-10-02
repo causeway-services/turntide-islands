@@ -16,9 +16,9 @@ future program.
 
 # Participate now
 
-The active public doorway is [the Turntide Islands Discord](https://discord.gg/xZHxzDz4zv).
-New arrivals follow the established `#dock` welcome and `#channel-visas` role
-selection. [[join|Read how to join]] before entering. Members can discuss
+The active public doorway is Discord; [[join|Join Turntide Islands]] through
+the Join page, which carries the current external doorway. New arrivals follow
+the established `#dock` welcome and `#channel-visas` role selection. Members can discuss
 questions, sources, projects, and place-based observations.
 [[events|Events and community programming]] holds the dated cycle records
 and gathering proposal process. A gathering is confirmed only when a human

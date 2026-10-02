@@ -85,7 +85,7 @@ exact site details privately with a consenting organizer if a trial is proposed.
 
 # Help improve this record
 
-[Join Turntide](https://discord.gg/xZHxzDz4zv), choose **Questions and
+[[join|Join Turntide]], choose **Questions and
 research** in Discord's onboarding, and complete the `#dock` welcome. Then
 bring a source or a general, non-identifying observation to
 `#question-quarry`. Say what you observed, what you infer, and what remains
