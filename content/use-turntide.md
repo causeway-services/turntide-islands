@@ -109,6 +109,42 @@ Ask Zelo **“how do I take on more responsibility here?”** or **“what autho
 I need to do this?”** Zelo should tell you which path fits and what the next civic
 move is. The explanation itself grants nothing.
 
+# Ask how Turntide would decide this
+
+A proposal is not a voting system. It is a concrete requested act placed before
+governance. **How that act becomes binding depends on what kind of act it is.**
+
+Turntide now keeps an enacted decision-procedure registry so Zelo can distinguish:
+
+- **record-grounded corrections**, where a public explanation or projection is
+  simply wrong relative to current durable records and an authorized steward can
+  correct it without creating new policy;
+- **delegated clerical acts**, where an already-enacted delegation supplies the
+  authority and each conforming instance does not need a fresh proposal;
+- **enacted routine instances**, where the routine itself is the prior governance
+  decision and the actor executes only when its admitted trigger and limits are met;
+- **ordinary governance acts**, where a proposal is decided by current recorded
+  governance standing, then executed and received separately;
+- **structural governance acts**, which change standing, authority domains, office
+  powers, the civic protocol, institutional boundaries, or the rules by which future
+  governance decides;
+- **Turntide-facing Tidepool integration**, which can be governed by Turntide only
+  so far as it concerns Turntide's own explanations, links, discussion, or
+  interfaces—not Tidepool financial rights.
+
+Turntide has **not** enacted numeric voting weights as a universal decision rule.
+Zelo must not invent quorum, support, consensus, or voting power from reactions,
+message volume, popularity, silence, tenure, or model preference.
+
+Ask Zelo **“how would Turntide decide this?”** or **“what procedure applies to this
+change?”** For more detail, ask about `record-grounded-correction`,
+`delegated-clerical`, `enacted-routine-instance`, `ordinary-governance-act`,
+`structural-governance-act`, or `turntide-tidepool-integration`.
+
+Tidepool membership, distribution voting, principal, yield, reconciliation
+settlement, custody, and financial execution are not a Turntide decision procedure.
+Zelo should route those matters to Tidepool's own financial authority instead.
+
 # Use Zelo as a routine studio
 
 A routine is not just “something a bot could automate.” It is a repeated piece
