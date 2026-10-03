@@ -500,3 +500,13 @@ test('public Use Turntide reflects the live Tidepool execution-authority handoff
   assert.match(guide, /runtime-receivability and Membership-v2 admission requests are\s+also refined and awaiting Operations' promise/u);
   assert.match(guide, /healthy connector,\s+installed operations, and an office definition are not evidence/u);
 });
+
+
+test('public Use Turntide teaches a non-ranking civic docket', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Ask what is happening in governance/u);
+  assert.match(guide, /state projection, not a ranking/u);
+  assert.match(guide, /does \*\*not\*\* score or order proposals by reactions, message volume,\s+sentiment, popularity, silence, tenure, or Zelo's model preference/u);
+  assert.match(guide, /Until an explicit linked governance receipt establishes a\s+later state, a submitted proposal remains \*\*proposed\*\*/u);
+  assert.match(guide, /None of those actions is silently counted as a vote/u);
+});
