@@ -65,6 +65,21 @@ Useful prompts include:
 This distinction is deliberate: **low-friction participation, high-legibility
 authority**.
 
+
+## Asking for bounded authority
+
+Sometimes “I can help” really does need authority: for example, maintaining one
+project record, carrying out one reversible clerical change, or executing a class
+of actions Turntide wants someone else to handle. That should not require vague
+trust or an all-purpose office.
+
+Ask Zelo to draft a **delegation request**. The draft names the delegate, purpose,
+scope, granted actions, explicit limits, review or expiry condition, revocation
+condition, and receiving condition. Drafting it creates no authority. A recorded
+governance act must activate it, and active delegations have explicit paths to be
+revoked, expire when their recorded condition is witnessed, or be superseded.
+
+
 # Use Zelo as a routine studio
 
 A routine is not just “something a bot could automate.” It is a repeated piece
