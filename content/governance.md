@@ -41,11 +41,13 @@ Those are separate typed states.
 
 # Current operating condition
 
-Turntide is presently a small DAO. Its effective decisions are made by the
-active participants and delegated agents that are actually doing the work and
-recording decisions. The current Discord owner/control surface and delegated
-561 Group agents are therefore practical execution surfaces of the present DAO,
-subject to the DAO's explicit records and revocable delegations.
+Turntide is presently a small DAO. At present, emsenn and delegated 561 Group
+agents are the active governing participants, so they exercise the DAO's
+effective decision authority while that remains the actual active participant
+set. The current Discord owner/control surface and delegated agents are
+practical execution surfaces of the DAO, subject to its explicit records and
+revocable delegations. As additional participants become active, the DAO can
+admit and redistribute standing through its governance records.
 
 This does not require a monthly human meeting, broad human consensus, or
 approval from inactive members. Meetings and events may be useful social
