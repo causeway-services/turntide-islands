@@ -175,6 +175,31 @@ answer surfaces genuinely repeated work, follow with **“routine studio for
 #channel-name”** and describe the repetition. The place map itself creates no
 routine, standing, obligation, or authority.
 
+## Preserve a proposal draft without proposing it
+
+If you have a concrete change in mind but are not ready to place it before governance,
+ask Zelo to **“save this as a draft proposal”** and name the requested act. Zelo can
+keep that draft in a private, author-scoped, append-only inbox tied to its original
+Discord context.
+
+A saved proposal draft is deliberately **not a proposal before governance**. It
+starts in `draft-proposal`, and Zelo records which fields are still missing:
+proposer, requested act, affected scope, evidence, authority needed, reversibility,
+and receiving condition. Only the separate `draft-proposal → proposed` civic
+transition places a complete draft before current governance. A proposed act is
+still not an enacted act.
+
+You can ask Zelo **“show me my proposal drafts”**. The list shows a short handle,
+original channel, draft status, and missing fields without repeating the private
+requested-act text. Ask **“continue proposal <handle>”** in the original channel to
+resume one. Zelo refuses cross-author lookup and cross-channel continuation so a
+context-specific draft is not silently carried somewhere else.
+
+The proposal-draft carrier is source-bound and tested. Its live Discord receiving
+receipt remains separate: a running Zelo deployment must demonstrate save, replay
+deduplication, author-scoped listing, and original-channel continuation before that
+delivery path is called received.
+
 ## Preserve a routine idea without enacting it
 
 If repeated work is concrete enough that you do not want the idea to vanish back
