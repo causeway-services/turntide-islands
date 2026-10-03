@@ -2,58 +2,52 @@
 title: Turntide Islands
 date-created: 2026-08-29
 type: index
+eyebrow: Welcome ashore
 status: active
+summary: A small archipelago of people learning, practically and locally, to live well with climate weirding.
 tags:
 - turntide-islands
 - climate-adaptation
 - community
 ---
 
-Turntide Islands is a public-facing record of a community building practical,
-local climate-adaptation knowledge. It treats a community as more than its
-chat surface: its durable work is a settlement of published records, explicit
-admissions, and accountable decisions.
+The weather is getting weird. Turntide Islands is a community of people who
+would rather respond to that than merely react. We're gardeners, tinkerers,
+researchers, organizers, and the curious, swapping practical, local knowledge
+about living well through it: what to plant, how to drain a yard, which
+sources to trust, and how to look after each other.
 
-The work begins with a simple problem: useful knowledge about adaptation is
-fragmented, hard to verify, and rarely funded. Turntide Islands is developing
-a way to collect, test, and share that knowledge without presenting future
-plans as present facts.
+Useful knowledge about adaptation is scattered, hard to check, and rarely
+paid for. So we keep receipts. A good conversation gets rescued into the
+Knowledge Vault, evidence travels with the claims it supports, and the
+community's decisions are written down where anyone can read them. This site
+is where that public record is kept.
 
-# Join the conversation
+# Come ashore
 
-The community's present public doorway is Discord. If you want to meet people,
-ask a question, or follow the work as it develops, [[join|join Turntide
-Islands]]. The Join page carries the current external doorway so other public
-pages do not duplicate an invite URL. That doorway leads to the community's
-`#dock` arrival channel.
+The islands are on Discord. [[join|Join Turntide Islands]], and you'll land
+at `#dock`, our harbor. Discord's onboarding there asks what brought you and
+which islands you'd like to visit, and a person welcomes you in. After that,
+`#channel-visas` is where you change which islands you visit.
 
-New arrivals first read the established welcome in `#dock` and react with its
-designated emoji. That verification opens the next step: `#channel-visas`,
-where people can choose topical communities through the established emoji and
-self-assigned-role flow. `#dock` is an arrival surface, not a general project
-or discussion channel. Participation does not create a commercial obligation,
-and sharing a message is not consent to have it resold, profiled, or copied
-into an automatic cohort. The active social surface is for learning together;
-there is no public token sale, paid membership, or operating field-trial
-program being offered here.
+Not sure where you'd fit? Look over the [[islands|chart of the islands]]
+first: the Mainland for introductions and questions, the Chatter Isles for
+gardens, cooking, scholarship, tech, and markets, the Knowledge Vault for
+evidence, and Governance Rock for how we run ourselves.
 
-Read [[join|how to join and what to expect]].
+# Around the harbor
 
-Read [[events|Events and community programming]] for dated programming
-cycles, their status, and how to propose a gathering.
+- [[events|Events]] lists what's on, what has ended, and how to propose a
+  gathering of your own.
+- [[settlement|The settlement]] is the public account of how the community
+  holds itself accountable.
+- [[proof-of-adaptation|Proof of Adaptation]] sketches a proposed loop for
+  turning local practice into checked, shareable evidence.
+- [[governance|Governance]] separates the commitments that already stand from
+  the directions we're still exploring.
 
-# What is here
-
-- [[settlement|The settlement]] explains the public account of how Turntide
-  Islands holds itself accountable.
-- [[proof-of-adaptation|Proof of Adaptation]] describes the proposed
-  evidence-and-work loop for local practice.
-- [[events|Events and community programming]] keeps the dated programming
-  record and explains how human-hosted gatherings are confirmed.
-- [[governance|Governance]] distinguishes standing commitments from future
-  directions.
-
-> [!note] Current status
-> This site publishes the settlement's public record. A proposal, draft, or
-> declared direction remains exactly that until the relevant admission and
-> witnessed record exists.
+> [!note] An honest present tense
+> Turntide Islands today is a conversation and a public record. Membership is
+> free and carries no paid program, token, or commercial obligation. Anything
+> on this site described as proposed stays proposed until its record says
+> otherwise.

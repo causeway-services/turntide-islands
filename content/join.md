@@ -3,6 +3,7 @@ title: Join Turntide Islands
 date-created: 2026-08-29
 type: page
 status: active
+summary: How to come ashore on the Turntide Islands Discord, and what to expect when you do.
 tags:
 - turntide-islands
 - community
@@ -10,43 +11,50 @@ tags:
 - discord
 ---
 
-Turntide Islands is open for public conversation in Discord. Start by joining
-[the Turntide Islands server](https://discord.gg/xZHxzDz4zv); the permanent
-invite opens at `#dock`, the community's arrival channel.
+Turntide Islands is open, free, and on Discord. This link always works:
 
-# What to expect now
+[Come ashore at Turntide Islands](https://discord.gg/xZHxzDz4zv)
 
-This is a community for practical, local climate-adaptation learning. You can
-read, introduce yourself, ask a question, share an observation, and help make
-useful knowledge easier to find and evaluate. In `#dock`, read the established
-welcome and react with its designated emoji. Once verified, use
-`#channel-visas` to choose topical communities through the existing emoji and
-self-assigned-role flow. This is an established community journey; it is not a
-generic bot template, and `#dock` is not a general discussion channel.
+# Landing
 
-The current experience is a social and learning space. Public participation is
-not enrollment in a paid program, a token offer, a commercial contract, or a
-promise of access to future work. Proposed governance, proof-of-adaptation,
-and market ideas remain proposals until their required public admissions and
-witnessed records exist.
+1. The invite drops you at `#dock`, our harbor.
+2. Discord's onboarding asks a few questions there: what brought you, and
+   which islands you'd like to visit.
+3. A person from the community reviews new arrivals and lets you in. It's a
+   small community, not a bot gate, so it can take a little while.
+4. Once you're in, introduce yourself in `#mainland` if you like, and visit
+   `#channel-visas` whenever you want to change which islands you visit.
 
-# Community expectations
+The [[islands|chart of the islands]] shows what's where.
 
-Treat people with care, make the evidentiary state of a claim clear, and do
-not represent a proposal as an activated program. Ordinary messages and
-participation are not consent for resale, automated cohort profiling, or
-copying message text into a roster. If you want to discuss commercial work,
-licensing, or paid arrangements, keep that distinct from ordinary community
-participation and use an explicitly designated process when one is available.
+# What it's like
 
-The settlement's public account explains why the community makes these
-distinctions: [[settlement|read the settlement record]]. For the proposed
-evidence loop, see [[proof-of-adaptation|Proof of Adaptation]].
+People here read, ask, share observations from their own yards, kitchens,
+and towns, and help make useful knowledge easier to find and to check. You can
+lurk for as long as you want. When you post, you'll find the community's own
+emoji and stickers waiting for you, including :turntide:, :receipts:, and
+:islander:.
 
-See [[events|Events and community programming]] for dated cycle records
-and how to propose a gathering, practical question, project, or field note.
+# How we treat each other
 
-> [!note] A clear present tense
-> Joining Discord lets you take part in the community that exists today. It
-> does not activate a DAO, token, paid membership, field trial, or a new
-> programming cycle.
+- **Care, curiosity, and respect.** Assume good faith and ask before you
+  argue.
+- **Show your sources.** Say whether a claim is something you've seen,
+  something you've read, or something you suspect. `#receipts` exists for a
+  reason.
+- **Keep the present tense honest.** Don't describe a proposal as something
+  that already exists.
+- **Your words are yours.** Taking part is not consent to have your messages
+  resold, profiled, or copied into rosters.
+- **No spam, scams, or doxxing.** Ever.
+
+Commercial work, licensing, or paid arrangements are fine to ask about, but
+keep them separate from ordinary conversation and use a designated process
+when one exists. The [[settlement|settlement record]] explains why the
+community draws these lines, and [[events|Events]] explains how to propose a
+gathering, project, or field note.
+
+> [!note] What joining is, and isn't
+> Joining Discord lets you take part in the community as it exists today. It
+> doesn't enroll you in a paid membership, a token, a DAO, a field trial, or a
+> new programming cycle.

@@ -70,7 +70,7 @@ test('Cloudflare serves the verified VICTOR release at the public hostname', asy
 test('the edge serves the VICTOR landing cell at the root URL', async () => {
   const worker = await readFile(resolve(root, 'worker.mjs'), 'utf8');
   assert.match(worker, /url\.pathname === '\/'/);
-  assert.match(worker, /new URL\('\/index\/index\.html', url\)/);
+  assert.match(worker, /new URL\('\/index\/', url\)/);
   assert.match(worker, /env\.ASSETS\.fetch/);
 });
 
