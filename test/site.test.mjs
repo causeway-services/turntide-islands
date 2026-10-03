@@ -510,3 +510,13 @@ test('public Use Turntide teaches a non-ranking civic docket', async () => {
   assert.match(guide, /Until an explicit linked governance receipt establishes a\s+later state, a submitted proposal remains \*\*proposed\*\*/u);
   assert.match(guide, /None of those actions is silently counted as a vote/u);
 });
+
+test('public Use Turntide explains typed decision procedures', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Ask how Turntide would decide this/u);
+  assert.match(guide, /A proposal is not a voting system/u);
+  assert.match(guide, /record-grounded corrections/u);
+  assert.match(guide, /structural governance acts/u);
+  assert.match(guide, /has \*\*not\*\* enacted numeric voting weights/u);
+  assert.match(guide, /Tidepool membership, distribution voting, principal, yield/u);
+});
