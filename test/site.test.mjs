@@ -177,3 +177,62 @@ test('Turntide logical MetroPlat world remains distinct from ANT and deployment 
   assert.ok(ant.identityBoundary.notIdenticalTo.includes('metroplat-deployment'));
   for (const projection of binding.publicProjections) assert.equal(projection.authority, false);
 });
+
+
+test('Zelo civic mandate lowers governance friction without becoming sovereign', async () => {
+  const mandate = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/zelo-civic-steward.json'),
+    'utf8',
+  ));
+  const routines = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/civic-routines.json'),
+    'utf8',
+  ));
+  const guild = JSON.parse(await readFile(
+    resolve(root, '../../data/records/discord-guild/turntide-islands.guild.json'),
+    'utf8',
+  ));
+  const governance = await readFile(resolve(root, 'content', 'governance.md'), 'utf8');
+
+  assert.equal(mandate.status, 'enacted');
+  assert.equal(mandate.office.id, 'zelo-civic-steward');
+  assert.match(mandate.purpose, /Help Turntiders understand Turntide/u);
+  assert.ok(mandate.duties.some((duty) => duty.id === 'discover-routines'));
+  assert.ok(mandate.duties.some((duty) => duty.id === 'reconcile-decisions-and-actions'));
+  assert.ok(mandate.immunities.some((rule) => /cannot be required to invent consensus/u.test(rule)));
+  assert.ok(mandate.immunities.some((rule) => /cannot treat reactions, message volume, silence, or Discord presence as governance weight/u.test(rule)));
+  assert.ok(mandate.immunities.some((rule) => /cannot admit a Tidepool member/u.test(rule)));
+
+  assert.equal(routines.status, 'enacted');
+  for (const id of [
+    'civic-orientation',
+    'governance-rock-sweep',
+    'proposal-ferry',
+    'decision-action-reconciliation',
+    'island-routine-discovery',
+    'standing-delegation-review',
+    'tidepool-boundary-explainer',
+    'civic-receipt',
+  ]) assert.ok(routines.routines.some((routine) => routine.id === id), `missing civic routine ${id}`);
+  assert.ok(routines.antiPatterns.includes('mandatory recurring human consensus meetings'));
+  assert.ok(routines.antiPatterns.includes('treating silence or absence as consent'));
+  assert.match(
+    routines.routines.find((routine) => routine.id === 'governance-rock-sweep').output,
+    /or no post/u,
+  );
+
+  const questions = guild.channels.find((channel) => channel.key === 'governance-questions');
+  const discussion = guild.channels.find((channel) => channel.key === 'governance-discussion');
+  const proposals = guild.channels.find((channel) => channel.key === 'governance-proposals');
+  const action = guild.channels.find((channel) => channel.key === 'governance-action');
+  assert.match(questions.topic, /Zelo can explain/u);
+  assert.match(questions.topic, /not a vote or authority grant/u);
+  assert.match(discussion.topic, /Zelo can help turn a concern into a clearly scoped draft proposal/u);
+  assert.match(proposals.topic, /a proposal is not enacted until an authorized governance act/u);
+  assert.match(action.topic, /Zelo reconciles decisions against execution/u);
+
+  assert.match(governance, /Governance Rock is an asynchronous civic path, not a meeting requirement/u);
+  assert.match(governance, /Zelo is Turntide's disclosed agentic civic steward/u);
+  assert.match(governance, /self-government easier to use, not to become the government/u);
+  assert.match(governance, /Zelo stays quiet when a scheduled review finds no material change/u);
+});
