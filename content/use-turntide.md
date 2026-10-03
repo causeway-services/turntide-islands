@@ -294,10 +294,18 @@ standing. They are correctly unavailable to the general Turntide / Board civic
 office.
 
 The dedicated **Tidepool Protocol Clerk** office exists and owns exactly those nine
-protocol-transition verbs, but it is currently **vacant**. A least-authority staffing
-request is open. The first real admission → vote → close → reconciliation →
-disclosure loop remains **unreceived**; installed operations and an office definition
-are not evidence that a financial cycle has happened.
+protocol-transition verbs, but it is currently **vacant**, with **zero seats**. Its
+enacted law says that operation availability is execution capability, **not political
+or financial discretion**: the clerk may execute only already-authorized Tidepool
+transitions or fail closed with the missing authority, witness, or state.
+
+The remaining authority handoff is now explicit on the live 561 work board. **561
+Group Operations owes the answer** to which authority should hold those nine
+protocol verbs; the runtime-receivability and Membership-v2 admission requests are
+also refined and awaiting Operations' promise. The first real admission → vote →
+close → reconciliation → disclosure loop remains **unreceived**; a healthy connector,
+installed operations, and an office definition are not evidence that a financial
+cycle has happened.
 
 Ask Zelo **“what is Tidepool's current status?”** or any ordinary Tidepool question.
 Zelo should state the observation time and current blocker, then route the question
