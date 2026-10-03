@@ -18,6 +18,7 @@ export default {
       { label: 'Events', href: '/events/' },
       { label: 'The settlement', href: '/settlement/' },
       { label: 'Proof of Adaptation', href: '/proof-of-adaptation/' },
+      { label: 'Use Turntide', href: '/use-turntide/' },
       { label: 'Governance', href: '/governance/' },
     ],
   },
