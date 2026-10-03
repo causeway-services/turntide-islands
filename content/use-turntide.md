@@ -273,6 +273,32 @@ This is why Governance Rock has questions, discussion, proposals, and action as
 separate lanes. The separation keeps “someone said a thing,” “Turntide decided a
 thing,” and “the thing actually happened” from collapsing into each other.
 
+# Challenge an action or receipt
+
+You do not need governance standing to say that a Turntide explanation, execution,
+or receipt is contradicted by evidence. Ask Zelo to **contest** or **challenge** it
+and name the specific problem: which record is at issue, what it currently claims,
+what fact or receipt is missing or contradictory, and where the evidence can be
+checked.
+
+The effect depends on what you are challenging:
+
+- A wrong or stale **explanation** can be corrected against current records.
+- An **executed** governance act whose receiving evidence is missing or contradicted
+  can move to **contested** under the civic protocol. A participant or Zelo can raise
+  that contest when the specific contradiction or missing receipt is named.
+- An act already recorded as **received** is not silently erased by a challenge.
+  New evidence can open discussion or a proposal to **reopen** it, but the actual
+  received → reopened transition requires recorded governance standing and a new
+  governing act with a reason.
+- A disputed **Tidepool financial receipt** stays in Tidepool's own reconciliation
+  and financial-governance domain. Zelo can route the evidence but cannot alter
+  membership, voting weight, settlement, or disclosure.
+
+A contest is therefore a way to keep settlement falsifiable, not an automatic veto
+or rollback. Reactions, message volume, silence, or popularity are not contest
+evidence.
+
 # Learn by rehearsal
 
 If you want to understand the DAO without risking a real change, ask Zelo for a
