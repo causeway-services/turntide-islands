@@ -49,9 +49,9 @@ test('the Join page is the single public carrier for the Discord invite', async 
     assert.match(page, /\[\[join\|/);
   }
   assert.match(index, /#dock/);
-  assert.match(index, /#channel-visas/);
+  assert.match(index, /Channels & Roles/);
   assert.match(join, /#dock/);
-  assert.match(join, /#channel-visas/);
+  assert.match(join, /Channels & Roles/);
   assert.doesNotMatch(index, /#channel-visas/);
   assert.doesNotMatch(join, /#channel-visas/);
   assert.doesNotMatch(index, /#start-here/);
