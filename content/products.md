@@ -42,7 +42,7 @@ not a completed local trial or a member contribution.
 
 The [[duluth-garden-drainage|Duluth garden drainage record]] checks one
 garden-program map point against a public watershed layer and names what that
-intersection cannot answer. A [provider request](https://github.com/561-group/561-group-site/issues/2)
+intersection cannot answer. A provider request
 is open for a bounded screening; no work has been awarded.
 
 # Signals and public publishing

@@ -11,8 +11,8 @@ tags:
 ---
 
 This is an AI-prepared desktop source check for a community question about
-gardens, watersheds, and rainwater in Duluth. The [provider offer
-request](https://github.com/561-group/561-group-site/issues/2) asks for a
+gardens, watersheds, and rainwater in Duluth. The provider offer
+request asks for a
 bounded, reproducible screening before anyone proposes a paid report. No
 garden organizer has agreed to a site study, and no provider has been selected.
 
@@ -67,7 +67,7 @@ considered.
 - **Vault work:** the [source check in `#receipts`](https://discord.com/channels/1184863861065658419/1519620773436854353/1553967627196571658)
   and [specific human review request in `#archive-desk`](https://discord.com/channels/1184863861065658419/1519620769695535264/1553967628790267995)
   link to this record. A request for review is not a completed human review.
-- **Work selection:** [offers are open](https://github.com/561-group/561-group-site/issues/2)
+- **Work selection:** offers are open
   for a bounded feasibility slice. That request does not award work or
   authorize spending.
 - **Public use:** this record uses public source material and paraphrases the
