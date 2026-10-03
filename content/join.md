@@ -22,8 +22,9 @@ Turntide Islands is open, free, and on Discord. This link always works:
    which islands you'd like to visit.
 3. A person from the community reviews new arrivals and lets you in. It's a
    small community, not a bot gate, so it can take a little while.
-4. Once you're in, introduce yourself in `#mainland` if you like, and visit
-   `#channel-visas` whenever you want to change which islands you visit.
+4. Once you're in, introduce yourself in `#mainland` if you like. Open
+   **Channels & Roles** at the top of the channel list whenever you want to
+   change which islands you visit.
 
 The [[islands|chart of the islands]] shows what's where.
 

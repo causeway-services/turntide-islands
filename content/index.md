@@ -28,12 +28,14 @@ is where that public record is kept.
 The islands are on Discord. [[join|Join Turntide Islands]], and you'll land
 at `#dock`, our harbor. Discord's onboarding there asks what brought you and
 which islands you'd like to visit, and a person welcomes you in. After that,
-`#channel-visas` is where you change which islands you visit.
+**Channels & Roles** at the top of the channel list is where you change which
+islands you visit.
 
 Not sure where you'd fit? Look over the [[islands|chart of the islands]]
-first: the Mainland for introductions and questions, the Chatter Isles for
-gardens, cooking, scholarship, tech, and markets, the Knowledge Vault for
-evidence, and Governance Rock for how we run ourselves.
+first: the Mainland for introductions, questions, and field notes, the
+Chatter Isles for gardens, cooking, climate, scholarship, tech, and markets,
+the Knowledge Vault for evidence and our own news wire, and Governance Rock
+for how we run ourselves.
 
 # Around the harbor
 
