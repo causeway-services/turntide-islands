@@ -419,3 +419,13 @@ test('public Use Turntide explains quiet scheduled civic attention', async () =>
   assert.match(guide, /Private routine-candidate intake is summarized by \*\*count only\*\*/u);
   assert.match(guide, /live Discord receiving\s+receipt remains separate/u);
 });
+
+
+test('public Use Turntide teaches private routine candidate continuation', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /show me my routine candidates/u);
+  assert.match(guide, /does not repeat the saved observation text/u);
+  assert.match(guide, /continue routine candidate <handle>/u);
+  assert.match(guide, /refuses\s+cross-author lookup/u);
+  assert.match(guide, /still does not propose,\s+enact, or schedule the routine/u);
+});
