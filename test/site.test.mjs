@@ -398,5 +398,5 @@ test('public Use Turntide teaches place-aware civic wayfinding', async () => {
   assert.match(guide, /Ask what can happen where you are/u);
   assert.match(guide, /what can happen in #channel-name/u);
   assert.match(guide, /routine studio for\s+#channel-name/u);
-  assert.match(guide, /Turntide standing does not grant Tidepool financial authority/u);
+  assert.match(guide, /Turntide standing does not grant Tidepool\s+financial authority/u);
 });
