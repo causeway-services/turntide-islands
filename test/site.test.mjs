@@ -218,6 +218,8 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
     'next-move-nudge',
     'governance-rehearsal',
     'civic-state-answer',
+    'participation-wayfinding',
+    'routine-studio',
   ]) assert.ok(routines.routines.some((routine) => routine.id === id), `missing civic routine ${id}`);
   assert.ok(routines.antiPatterns.includes('mandatory recurring human consensus meetings'));
   assert.ok(routines.antiPatterns.includes('treating silence or absence as consent'));
@@ -303,7 +305,13 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
   assert.match(guide, /smallest next act/u);
   assert.match(guide, /governance rehearsal/u);
   assert.match(guide, /Rehearsal creates no vote,\s+standing, decision, or authority/u);
+  assert.match(guide, /You can matter without already governing/u);
+  assert.match(guide, /low-friction participation, high-legibility\s+authority/u);
+  assert.match(guide, /Use Zelo as a routine studio/u);
   assert.match(guide, /routine candidate/u);
+  assert.match(guide, /patterns are prompts for thinking, not enacted routines/u);
+  assert.match(guide, /Question Quarry/u);
+  assert.match(guide, /Solidarity Shoals/u);
   assert.match(guide, /Zelo does not silently enact one/u);
   assert.match(guide, /Tidepool is adjacent to Turntide but has its own financial membership and governance\s+boundary/u);
   assert.ok(config.includes("label: 'Use Turntide', href: '/use-turntide/'"));
@@ -311,4 +319,37 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
   const questions = guild.channels.find((channel) => channel.key === 'governance-questions');
   assert.match(questions.topic, /what state a matter is in/u);
   assert.match(questions.topic, /smallest lawful next move/u);
+});
+
+
+test('Turntide routine patterns are advisory and place-aware', async () => {
+  const patterns = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/routine-pattern-library.json'),
+    'utf8',
+  ));
+  const mandate = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/zelo-civic-steward.json'),
+    'utf8',
+  ));
+
+  assert.equal(patterns.status, 'advisory');
+  assert.equal(patterns.authorityEffect, 'none');
+  assert.equal(patterns.rules.patternIsNotRoutine, true);
+  assert.equal(patterns.rules.observationBeforeAutomation, true);
+  assert.equal(patterns.rules.silenceAndReactionCountsAreNotDemand, true);
+  for (const id of [
+    'harbor-welcome-follow-up',
+    'question-quarry-rescue',
+    'field-note-rescue',
+    'knowledge-vault-rescue',
+    'solidarity-loop-follow-up',
+    'island-material-pulse',
+    'project-next-move',
+    'governance-learning-loop',
+    'seasonal-school-cycle',
+  ]) assert.ok(patterns.patterns.some((pattern) => pattern.id === id), `missing routine pattern ${id}`);
+
+  assert.ok(mandate.duties.some((duty) => duty.id === 'teach-participation-without-standing'));
+  assert.ok(mandate.duties.some((duty) => duty.id === 'facilitate-routine-studio'));
+  assert.ok(mandate.immunities.some((rule) => /advisory routine pattern/u.test(rule)));
 });
