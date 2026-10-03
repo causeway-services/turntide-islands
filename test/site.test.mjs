@@ -463,3 +463,16 @@ test('public Use Turntide teaches private proposal drafts without proposing them
   assert.match(guide, /refuses cross-author lookup and cross-channel continuation/u);
   assert.match(guide, /live Discord receiving\s+receipt remains separate/u);
 });
+
+
+test('public Use Turntide teaches explicit proposal refinement and submission without enactment', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /set proposal <handle> affected scope/u);
+  assert.match(guide, /set proposal <handle> receiving condition/u);
+  assert.match(guide, /submit\s+proposal <handle>/u);
+  assert.match(guide, /#governance-proposals/u);
+  assert.match(guide, /draft-proposal → proposed/u);
+  assert.match(guide, /Proposed is not enacted/u);
+  assert.match(guide, /fail-closed against duplicates/u);
+  assert.match(guide, /reports the submission as pending and\s+does not post it again/u);
+});
