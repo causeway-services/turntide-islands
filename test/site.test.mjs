@@ -488,3 +488,13 @@ test('public Use Turntide teaches quiet non-ranking proposal intake review', asy
   assert.match(guide, /does not rank, endorse, suppress, or\s+infer support/u);
   assert.match(guide, /unchanged proposal id is not announced again/u);
 });
+
+
+test('public Use Turntide reflects the live Tidepool execution-authority handoff', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /currently \*\*vacant\*\*, with \*\*zero seats\*\*/u);
+  assert.match(guide, /not political\s+or financial discretion/u);
+  assert.match(guide, /561\s+Group Operations owes the answer/u);
+  assert.match(guide, /runtime-receivability and Membership-v2 admission requests are\s+also refined and awaiting Operations' promise/u);
+  assert.match(guide, /healthy connector,\s+installed operations, and an office definition are not evidence/u);
+});
