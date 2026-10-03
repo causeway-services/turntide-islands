@@ -138,7 +138,8 @@ words. Governance Rock is where explicit civic state transitions live.
 Economy Estuary has an additional Tidepool boundary: Turntiders can discuss
 Tidepool, its public state, and how Turntide should explain or integrate it, while
 membership, distribution voting, principal, yield, and financial execution remain
-inside Tidepool's own authority domain.
+inside Tidepool's own authority domain. **Turntide standing does not grant Tidepool
+financial authority.**
 
 Ask Zelo **“what can happen in #channel-name?”** to get the current map. If the
 answer surfaces genuinely repeated work, follow with **“routine studio for
