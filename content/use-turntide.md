@@ -145,5 +145,22 @@ boundary. Discord participation does not make you a Tidepool member, Turntide
 governance standing does not automatically grant financial authority, and Zelo
 cannot move principal or yield simply because Zelo can explain the system.
 
-If the distinction matters, ask Zelo. A good answer should say which authority
-domain the proposed act belongs to and what receipt is still missing.
+Zelo can still be useful as a **Tidepool civic liaison**. The first question is
+what kind of thing you are trying to do:
+
+- “What is Tidepool and what is actually working?” is an informational status
+  question. Zelo can explain current receipts and unavailable states.
+- “Should Turntide explain, discuss, link to, or integrate Tidepool differently?”
+  is a Turntide-facing governance or product-surface question. It can become
+  Turntide discussion or a proposal.
+- “How do I become a Tidepool member?” belongs to Tidepool's own admission
+  process. Zelo can explain and route it; Turntide participation cannot grant it.
+- “How do I vote on a Tidepool distribution?” belongs to Tidepool's financial
+  membership/governance rules, not Turntide-wide standing.
+- “Move my principal/yield” or “execute this Tidepool transaction” is a financial
+  operation. Zelo's civic office cannot do that merely because it can discuss the
+  protocol.
+
+A good Zelo answer should name the authority domain, the next process, and any
+receipt or live capability that is still missing rather than converting
+unavailability into an implied permission.
