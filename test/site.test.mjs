@@ -220,6 +220,7 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
     'civic-state-answer',
     'participation-wayfinding',
     'routine-studio',
+    'tidepool-civic-liaison',
   ]) assert.ok(routines.routines.some((routine) => routine.id === id), `missing civic routine ${id}`);
   assert.ok(routines.antiPatterns.includes('mandatory recurring human consensus meetings'));
   assert.ok(routines.antiPatterns.includes('treating silence or absence as consent'));
@@ -314,6 +315,9 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
   assert.match(guide, /Solidarity Shoals/u);
   assert.match(guide, /Zelo does not silently enact one/u);
   assert.match(guide, /Tidepool is adjacent to Turntide but has its own financial membership and governance\s+boundary/u);
+  assert.match(guide, /Tidepool civic liaison/u);
+  assert.match(guide, /Turntide participation cannot grant it/u);
+  assert.match(guide, /Zelo's civic office cannot do that/u);
   assert.ok(config.includes("label: 'Use Turntide', href: '/use-turntide/'"));
 
   const questions = guild.channels.find((channel) => channel.key === 'governance-questions');
