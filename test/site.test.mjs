@@ -1,9 +1,17 @@
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
 import { test } from 'node:test';
 
 const root = resolve(import.meta.dirname, '..');
+
+function repositoryRoot(from) {
+  for (let directory = resolve(from); directory !== dirname(directory); directory = dirname(directory)) {
+    if (existsSync(resolve(directory, 'pnpm-workspace.yaml'))) return directory;
+  }
+  throw new Error('repository root not found');
+}
 
 test('the site depends on VICTOR through the registry', async () => {
   const manifest = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
@@ -137,4 +145,35 @@ test('Turntide public governance receives the host-independent ANT identity boun
 
   assert.match(governance, /Discord, this website, Tidepool, bots, schedulers,[\s\S]*are instruments and projections/u);
   assert.match(join, /Governance standing and delegations are[\s>]*separate recorded states/u);
+});
+
+
+test('Turntide logical MetroPlat world remains distinct from ANT and deployment identity', async () => {
+  const ant = JSON.parse(await readFile(
+    resolve(root, '../../data/records/institution/turntide-islands.ant.json'),
+    'utf8',
+  ));
+  const binding = JSON.parse(await readFile(
+    resolve(root, '../../data/records/institution/turntide-islands.metroplat-world.json'),
+    'utf8',
+  ));
+  const repository = repositoryRoot(root);
+  const manifest = JSON.parse(await readFile(resolve(repository, binding.instanceManifest), 'utf8'));
+
+  assert.equal(binding.type, 'TurntideMetroPlatWorldBinding');
+  assert.equal(binding.status, 'declared-unhosted');
+  assert.equal(binding.institutionId, ant.institution.id);
+  assert.notEqual(binding.metroplatInstanceId, binding.institutionId);
+  assert.equal(manifest.instanceOf, '@red-cup-engineering/metroplat');
+  assert.equal(manifest.identity.id, binding.metroplatInstanceId);
+  assert.equal(manifest.identity.origin, undefined);
+  assert.deepEqual(binding.deploymentBindings, []);
+  assert.deepEqual(manifest.operationSources, []);
+  assert.deepEqual(manifest.capabilities, []);
+  assert.deepEqual(manifest.schedules, []);
+  assert.equal(binding.realizationLaw.deploymentBindingRequiredForLiveClaim, true);
+  assert.equal(binding.realizationLaw.redundancyRequiresConvergenceReceipt, true);
+  assert.ok(ant.identityBoundary.notIdenticalTo.includes('metroplat-instance'));
+  assert.ok(ant.identityBoundary.notIdenticalTo.includes('metroplat-deployment'));
+  for (const projection of binding.publicProjections) assert.equal(projection.authority, false);
 });
