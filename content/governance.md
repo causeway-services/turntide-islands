@@ -110,6 +110,13 @@ Turntide has admitted a small civic routine set for Zelo:
 These routines are asynchronous by default. They do not create a recurring human
 meeting, and Zelo stays quiet when a scheduled review finds no material change.
 
+For the practical interface, see [[use-turntide|Use Turntide]]. Turntide also keeps
+a machine-readable standing ledger and civic action protocol so Zelo does not have
+to infer authority or proposal state from Discord roles, reactions, or conversational
+momentum. When state matters, Zelo should be able to say what state a matter is in,
+what the smallest lawful next transition is, who can perform it, and which receipt or
+authority is still missing.
+
 # Public accountability
 
 The governance record distinguishes enacted state from proposed direction.
