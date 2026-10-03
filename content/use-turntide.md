@@ -40,6 +40,78 @@ Zelo should answer the substance first. When governance state matters, Zelo shou
 also tell you the current state, the next lawful transition, and who or what can make
 that transition real.
 
+
+# You can matter without already governing
+
+Turntide separates **participation** from **binding authority**. You do not need
+Turntide-wide governance standing to ask a question, criticize an explanation,
+join discussion, bring evidence or lived experience, draft a proposal, volunteer
+to carry out already-authorized work, ask for a bounded delegation, or point out
+repeated work that might deserve a routine.
+
+Those acts can influence what Turntide understands and what current governance
+decides. They do not silently become votes or binding decisions. When binding
+authority matters, Zelo should say so plainly and point to the standing or
+delegation record that would make the act effective.
+
+Useful prompts include:
+
+- “I don't govern Turntide; how can I still help with this?”
+- “What can I do here without needing a delegation?”
+- “I want to propose this, not decide it myself.”
+- “I can carry this out if Turntide wants—what authority would I need?”
+- “We keep having this problem. Can Zelo help us design a routine for it?”
+
+This distinction is deliberate: **low-friction participation, high-legibility
+authority**.
+
+
+## Asking for bounded authority
+
+Sometimes “I can help” really does need authority: for example, maintaining one
+project record, carrying out one reversible clerical change, or executing a class
+of actions Turntide wants someone else to handle. That should not require vague
+trust or an all-purpose office.
+
+Ask Zelo to draft a **delegation request**. The draft names the delegate, purpose,
+scope, granted actions, explicit limits, review or expiry condition, revocation
+condition, and receiving condition. Drafting it creates no authority. A recorded
+governance act must activate it, and active delegations have explicit paths to be
+revoked, expire when their recorded condition is witnessed, or be superseded.
+
+
+# Use Zelo as a routine studio
+
+A routine is not just “something a bot could automate.” It is a repeated piece
+of community work with a beneficiary, trigger, actor, output, authority boundary,
+failure mode, and retirement condition.
+
+Zelo now keeps an advisory pattern library tied to actual Turntide places. These
+patterns are prompts for thinking, not enacted routines and not evidence that a
+community wants automation. Examples include:
+
+- the **Harbor**: newcomer orientation and follow-up;
+- **Question Quarry**: rescuing stalled questions by identifying whether the
+  missing move is clarification, research, observation, discussion, or governance;
+- **Field Notes**: preserving valuable local observations without treating chat
+  participation as publication consent;
+- the **Knowledge Vault**: rescuing source-linked conclusions and receipts;
+- **Solidarity Shoals**: opt-in follow-up so mutual-aid asks and offers can be
+  updated or closed without inferring private circumstances;
+- the **Chatter Isles**: a material pulse only when genuinely new questions,
+  sources, projects, or decisions exist;
+- **Praxis Peninsula / Workshop**: making a project's owner, next move,
+  dependency, and receiving condition legible;
+- **Governance Rock**: teaching from received acts without turning examples into
+  precedent;
+- the **School**: opening, progress, closing, and archive loops for an actually
+  admitted seasonal program.
+
+Ask Zelo something like “routine studio for #question-quarry” or describe the
+repeated work in ordinary language. Zelo can offer a pattern and turn your
+observation into a draft candidate. The draft still has to move through
+Turntide's civic process before it becomes an enacted or scheduled routine.
+
 # The ordinary path
 
 A **question** can simply be answered, or it can open **discussion** when something
@@ -88,5 +160,22 @@ boundary. Discord participation does not make you a Tidepool member, Turntide
 governance standing does not automatically grant financial authority, and Zelo
 cannot move principal or yield simply because Zelo can explain the system.
 
-If the distinction matters, ask Zelo. A good answer should say which authority
-domain the proposed act belongs to and what receipt is still missing.
+Zelo can still be useful as a **Tidepool civic liaison**. The first question is
+what kind of thing you are trying to do:
+
+- “What is Tidepool and what is actually working?” is an informational status
+  question. Zelo can explain current receipts and unavailable states.
+- “Should Turntide explain, discuss, link to, or integrate Tidepool differently?”
+  is a Turntide-facing governance or product-surface question. It can become
+  Turntide discussion or a proposal.
+- “How do I become a Tidepool member?” belongs to Tidepool's own admission
+  process. Zelo can explain and route it; Turntide participation cannot grant it.
+- “How do I vote on a Tidepool distribution?” belongs to Tidepool's financial
+  membership/governance rules, not Turntide-wide standing.
+- “Move my principal/yield” or “execute this Tidepool transaction” is a financial
+  operation. Zelo's civic office cannot do that merely because it can discuss the
+  protocol.
+
+A good Zelo answer should name the authority domain, the next process, and any
+receipt or live capability that is still missing rather than converting
+unavailability into an implied permission.

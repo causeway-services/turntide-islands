@@ -218,6 +218,9 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
     'next-move-nudge',
     'governance-rehearsal',
     'civic-state-answer',
+    'participation-wayfinding',
+    'routine-studio',
+    'tidepool-civic-liaison',
   ]) assert.ok(routines.routines.some((routine) => routine.id === id), `missing civic routine ${id}`);
   assert.ok(routines.antiPatterns.includes('mandatory recurring human consensus meetings'));
   assert.ok(routines.antiPatterns.includes('treating silence or absence as consent'));
@@ -239,6 +242,8 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
   assert.match(governance, /Governance Rock is an asynchronous civic path, not a meeting requirement/u);
   assert.match(governance, /Zelo is Turntide's disclosed agentic civic steward/u);
   assert.match(governance, /self-government easier to use, not to become the government/u);
+  assert.match(governance, /Turntide also treats \*\*delegation\*\* as a civic state/u);
+  assert.match(governance, /scope does not expand by habit/u);
   assert.match(governance, /Zelo stays quiet when a scheduled review finds no material change/u);
 });
 
@@ -277,6 +282,11 @@ test('Turntide civic standing and state protocol make Zelo guidance non-inferent
   assert.equal(protocol.artifactKinds.question.initialState, 'open');
   assert.equal(protocol.artifactKinds.proposal.initialState, 'draft-proposal');
   assert.equal(protocol.artifactKinds.decision.initialState, 'enacted');
+  assert.equal(protocol.artifactKinds.delegation.initialState, 'requested');
+  const delegationActivation = protocol.artifactKinds.delegation.transitions.find((transition) => transition.to === 'active');
+  assert.ok(delegationActivation.mayBePerformedBy.includes('recorded-governance-standing'));
+  assert.ok(delegationActivation.requires.includes('explicit limits'));
+  assert.ok(delegationActivation.requires.includes('review-or-expiry condition'));
   const enact = protocol.artifactKinds.proposal.transitions.find((transition) => transition.to === 'enacted');
   assert.ok(enact.mayBePerformedBy.includes('recorded-governance-standing'));
   assert.ok(!enact.mayBePerformedBy.includes('zelo-civic-steward'));
@@ -303,12 +313,71 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
   assert.match(guide, /smallest next act/u);
   assert.match(guide, /governance rehearsal/u);
   assert.match(guide, /Rehearsal creates no vote,\s+standing, decision, or authority/u);
+  assert.match(guide, /You can matter without already governing/u);
+  assert.match(guide, /low-friction participation, high-legibility\s+authority/u);
+  assert.match(guide, /Asking for bounded authority/u);
+  assert.match(guide, /delegation request/u);
+  assert.match(guide, /Drafting it creates no authority/u);
+  assert.match(guide, /Use Zelo as a routine studio/u);
   assert.match(guide, /routine candidate/u);
+  assert.match(guide, /patterns are prompts for thinking, not enacted routines/u);
+  assert.match(guide, /Question Quarry/u);
+  assert.match(guide, /Solidarity Shoals/u);
   assert.match(guide, /Zelo does not silently enact one/u);
   assert.match(guide, /Tidepool is adjacent to Turntide but has its own financial membership and governance\s+boundary/u);
+  assert.match(guide, /Tidepool civic liaison/u);
+  assert.match(guide, /Turntide participation cannot grant it/u);
+  assert.match(guide, /Zelo's civic office cannot do that/u);
   assert.ok(config.includes("label: 'Use Turntide', href: '/use-turntide/'"));
 
   const questions = guild.channels.find((channel) => channel.key === 'governance-questions');
   assert.match(questions.topic, /what state a matter is in/u);
   assert.match(questions.topic, /smallest lawful next move/u);
+});
+
+
+test('Turntide routine patterns are advisory and place-aware', async () => {
+  const patterns = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/routine-pattern-library.json'),
+    'utf8',
+  ));
+  const mandate = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/zelo-civic-steward.json'),
+    'utf8',
+  ));
+
+  assert.equal(patterns.status, 'advisory');
+  assert.equal(patterns.authorityEffect, 'none');
+  assert.equal(patterns.rules.patternIsNotRoutine, true);
+  assert.equal(patterns.rules.observationBeforeAutomation, true);
+  assert.equal(patterns.rules.silenceAndReactionCountsAreNotDemand, true);
+  for (const id of [
+    'harbor-welcome-follow-up',
+    'question-quarry-rescue',
+    'field-note-rescue',
+    'knowledge-vault-rescue',
+    'solidarity-loop-follow-up',
+    'island-material-pulse',
+    'project-next-move',
+    'governance-learning-loop',
+    'seasonal-school-cycle',
+  ]) assert.ok(patterns.patterns.some((pattern) => pattern.id === id), `missing routine pattern ${id}`);
+
+  assert.ok(mandate.duties.some((duty) => duty.id === 'teach-participation-without-standing'));
+  assert.ok(mandate.duties.some((duty) => duty.id === 'facilitate-routine-studio'));
+  assert.ok(mandate.immunities.some((rule) => /advisory routine pattern/u.test(rule)));
+});
+
+
+test('Governance Rock onboarding invites participation without implying standing', async () => {
+  const guild = JSON.parse(await readFile(
+    resolve(root, '../../data/records/discord-guild/turntide-islands.guild.json'),
+    'utf8',
+  ));
+  const prompt = guild.onboarding.prompts.find((candidate) => /Governance Rock/u.test(candidate.title));
+  assert.ok(prompt);
+  assert.equal(prompt.title, 'Want to follow Governance Rock?');
+  assert.match(prompt.options[0].title, /Watch, ask, propose, and learn/u);
+  assert.match(prompt.options[0].description, /distinguishes participation from binding standing/u);
+  assert.doesNotMatch(JSON.stringify(prompt), /Want a seat on Governance Rock/u);
 });

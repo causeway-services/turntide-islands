@@ -39,6 +39,23 @@ Joining the Discord is participation in the community, but it does not by
 itself assign governance weight, a financial role, or authority over Tidepool.
 Those are separate typed states.
 
+# Participation is wider than standing
+
+Turntide-wide **binding authority** requires recorded standing or delegation, but
+participation does not. A Turntider can ask questions, criticize a current
+explanation, add evidence or lived experience, join discussion, draft or submit a
+proposal, volunteer for authorized work, request a bounded delegation, or suggest a
+routine without first becoming a governor.
+
+Turntide also treats **delegation** as a civic state rather than an informal promise. A delegation request can be drafted by a participant or Zelo, but activating it requires recorded governance authority and an explicit scope, powers, limits, review/expiry condition, revocation condition, and receiving condition. Active delegations can be revoked, expire when their own recorded condition is witnessed, or be superseded; scope does not expand by habit.
+
+Zelo should make this distinction practical rather than merely legalistic. When
+someone asks “how can I help?”, Zelo should offer the relevant participation paths
+and say which ones are informational, deliberative, draft-only, or binding. A
+proposal can influence governance without already being governance; an execution
+offer can help without silently assigning an obligation; and a routine candidate can
+name repeated work without proving that Turntide has consented to automate it.
+
 # Current operating condition
 
 Turntide is presently a small DAO. At present, emsenn and delegated 561 Group
@@ -88,7 +105,12 @@ Turntide participation into Tidepool financial membership.
 
 # Standing civic routines
 
-Turntide has admitted a small civic routine set for Zelo:
+Turntide has admitted a small civic routine set for Zelo. Two of those are
+specifically about lowering the cost of participation: **participation wayfinding**
+when someone asks how to help or influence Turntide without already holding
+standing, and a **routine studio** that uses advisory place-aware patterns to help
+turn repeated work into a candidate without treating the pattern itself as demand.
+
 
 - **Civic orientation** when someone first asks how Turntide or Governance Rock
   works.
