@@ -195,10 +195,32 @@ requested-act text. Ask **“continue proposal <handle>”** in the original cha
 resume one. Zelo refuses cross-author lookup and cross-channel continuation so a
 context-specific draft is not silently carried somewhere else.
 
-The proposal-draft carrier is source-bound and tested. Its live Discord receiving
-receipt remains separate: a running Zelo deployment must demonstrate save, replay
-deduplication, author-scoped listing, and original-channel continuation before that
-delivery path is called received.
+Refine the draft in that original channel with explicit field moves such as
+**“set proposal <handle> affected scope: …”**, **“set proposal <handle> evidence:
+…”**, **“set proposal <handle> authority needed: …”**, **“set proposal <handle>
+reversibility: …”**, and **“set proposal <handle> receiving condition: …”**.
+Each refinement is appended as a private event instead of rewriting the prior
+draft, so Zelo can project the current complete draft while preserving how it got
+there.
+
+When every required field is complete, the author can explicitly say **“submit
+proposal <handle>”**. Zelo then carries that proposer-authored draft to
+`#governance-proposals`, gives the proposal a content-addressed id, and records
+the public Discord message as the submission receipt. This performs only
+`draft-proposal → proposed`. **Proposed is not enacted.** Turntide governance
+still has to enact, refuse, or supersede the proposal through the ordinary civic
+protocol.
+
+Submission is fail-closed against duplicates. Zelo records a submission intent
+before the external post and a receipt afterward. If the Discord outcome becomes
+ambiguous between those two points, Zelo reports the submission as pending and
+does not post it again until the ambiguity is reconciled.
+
+The proposal-draft/refinement/submission carrier is source-bound and tested. Its
+live Discord receiving receipt remains separate: a running Zelo deployment must
+demonstrate save, replay deduplication, author-scoped listing, original-channel
+refinement, explicit submission to `#governance-proposals`, and public receipt
+readback before that delivery path is called received.
 
 ## Preserve a routine idea without enacting it
 
