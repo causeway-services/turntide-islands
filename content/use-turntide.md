@@ -222,6 +222,23 @@ demonstrate save, replay deduplication, author-scoped listing, original-channel
 refinement, explicit submission to `#governance-proposals`, and public receipt
 readback before that delivery path is called received.
 
+## What happens after you submit a proposal
+
+A submitted proposal should not depend on reaction counts or on somebody remembering
+to scroll back through Governance Rock. Zelo's enacted **proposal intake review**
+checks the public proposal-submission receipts once a day.
+
+The first observation is a silent baseline. After that, when genuinely new proposal
+receipts have arrived, Zelo may post one bounded intake notice in
+`#governance-proposals` naming only the new content-addressed proposal ids. The
+notice says explicitly that they are **proposed, not enacted** and points people to
+the authored proposal posts for the actual scope and evidence.
+
+This is visibility, not prioritization. Zelo does not rank, endorse, suppress, or
+infer support for proposals from reactions, message volume, sentiment, silence,
+popularity, or model preference. An unchanged proposal id is not announced again by
+this routine.
+
 ## Preserve a routine idea without enacting it
 
 If repeated work is concrete enough that you do not want the idea to vanish back

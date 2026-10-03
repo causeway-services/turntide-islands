@@ -476,3 +476,15 @@ test('public Use Turntide teaches explicit proposal refinement and submission wi
   assert.match(guide, /fail-closed against duplicates/u);
   assert.match(guide, /reports the submission as pending and\s+does not post it again/u);
 });
+
+
+test('public Use Turntide teaches quiet non-ranking proposal intake review', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /What happens after you submit a proposal/u);
+  assert.match(guide, /proposal intake review/u);
+  assert.match(guide, /first observation is a silent baseline/u);
+  assert.match(guide, /proposed, not enacted/u);
+  assert.match(guide, /visibility, not prioritization/u);
+  assert.match(guide, /does not rank, endorse, suppress, or\s+infer support/u);
+  assert.match(guide, /unchanged proposal id is not announced again/u);
+});
