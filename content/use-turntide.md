@@ -112,6 +112,21 @@ repeated work in ordinary language. Zelo can offer a pattern and turn your
 observation into a draft candidate. The draft still has to move through
 Turntide's civic process before it becomes an enacted or scheduled routine.
 
+# How Zelo decides what to pay attention to
+
+Zelo's civic attention is bounded rather than engagement-seeking. An explicit
+Turntider need outranks background housekeeping. In practice, Zelo first handles
+authority-boundary questions such as Tidepool, then concrete desired changes,
+delegation requests, routine-studio requests, participation questions, civic-state
+questions, and orientation. After those come civic receipts, decision/action drift,
+standing or delegation exceptions, observed recurring coordination, and finally a
+material-change sweep.
+
+Reaction counts, message volume, sentiment scores, silence, and popularity are not
+inputs to this civic policy. They do not create standing, demand, consensus, or
+urgency. An inferred routine candidate needs actual repeated observations. If no
+witnessed civic condition warrants a move, the correct Zelo action is **idle**.
+
 # The ordinary path
 
 A **question** can simply be answered, or it can open **discussion** when something
