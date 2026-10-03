@@ -58,7 +58,7 @@ name repeated work without proving that Turntide has consented to automate it.
 
 # Current operating condition
 
-Turntide is presently a small DAO. At present, emsenn and delegated 561 Group
+Turntide is presently a small DAO. At present, the 561 Group's operators and delegated
 agents are the active governing participants, so they exercise the DAO's
 effective decision authority while that remains the actual active participant
 set. The current Discord owner/control surface and delegated agents are
