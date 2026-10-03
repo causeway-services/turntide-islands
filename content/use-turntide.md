@@ -40,6 +40,63 @@ Zelo should answer the substance first. When governance state matters, Zelo shou
 also tell you the current state, the next lawful transition, and who or what can make
 that transition real.
 
+
+# You can matter without already governing
+
+Turntide separates **participation** from **binding authority**. You do not need
+Turntide-wide governance standing to ask a question, criticize an explanation,
+join discussion, bring evidence or lived experience, draft a proposal, volunteer
+to carry out already-authorized work, ask for a bounded delegation, or point out
+repeated work that might deserve a routine.
+
+Those acts can influence what Turntide understands and what current governance
+decides. They do not silently become votes or binding decisions. When binding
+authority matters, Zelo should say so plainly and point to the standing or
+delegation record that would make the act effective.
+
+Useful prompts include:
+
+- “I don't govern Turntide; how can I still help with this?”
+- “What can I do here without needing a delegation?”
+- “I want to propose this, not decide it myself.”
+- “I can carry this out if Turntide wants—what authority would I need?”
+- “We keep having this problem. Can Zelo help us design a routine for it?”
+
+This distinction is deliberate: **low-friction participation, high-legibility
+authority**.
+
+# Use Zelo as a routine studio
+
+A routine is not just “something a bot could automate.” It is a repeated piece
+of community work with a beneficiary, trigger, actor, output, authority boundary,
+failure mode, and retirement condition.
+
+Zelo now keeps an advisory pattern library tied to actual Turntide places. These
+patterns are prompts for thinking, not enacted routines and not evidence that a
+community wants automation. Examples include:
+
+- the **Harbor**: newcomer orientation and follow-up;
+- **Question Quarry**: rescuing stalled questions by identifying whether the
+  missing move is clarification, research, observation, discussion, or governance;
+- **Field Notes**: preserving valuable local observations without treating chat
+  participation as publication consent;
+- the **Knowledge Vault**: rescuing source-linked conclusions and receipts;
+- **Solidarity Shoals**: opt-in follow-up so mutual-aid asks and offers can be
+  updated or closed without inferring private circumstances;
+- the **Chatter Isles**: a material pulse only when genuinely new questions,
+  sources, projects, or decisions exist;
+- **Praxis Peninsula / Workshop**: making a project's owner, next move,
+  dependency, and receiving condition legible;
+- **Governance Rock**: teaching from received acts without turning examples into
+  precedent;
+- the **School**: opening, progress, closing, and archive loops for an actually
+  admitted seasonal program.
+
+Ask Zelo something like “routine studio for #question-quarry” or describe the
+repeated work in ordinary language. Zelo can offer a pattern and turn your
+observation into a draft candidate. The draft still has to move through
+Turntide's civic process before it becomes an enacted or scheduled routine.
+
 # The ordinary path
 
 A **question** can simply be answered, or it can open **discussion** when something
