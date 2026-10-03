@@ -221,6 +221,25 @@ This scheduled path is source-bound and tested, but its **live Discord receiving
 receipt remains separate**: deployment must include the source and observed guild
 behavior must show the quiet-baseline/deduplication law working in practice.
 
+## Ask Tidepool status, not just what Tidepool is
+
+Zelo's Tidepool answer now carries a **dated current-state projection** rather than
+only explaining the authority boundary. As of October 3, 2026, the Cold Red Gate
+runtime has the nine Tidepool protocol operations installed and they require
+standing. They are correctly unavailable to the general Turntide / Board civic
+office.
+
+The dedicated **Tidepool Protocol Clerk** office exists and owns exactly those nine
+protocol-transition verbs, but it is currently **vacant**. A least-authority staffing
+request is open. The first real admission → vote → close → reconciliation →
+disclosure loop remains **unreceived**; installed operations and an office definition
+are not evidence that a financial cycle has happened.
+
+Ask Zelo **“what is Tidepool's current status?”** or any ordinary Tidepool question.
+Zelo should state the observation time and current blocker, then route the question
+to Turntide integration, Tidepool membership/governance, or Tidepool protocol
+execution as appropriate. A later live receipt supersedes the dated projection.
+
 # How Zelo decides what to pay attention to
 
 Zelo's civic attention is bounded rather than engagement-seeking. An explicit
