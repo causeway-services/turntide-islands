@@ -494,7 +494,7 @@ test('public Use Turntide teaches quiet non-ranking proposal intake review', asy
 
 test('public Use Turntide reflects the live Tidepool execution-authority handoff', async () => {
   const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
-  assert.match(guide, /currently \*\*vacant\*\*, with \*\*zero seats\*\*/u);
+  assert.match(guide, /currently \*\*vacant\*\*,\s+with \*\*zero seats\*\*/u);
   assert.match(guide, /prior\s+nine-verb closure is \*\*too broad\*\*/u);
   assert.match(guide, /distribution voting\*\* is bound to the member account/u);
   assert.match(guide, /other six installed verbs are protocol-close candidates/u);
