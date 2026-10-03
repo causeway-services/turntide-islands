@@ -381,3 +381,13 @@ test('Governance Rock onboarding invites participation without implying standing
   assert.match(prompt.options[0].description, /distinguishes participation from binding standing/u);
   assert.doesNotMatch(JSON.stringify(prompt), /Want a seat on Governance Rock/u);
 });
+
+
+test('Use Turntide explains Zelo civic attention as bounded rather than engagement-seeking', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /How Zelo decides what to pay attention to/u);
+  assert.match(guide, /explicit\s+Turntider need outranks background housekeeping/u);
+  assert.match(guide, /Reaction counts, message volume, sentiment scores, silence, and popularity are not\s+inputs/u);
+  assert.match(guide, /inferred routine candidate needs actual repeated observations/u);
+  assert.match(guide, /correct Zelo action is \*\*idle\*\*/u);
+});
