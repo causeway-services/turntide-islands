@@ -81,3 +81,19 @@ test('Tidepool projection does not promote source capability to public availabil
   assert.match(products, /does not present Tidepool\s+admission or routing as an available community offering/);
   assert.doesNotMatch(products, /no public admission or routing action is\s+available/);
 });
+
+
+test('Turntide public governance describes the DAO as current and human-agent accessible', async () => {
+  const governance = await readFile(resolve(root, 'content', 'governance.md'), 'utf8');
+  const join = await readFile(resolve(root, 'content', 'join.md'), 'utf8');
+
+  assert.match(governance, /governed as a decentralized autonomous organization/u);
+  assert.match(governance, /both humans and agents/u);
+  assert.match(governance, /Inactive or hypothetical constituencies do not\s+acquire a veto/u);
+  assert.match(governance, /does not require a monthly human meeting, broad human consensus/u);
+  assert.match(governance, /Discord, this website, Tidepool, bots, schedulers,\s+financial pools, and provider systems are instruments and projections/u);
+  assert.doesNotMatch(governance, /planned DAO/u);
+  assert.match(join, /Turntide itself is a DAO/u);
+  assert.match(join, /Discord arrival does not by itself assign\s+governance weight/u);
+  assert.doesNotMatch(join, /doesn't enroll you in a paid membership, a token, a DAO/u);
+});
