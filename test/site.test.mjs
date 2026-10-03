@@ -391,3 +391,12 @@ test('Use Turntide explains Zelo civic attention as bounded rather than engageme
   assert.match(guide, /inferred routine candidate needs actual repeated observations/u);
   assert.match(guide, /correct Zelo action is \*\*idle\*\*/u);
 });
+
+
+test('public Use Turntide teaches place-aware civic wayfinding', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Ask what can happen where you are/u);
+  assert.match(guide, /what can happen in #channel-name/u);
+  assert.match(guide, /routine studio for\s+#channel-name/u);
+  assert.match(guide, /Turntide standing does not grant Tidepool\s+financial authority/u);
+});
