@@ -437,7 +437,9 @@ test('public Use Turntide states dated Tidepool runtime readiness', async () => 
   assert.match(guide, /As of October 3, 2026/u);
   assert.match(guide, /Tidepool Protocol Clerk/u);
   assert.match(guide, /currently \*\*vacant\*\*/u);
-  assert.match(guide, /first real admission → vote → close → reconciliation →\s+disclosure loop remains \*\*unreceived\*\*/u);
+  assert.match(guide, /first real admission[\s\S]*?loop remains \*\*unreceived\*\*/u);
+  assert.match(guide, /561\s+Group Operations owes the answer/u);
+  assert.match(guide, /runtime-receivability and Membership-v2 admission requests are\s+also refined and awaiting Operations' promise/u);
   assert.match(guide, /later live receipt supersedes the dated projection/u);
 });
 
