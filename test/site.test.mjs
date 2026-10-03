@@ -107,3 +107,34 @@ test('Products follows the current Discord onboarding carrier', async () => {
   assert.match(products, /Channels & Roles/);
   assert.doesNotMatch(products, /#channel-visas/);
 });
+
+
+test('Turntide public governance receives the host-independent ANT identity boundary', async () => {
+  const institution = JSON.parse(await readFile(
+    resolve(root, '../../data/records/institution/turntide-islands.ant.json'),
+    'utf8',
+  ));
+  const governance = await readFile(resolve(root, 'content', 'governance.md'), 'utf8');
+  const join = await readFile(resolve(root, 'content', 'join.md'), 'utf8');
+
+  assert.equal(institution.type, 'TurntideInstitutionIdentity');
+  assert.equal(institution.status, 'recognized');
+  assert.equal(institution.institution.id, 'turntide-islands');
+  assert.equal(institution.institution.form, 'autonomous-national-territory');
+  assert.equal(institution.governance.model, 'decentralized-autonomous-organization');
+  assert.deepEqual(institution.governance.standingKinds, ['human', 'agent']);
+  assert.equal(institution.identityBoundary.hostIndependent, true);
+  assert.equal(institution.identityBoundary.deploymentIdentitySeparate, true);
+  for (const instrument of ['discord-guild', 'public-website', 'tidepool', 'zelo', 'metroplat-instance', 'metroplat-deployment', 'physical-host']) {
+    assert.ok(institution.identityBoundary.notIdenticalTo.includes(instrument));
+  }
+  assert.ok(institution.authorityDomains.discordParticipation.doesNotImply.includes('turntide-governance'));
+  assert.ok(institution.authorityDomains.discordParticipation.doesNotImply.includes('tidepool-financial-membership'));
+  assert.ok(institution.authorityDomains.tidepoolFinancialMembership.doesNotImply.includes('turntide-governance'));
+  assert.equal(institution.projectionLaw.publicSurfacesAreAuthority, false);
+  assert.equal(institution.projectionLaw.providerCapabilityIsAuthority, false);
+  assert.equal(institution.projectionLaw.sourcePresenceIsDeploymentReceipt, false);
+
+  assert.match(governance, /Discord, this website, Tidepool, bots, schedulers,[\s\S]*are instruments and projections/u);
+  assert.match(join, /Governance standing and delegations are[\s>]*separate recorded states/u);
+});
