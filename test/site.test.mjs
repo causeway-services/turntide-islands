@@ -429,3 +429,14 @@ test('public Use Turntide teaches private routine candidate continuation', async
   assert.match(guide, /refuses\s+cross-author lookup/u);
   assert.match(guide, /still does not propose,\s+enact, or schedule the routine/u);
 });
+
+
+test('public Use Turntide states dated Tidepool runtime readiness', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Ask Tidepool status, not just what Tidepool is/u);
+  assert.match(guide, /As of October 3, 2026/u);
+  assert.match(guide, /Tidepool Protocol Clerk/u);
+  assert.match(guide, /currently \*\*vacant\*\*/u);
+  assert.match(guide, /first real admission → vote → close → reconciliation →\s+disclosure loop remains \*\*unreceived\*\*/u);
+  assert.match(guide, /later live receipt supersedes the dated projection/u);
+});
