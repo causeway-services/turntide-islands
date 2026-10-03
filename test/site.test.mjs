@@ -410,3 +410,12 @@ test('public Use Turntide explains standing pathways without a promotion ladder'
   assert.match(guide, /Propose broader standing/u);
   assert.match(guide, /Tidepool's own path for financial authority/u);
 });
+
+
+test('public Use Turntide explains quiet scheduled civic attention', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Scheduled civic attention stays quiet by default/u);
+  assert.match(guide, /first observation establishes a\s+silent baseline/u);
+  assert.match(guide, /Private routine-candidate intake is summarized by \*\*count only\*\*/u);
+  assert.match(guide, /live Discord receiving\s+receipt remains separate/u);
+});
