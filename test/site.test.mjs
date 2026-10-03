@@ -52,6 +52,8 @@ test('the Join page is the single public carrier for the Discord invite', async 
   assert.match(index, /#channel-visas/);
   assert.match(join, /#dock/);
   assert.match(join, /#channel-visas/);
+  assert.doesNotMatch(index, /#channel-visas/);
+  assert.doesNotMatch(join, /#channel-visas/);
   assert.doesNotMatch(index, /#start-here/);
   assert.doesNotMatch(join, /#start-here/);
   assert.ok(config.includes("label: 'Join', href: '/join/'"));
@@ -96,4 +98,12 @@ test('Turntide public governance describes the DAO as current and human-agent ac
   assert.match(join, /Turntide itself is a DAO/u);
   assert.match(join, /Discord arrival does not by itself assign\s+governance weight/u);
   assert.doesNotMatch(join, /doesn't enroll you in a paid membership, a token, a DAO/u);
+});
+
+
+test('Products follows the current Discord onboarding carrier', async () => {
+  const products = await readFile(resolve(root, 'content', 'products.md'), 'utf8');
+  assert.match(products, /#dock/);
+  assert.match(products, /Channels & Roles/);
+  assert.doesNotMatch(products, /#channel-visas/);
 });
