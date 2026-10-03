@@ -400,3 +400,13 @@ test('public Use Turntide teaches place-aware civic wayfinding', async () => {
   assert.match(guide, /routine studio for\s+#channel-name/u);
   assert.match(guide, /Turntide standing does not grant Tidepool\s+financial authority/u);
 });
+
+
+test('public Use Turntide explains standing pathways without a promotion ladder', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Taking on more responsibility/u);
+  assert.match(guide, /does not use an automatic promotion ladder/u);
+  assert.match(guide, /Request a bounded delegation/u);
+  assert.match(guide, /Propose broader standing/u);
+  assert.match(guide, /Tidepool's own path for financial authority/u);
+});

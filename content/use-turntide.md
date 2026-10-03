@@ -80,6 +80,33 @@ governance act must activate it, and active delegations have explicit paths to b
 revoked, expire when their recorded condition is witnessed, or be superseded.
 
 
+# Taking on more responsibility
+
+Turntide does not use an automatic promotion ladder. Being around longer, posting
+more, getting reactions, holding a Discord role, working for a provider, or joining
+Tidepool does not silently turn into governance power.
+
+There are several different ways to become more involved:
+
+- **Participate without binding standing.** Ask, discuss, bring evidence, propose,
+  volunteer, rehearse a process, or point out repeated work. This is the normal
+  starting point and does not require Turntide-wide standing.
+- **Request a bounded delegation.** If you want to maintain a project record,
+  perform a recurring clerical act, or carry responsibility that needs authority,
+  Zelo can help draft a request with explicit scope, powers, limits, review/expiry,
+  revocation, and receiving conditions. A governing act still has to activate it.
+- **Propose broader standing.** If Turntide actually needs a person, agent, office,
+  or constituency to hold durable authority broader than one delegation, that is a
+  governance change. Zelo can help draft the proposal, but only an explicit recorded
+  Turntide act can change the standing ledger.
+- **Use Tidepool's own path for financial authority.** Tidepool membership,
+  distribution voting, principal, yield, and financial execution remain governed by
+  Tidepool's own admission and protocol rules.
+
+Ask Zelo **“how do I take on more responsibility here?”** or **“what authority would
+I need to do this?”** Zelo should tell you which path fits and what the next civic
+move is. The explanation itself grants nothing.
+
 # Use Zelo as a routine studio
 
 A routine is not just “something a bot could automate.” It is a repeated piece
