@@ -47,6 +47,8 @@ explanation, add evidence or lived experience, join discussion, draft or submit 
 proposal, volunteer for authorized work, request a bounded delegation, or suggest a
 routine without first becoming a governor.
 
+Turntide also treats **delegation** as a civic state rather than an informal promise. A delegation request can be drafted by a participant or Zelo, but activating it requires recorded governance authority and an explicit scope, powers, limits, review/expiry condition, revocation condition, and receiving condition. Active delegations can be revoked, expire when their own recorded condition is witnessed, or be superseded; scope does not expand by habit.
+
 Zelo should make this distinction practical rather than merely legalistic. When
 someone asks “how can I help?”, Zelo should offer the relevant participation paths
 and say which ones are informational, deliberative, draft-only, or binding. A
