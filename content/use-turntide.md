@@ -112,6 +112,39 @@ repeated work in ordinary language. Zelo can offer a pattern and turn your
 observation into a draft candidate. The draft still has to move through
 Turntide's civic process before it becomes an enacted or scheduled routine.
 
+# Ask what can happen where you are
+
+Turntide's places are not just topic buckets. They are different kinds of civic
+terrain. Zelo has an enacted place-aware map for answering questions like:
+
+- “What can we actually do in #question-quarry?”
+- “What kinds of routines might make sense in #garden-grove?”
+- “This keeps happening in #solidarity-shoals. Is it a routine problem, a project,
+  or a governance problem?”
+- “Where should this go next?”
+- “What can I do here without needing governance standing?”
+
+A place guide names five things: **what the place is for**, ordinary nonbinding
+moves, routine seeds worth considering when repetition is actually observed, the
+path for escalating work elsewhere, and the authority boundary Zelo must preserve.
+
+For example, Question Quarry can turn uncertainty into clarification, research,
+observation, discussion, or governance. Solidarity Shoals can support opt-in
+mutual-aid status loops without inferring private need. The Chatter Isles can grow
+subject conversation into projects, evidence, or routine candidates. The Knowledge
+Vault can rescue durable claims and receipts without silently republishing member
+words. Governance Rock is where explicit civic state transitions live.
+
+Economy Estuary has an additional Tidepool boundary: Turntiders can discuss
+Tidepool, its public state, and how Turntide should explain or integrate it, while
+membership, distribution voting, principal, yield, and financial execution remain
+inside Tidepool's own authority domain.
+
+Ask Zelo **“what can happen in #channel-name?”** to get the current map. If the
+answer surfaces genuinely repeated work, follow with **“routine studio for
+#channel-name”** and describe the repetition. The place map itself creates no
+routine, standing, obligation, or authority.
+
 # How Zelo decides what to pay attention to
 
 Zelo's civic attention is bounded rather than engagement-seeking. An explicit
