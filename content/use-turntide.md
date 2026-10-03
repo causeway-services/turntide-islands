@@ -19,9 +19,11 @@ smallest next act that would move it forward.
 > [!note] Current delivery status
 > Zelo's civic mandate, standing, state protocol, and routine rules are enacted.
 > The current civic kernel can derive orientation, state, rehearsal, boundary, and
-> routine answers from those records. A live Discord delivery adapter for this new
-> civic interface is not yet independently received, so the existence of a rule here
-> is not evidence that every Zelo interaction below is already available in Discord.
+> routine answers from those records. Zelo's Discord steward now has a source-level
+> civic adapter that routes civic questions through this kernel before generic
+> inference, but a **live Discord receipt is not yet independently received**. Source
+> wiring and tests are not evidence that the running bot has answered a real guild
+> request with the new path.
 
 # Ask Zelo like a civic interface
 
