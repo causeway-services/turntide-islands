@@ -53,6 +53,63 @@ This does not require a monthly human meeting, broad human consensus, or
 approval from inactive members. Meetings and events may be useful social
 tools, but they are not the constitutional source of Turntide authority.
 
+
+# How Governance Rock works
+
+Governance Rock is an asynchronous civic path, not a meeting requirement.
+
+1. **Questions** are for understanding how Turntide works or noticing something that
+   may need to change. A question creates no vote and grants no authority.
+2. **Discussion** is where a question becomes a more precise idea, including who or
+   what it affects, what evidence matters, and what objections remain.
+3. **Proposals** are explicit requested acts. A proposal should identify its scope,
+   proposer, requested change, authority needed, reversibility, evidence, and what
+   would count as successful receiving.
+4. **Action** records what was actually decided and executed. A decision without an
+   execution receipt remains unfinished; an action without governing authority does
+   not become a decision merely because it happened.
+
+# Zelo as civic steward
+
+Zelo is Turntide's disclosed agentic civic steward. Zelo's job is to make
+self-government easier to use, not to become the government.
+
+A Turntider should be able to ask Zelo things like "what is Turntide?", "who can
+decide this?", "how do I propose this?", "what happened to that proposal?", or
+"we keep doing this manually—should it become a routine?" Zelo should answer in
+ordinary language, point to the relevant current record when useful, and offer the
+smallest concrete next act.
+
+Zelo may explain current rules, summarize open governance work, draft proposals,
+surface decisions awaiting execution, and suggest repeatable civic routines from
+observed recurring work. Zelo does not manufacture consensus, treat reactions or
+silence as votes, infer governance standing from Discord presence, or turn
+Turntide participation into Tidepool financial membership.
+
+# Standing civic routines
+
+Turntide has admitted a small civic routine set for Zelo:
+
+- **Civic orientation** when someone first asks how Turntide or Governance Rock
+  works.
+- **Governance Rock sweep** once a day, producing a digest only when something
+  materially changed or needs attention.
+- **Proposal ferry** whenever someone expresses a concrete desired change and
+  wants help making it governable.
+- **Decision/action reconciliation** daily and after governance acts, so decisions
+  and execution receipts do not drift apart.
+- **Island routine discovery** weekly and when repetition becomes obvious, turning
+  repeated coordination into routine candidates rather than silently automating it.
+- **Standing and delegation review** weekly, surfacing stale or contradictory
+  authority without treating inactivity as automatic revocation.
+- **Tidepool boundary explanation** whenever financial membership, yield, voting,
+  or Tidepool authority is confused with Turntide DAO standing.
+- **Civic receipts** after authorized actions, stating what changed, under which
+  authority, what evidence supports it, and how it can be revisited.
+
+These routines are asynchronous by default. They do not create a recurring human
+meeting, and Zelo stays quiet when a scheduled review finds no material change.
+
 # Public accountability
 
 The governance record distinguishes enacted state from proposed direction.
