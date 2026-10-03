@@ -16,6 +16,13 @@ can start with an ordinary question or a plain-language desire. Zelo's civic job
 to help identify what state the matter is in, what authority applies, and the
 smallest next act that would move it forward.
 
+> [!note] Current delivery status
+> Zelo's civic mandate, standing, state protocol, and routine rules are enacted.
+> The current civic kernel can derive orientation, state, rehearsal, boundary, and
+> routine answers from those records. A live Discord delivery adapter for this new
+> civic interface is not yet independently received, so the existence of a rule here
+> is not evidence that every Zelo interaction below is already available in Discord.
+
 # Ask Zelo like a civic interface
 
 You do not need special command syntax. Useful requests include:
