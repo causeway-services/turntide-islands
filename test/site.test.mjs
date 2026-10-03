@@ -353,3 +353,17 @@ test('Turntide routine patterns are advisory and place-aware', async () => {
   assert.ok(mandate.duties.some((duty) => duty.id === 'facilitate-routine-studio'));
   assert.ok(mandate.immunities.some((rule) => /advisory routine pattern/u.test(rule)));
 });
+
+
+test('Governance Rock onboarding invites participation without implying standing', async () => {
+  const guild = JSON.parse(await readFile(
+    resolve(root, '../../data/records/discord-guild/turntide-islands.guild.json'),
+    'utf8',
+  ));
+  const prompt = guild.onboarding.prompts.find((candidate) => /Governance Rock/u.test(candidate.title));
+  assert.ok(prompt);
+  assert.equal(prompt.title, 'Want to follow Governance Rock?');
+  assert.match(prompt.options[0].title, /Watch, ask, propose, and learn/u);
+  assert.match(prompt.options[0].description, /distinguishes participation from binding standing/u);
+  assert.doesNotMatch(JSON.stringify(prompt), /Want a seat on Governance Rock/u);
+});
