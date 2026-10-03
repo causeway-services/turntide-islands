@@ -175,6 +175,25 @@ answer surfaces genuinely repeated work, follow with **“routine studio for
 #channel-name”** and describe the repetition. The place map itself creates no
 routine, standing, obligation, or authority.
 
+## Preserve a routine idea without enacting it
+
+If repeated work is concrete enough that you do not want the idea to vanish back
+into chat, explicitly ask Zelo to **“save this as a routine candidate”** and name
+the repetition. Zelo's source adapter now has a private append-only draft inbox for
+that request.
+
+The stored intake keeps the observed repetition, its Discord source pointer, a
+dedupe identity, and the routine fields that are still missing. It is deliberately
+an **incomplete draft**. Saving it does not propose, enact, schedule, prioritize,
+authorize, or grant standing to anything. A later civic move must refine the draft
+and take it through the normal routine-candidate transition before governance can
+admit it.
+
+The inbox is source-bound but not yet independently received in the live Discord
+deployment; the current receiving condition requires a running Zelo instance to
+persist one request, dedupe its replay, and read the draft back without treating it
+as enacted.
+
 # How Zelo decides what to pay attention to
 
 Zelo's civic attention is bounded rather than engagement-seeking. An explicit
