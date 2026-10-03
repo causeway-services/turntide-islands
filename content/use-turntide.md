@@ -194,6 +194,24 @@ deployment; the current receiving condition requires a running Zelo instance to
 persist one request, dedupe its replay, and read the draft back without treating it
 as enacted.
 
+## Scheduled civic attention stays quiet by default
+
+Zelo's source runtime now has a bounded scheduled review path for the civic routines
+that are already enacted as daily, weekly, or monthly work. A restart does **not**
+cause it to replay old governance as fresh news: the first observation establishes a
+silent baseline. Later reviews can surface durable governance-state changes,
+decision/action mismatches, new saved routine-candidate counts, standing-record
+exceptions, or a newly received act worth teaching from.
+
+The scheduler does not use reactions, message volume, sentiment, popularity, or
+silence as evidence. Private routine-candidate intake is summarized by **count only**
+outside its original context. If a scheduled check finds no material civic condition,
+its correct output is no post.
+
+This scheduled path is source-bound and tested, but its **live Discord receiving
+receipt remains separate**: deployment must include the source and observed guild
+behavior must show the quiet-baseline/deduplication law working in practice.
+
 # How Zelo decides what to pay attention to
 
 Zelo's civic attention is bounded rather than engagement-seeking. An explicit
