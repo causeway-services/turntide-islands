@@ -213,6 +213,11 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
     'standing-delegation-review',
     'tidepool-boundary-explainer',
     'civic-receipt',
+    'routine-retirement-review',
+    'received-act-teaching-example',
+    'next-move-nudge',
+    'governance-rehearsal',
+    'civic-state-answer',
   ]) assert.ok(routines.routines.some((routine) => routine.id === id), `missing civic routine ${id}`);
   assert.ok(routines.antiPatterns.includes('mandatory recurring human consensus meetings'));
   assert.ok(routines.antiPatterns.includes('treating silence or absence as consent'));
@@ -235,4 +240,75 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
   assert.match(governance, /Zelo is Turntide's disclosed agentic civic steward/u);
   assert.match(governance, /self-government easier to use, not to become the government/u);
   assert.match(governance, /Zelo stays quiet when a scheduled review finds no material change/u);
+});
+
+test('Turntide civic standing and state protocol make Zelo guidance non-inferential', async () => {
+  const standing = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/current-standing.json'),
+    'utf8',
+  ));
+  const protocol = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/civic-action-protocol.json'),
+    'utf8',
+  ));
+  const mandate = JSON.parse(await readFile(
+    resolve(root, '../../data/records/governance/zelo-civic-steward.json'),
+    'utf8',
+  ));
+
+  assert.equal(standing.status, 'enacted');
+  assert.equal(standing.authorityDomain, 'turntide-governance');
+  assert.equal(standing.principles.standingRequiresRecord, true);
+  assert.equal(standing.principles.discordRoleCreatesStanding, false);
+  assert.equal(standing.principles.providerCredentialCreatesStanding, false);
+  assert.equal(standing.principles.tidepoolMembershipCreatesTurntideStanding, false);
+
+  const founder = standing.entries.find((entry) => entry.id === 'emsenn');
+  const zelo = standing.entries.find((entry) => entry.id === 'zelo-civic-steward');
+  const providers = standing.entries.find((entry) => entry.id === '561-group-delegated-turntide-agents');
+  assert.equal(founder.state, 'active-governor');
+  assert.ok(founder.may.includes('enact'));
+  assert.equal(zelo.state, 'active-delegated-steward');
+  assert.ok(zelo.mayNot.includes('self-expand-authority'));
+  assert.equal(providers.state, 'conditional-active-standing');
+  assert.ok(providers.mayNot.includes('convert-provider-capability-into-community-authority'));
+
+  assert.equal(protocol.status, 'enacted');
+  assert.equal(protocol.artifactKinds.question.initialState, 'open');
+  assert.equal(protocol.artifactKinds.proposal.initialState, 'draft-proposal');
+  assert.equal(protocol.artifactKinds.decision.initialState, 'enacted');
+  const enact = protocol.artifactKinds.proposal.transitions.find((transition) => transition.to === 'enacted');
+  assert.ok(enact.mayBePerformedBy.includes('recorded-governance-standing'));
+  assert.ok(!enact.mayBePerformedBy.includes('zelo-civic-steward'));
+  const received = protocol.artifactKinds.decision.transitions.find((transition) => transition.to === 'received');
+  assert.ok(received.requires.some((item) => /receiving evidence/u.test(item)));
+  assert.ok(protocol.zeloRules.mayNotWithoutExactDelegation.some((rule) => /grant governance standing/u.test(rule)));
+
+  assert.ok(mandate.duties.some((duty) => duty.id === 'maintain-civic-state-legibility'));
+  assert.ok(mandate.defaultInteraction.behavior.some((rule) => /current state and smallest lawful next transition/u.test(rule)));
+});
+
+
+test('Use Turntide exposes Zelo as a practical civic interface without granting authority', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
+  const guild = JSON.parse(await readFile(
+    resolve(root, '../../data/records/discord-guild/turntide-islands.guild.json'),
+    'utf8',
+  ));
+
+  assert.match(guide, /^---\ntitle: Use Turntide/mu);
+  assert.match(guide, /Ask Zelo like a civic interface/u);
+  assert.match(guide, /what state the matter is in/u);
+  assert.match(guide, /smallest next act/u);
+  assert.match(guide, /governance rehearsal/u);
+  assert.match(guide, /Rehearsal creates no vote,\s+standing, decision, or authority/u);
+  assert.match(guide, /routine candidate/u);
+  assert.match(guide, /Zelo does not silently enact one/u);
+  assert.match(guide, /Tidepool is adjacent to Turntide but has its own financial membership and governance\s+boundary/u);
+  assert.ok(config.includes("label: 'Use Turntide', href: '/use-turntide/'"));
+
+  const questions = guild.channels.find((channel) => channel.key === 'governance-questions');
+  assert.match(questions.topic, /what state a matter is in/u);
+  assert.match(questions.topic, /smallest lawful next move/u);
 });
