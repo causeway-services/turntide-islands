@@ -451,3 +451,15 @@ test('public Use Turntide teaches evidence-backed contestability without automat
   assert.match(guide, /Tidepool financial receipt/u);
   assert.match(guide, /not an automatic veto\s+or rollback/u);
 });
+
+
+test('public Use Turntide teaches private proposal drafts without proposing them', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Preserve a proposal draft without proposing it/u);
+  assert.match(guide, /not a proposal before governance/u);
+  assert.match(guide, /draft-proposal → proposed/u);
+  assert.match(guide, /show me my proposal drafts/u);
+  assert.match(guide, /continue proposal <handle>/u);
+  assert.match(guide, /refuses cross-author lookup and cross-channel continuation/u);
+  assert.match(guide, /live Discord receiving\s+receipt remains separate/u);
+});
