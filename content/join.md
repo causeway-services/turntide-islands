@@ -56,6 +56,8 @@ community draws these lines, and [[events|Events]] explains how to propose a
 gathering, project, or field note.
 
 > [!note] What joining is, and isn't
-> Joining Discord lets you take part in the community as it exists today. It
-> doesn't enroll you in a paid membership, a token, a DAO, a field trial, or a
-> new programming cycle.
+> Joining Discord lets you take part in the community as it exists today.
+> Turntide itself is a DAO, but Discord arrival does not by itself assign
+> governance weight, a paid membership, a token, a Tidepool role, a field
+> trial, or a new programming cycle. Governance standing and delegations are
+> separate recorded states.
