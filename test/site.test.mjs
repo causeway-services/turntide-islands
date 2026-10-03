@@ -40,7 +40,7 @@ test('the Join page is the single public carrier for the Discord invite', async 
   const drainage = await readFile(resolve(root, 'content', 'duluth-garden-drainage.md'), 'utf8');
   const rainGarden = await readFile(resolve(root, 'content', 'rain-garden-question.md'), 'utf8');
   const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
-  const invite = 'https://discord.gg/zHRy3RQgkD';
+  const invite = 'https://discord.gg/xZHxzDz4zv';
   const directInvite = /https:\/\/discord\.gg\//;
 
   assert.match(join, new RegExp(invite));

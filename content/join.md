@@ -11,7 +11,7 @@ tags:
 ---
 
 Turntide Islands is open for public conversation in Discord. Start by joining
-[the Turntide Islands server](https://discord.gg/zHRy3RQgkD); the permanent
+[the Turntide Islands server](https://discord.gg/xZHxzDz4zv); the permanent
 invite opens at `#dock`, the community's arrival channel.
 
 # What to expect now
