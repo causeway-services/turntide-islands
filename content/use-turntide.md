@@ -239,6 +239,33 @@ infer support for proposals from reactions, message volume, sentiment, silence,
 popularity, or model preference. An unchanged proposal id is not announced again by
 this routine.
 
+## Ask what is happening in governance
+
+You should not have to reconstruct Turntide's current civic state from channel
+scrollback. Ask Zelo **“what's happening in Turntide governance?”**, **“show me the
+governance docket”**, or **“what proposals are before governance?”**
+
+The civic docket is intentionally a **state projection, not a ranking**. It reads
+explicit public proposal-submission receipts and unsettled durable governance acts.
+For each submitted proposal it can name the content-addressed proposal id, where its
+public receipt lives, its current recorded state, and the lawful governance outcomes
+available from that state.
+
+The docket does **not** score or order proposals by reactions, message volume,
+sentiment, popularity, silence, tenure, or Zelo's model preference. Those things do
+not become support, urgency, consensus, or governance weight merely because they are
+easy to measure.
+
+A proposal also does not silently disappear from the docket because something
+similar happened later. Until an explicit linked governance receipt establishes a
+later state, a submitted proposal remains **proposed**. That fail-closed rule makes
+it possible to ask “what happened to this?” without Zelo inventing a connection.
+
+The useful next moves remain human- and agent-accessible: read the authored proposal,
+ask questions, add evidence, state an objection or alternative, volunteer for later
+authorized execution, or ask Zelo which lawful transition or receipt is still
+missing. None of those actions is silently counted as a vote.
+
 ## Preserve a routine idea without enacting it
 
 If repeated work is concrete enough that you do not want the idea to vanish back
