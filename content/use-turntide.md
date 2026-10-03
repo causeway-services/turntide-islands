@@ -194,6 +194,15 @@ deployment; the current receiving condition requires a running Zelo instance to
 persist one request, dedupe its replay, and read the draft back without treating it
 as enacted.
 
+You can later ask Zelo **“show me my routine candidates”**. That reply is scoped to
+your Discord identity and lists only a short handle, original place, draft status,
+and missing fields; it does not repeat the saved observation text. To reopen one,
+ask **“continue routine candidate <handle>”** in the original channel. Zelo refuses
+cross-author lookup and asks you to return to the original channel before reopening
+the draft, so a private or context-specific observation is not silently carried
+somewhere else. Continuing reopens the routine studio; it still does not propose,
+enact, or schedule the routine.
+
 ## Scheduled civic attention stays quiet by default
 
 Zelo's source runtime now has a bounded scheduled review path for the civic routines
