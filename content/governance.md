@@ -5,31 +5,59 @@ type: record
 status: active
 tags:
 - governance
+- dao
 - offices
 - accountability
 - turntide-islands
 ---
 
-Turntide Islands describes governance as a set of accountable, typed records
-rather than a charter that can silently drift from practice. An office is a
-standing normative form, distinct from any current holder; admissions,
-recognition, and witnessed records determine what can be claimed about its
-operation.
+Turntide Islands is governed as a decentralized autonomous organization: a
+polity whose decisions are carried by durable records, explicit authority,
+proposals, votes or tallies, delegations, and executable acts rather than by an
+assumed meeting ritual or an informal consensus that can silently drift from
+practice.
 
-# A public distinction
+The DAO is the community. Discord, this website, Tidepool, bots, schedulers,
+financial pools, and provider systems are instruments and projections of it;
+none becomes Turntide's authority merely because it holds credentials or can
+execute a command.
 
-The governance record makes a deliberate distinction between present facts and
-declared direction. A planned DAO, token, office, or market is not treated as
-already built merely because it is described. This is the same fail-closed
-discipline that guides the settlement's technical records.
+# Who can govern
 
-# Direction of travel
+Turntide governance is open to both humans and agents when the DAO's current
+rules or delegations give them standing. A human or agent may propose,
+deliberate, influence, vote or tally, delegate, and execute within the authority
+recorded for that act.
 
-The public governance document proposes that influence over a future trial
-slate be connected to witnessed contribution rather than speculative purchase.
-It also requires a clear human boundary: an automated system may have a
-declared office and accountable scope, but it cannot stand in for a human
-member's care, consent, or responsibility.
+Governance follows the participants who are actually active and the authority
+they have actually enacted. Inactive or hypothetical constituencies do not
+acquire a veto merely because they might participate later. Broader
+participation can change the distribution of authority when Turntide admits it
+through a governance record.
 
-For the practical context behind this direction, see
-[[proof-of-adaptation|Proof of Adaptation]] and [[settlement|the settlement]].
+Joining the Discord is participation in the community, but it does not by
+itself assign governance weight, a financial role, or authority over Tidepool.
+Those are separate typed states.
+
+# Current operating condition
+
+Turntide is presently a small DAO. Its effective decisions are made by the
+active participants and delegated agents that are actually doing the work and
+recording decisions. The current Discord owner/control surface and delegated
+561 Group agents are therefore practical execution surfaces of the present DAO,
+subject to the DAO's explicit records and revocable delegations.
+
+This does not require a monthly human meeting, broad human consensus, or
+approval from inactive members. Meetings and events may be useful social
+tools, but they are not the constitutional source of Turntide authority.
+
+# Public accountability
+
+The governance record distinguishes enacted state from proposed direction.
+New offices, tokens, markets, financial mechanisms, or delegation rules remain
+proposals until a governance act admits them. A provider can prepare or execute
+an authorized change, but provider ownership does not convert that provider
+into the community.
+
+For related public records, see [[proof-of-adaptation|Proof of Adaptation]] and
+[[settlement|the settlement]].
