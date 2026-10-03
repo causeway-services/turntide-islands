@@ -242,6 +242,8 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
   assert.match(governance, /Governance Rock is an asynchronous civic path, not a meeting requirement/u);
   assert.match(governance, /Zelo is Turntide's disclosed agentic civic steward/u);
   assert.match(governance, /self-government easier to use, not to become the government/u);
+  assert.match(governance, /Turntide also treats \*\*delegation\*\* as a civic state/u);
+  assert.match(governance, /scope does not expand by habit/u);
   assert.match(governance, /Zelo stays quiet when a scheduled review finds no material change/u);
 });
 
@@ -280,6 +282,11 @@ test('Turntide civic standing and state protocol make Zelo guidance non-inferent
   assert.equal(protocol.artifactKinds.question.initialState, 'open');
   assert.equal(protocol.artifactKinds.proposal.initialState, 'draft-proposal');
   assert.equal(protocol.artifactKinds.decision.initialState, 'enacted');
+  assert.equal(protocol.artifactKinds.delegation.initialState, 'requested');
+  const delegationActivation = protocol.artifactKinds.delegation.transitions.find((transition) => transition.to === 'active');
+  assert.ok(delegationActivation.mayBePerformedBy.includes('recorded-governance-standing'));
+  assert.ok(delegationActivation.requires.includes('explicit limits'));
+  assert.ok(delegationActivation.requires.includes('review-or-expiry condition'));
   const enact = protocol.artifactKinds.proposal.transitions.find((transition) => transition.to === 'enacted');
   assert.ok(enact.mayBePerformedBy.includes('recorded-governance-standing'));
   assert.ok(!enact.mayBePerformedBy.includes('zelo-civic-steward'));
@@ -308,6 +315,9 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
   assert.match(guide, /Rehearsal creates no vote,\s+standing, decision, or authority/u);
   assert.match(guide, /You can matter without already governing/u);
   assert.match(guide, /low-friction participation, high-legibility\s+authority/u);
+  assert.match(guide, /Asking for bounded authority/u);
+  assert.match(guide, /delegation request/u);
+  assert.match(guide, /Drafting it creates no authority/u);
   assert.match(guide, /Use Zelo as a routine studio/u);
   assert.match(guide, /routine candidate/u);
   assert.match(guide, /patterns are prompts for thinking, not enacted routines/u);
