@@ -440,3 +440,14 @@ test('public Use Turntide states dated Tidepool runtime readiness', async () => 
   assert.match(guide, /first real admission → vote → close → reconciliation →\s+disclosure loop remains \*\*unreceived\*\*/u);
   assert.match(guide, /later live receipt supersedes the dated projection/u);
 });
+
+
+test('public Use Turntide teaches evidence-backed contestability without automatic reversal', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Challenge an action or receipt/u);
+  assert.match(guide, /do not need governance standing/u);
+  assert.match(guide, /can move to \*\*contested\*\*/u);
+  assert.match(guide, /received → reopened transition requires recorded governance standing/u);
+  assert.match(guide, /Tidepool financial receipt/u);
+  assert.match(guide, /not an automatic veto\s+or rollback/u);
+});
