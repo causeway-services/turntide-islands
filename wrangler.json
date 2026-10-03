@@ -2,6 +2,8 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "turntide-islands-561-group",
   "compatibility_date": "2026-08-29",
+  "workers_dev": false,
+  "preview_urls": false,
   "main": "./worker.mjs",
   "assets": {
     "directory": "./dist",
