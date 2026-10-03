@@ -356,19 +356,30 @@ runtime has the nine Tidepool protocol operations installed and they require
 standing. They are correctly unavailable to the general Turntide / Board civic
 office.
 
-The dedicated **Tidepool Protocol Clerk** office exists and owns exactly those nine
-protocol-transition verbs, but it is currently **vacant**, with **zero seats**. Its
-enacted law says that operation availability is execution capability, **not political
-or financial discretion**: the clerk may execute only already-authorized Tidepool
-transitions or fail closed with the missing authority, witness, or state.
+The dedicated **Tidepool Protocol Clerk** office exists and is currently **vacant**,
+with **zero seats**. A source-level authority audit has now shown that its prior
+nine-verb closure is **too broad**. Three transitions carry participant-authored
+intent and must not be replayed by a generic clerk:
 
-The remaining authority handoff is now explicit on the live 561 work board. **561
-Group Operations owes the answer** to which authority should hold those nine
-protocol verbs; the runtime-receivability and Membership-v2 admission requests are
-also refined and awaiting Operations' promise. The first real admission → vote →
-close → reconciliation → disclosure loop remains **unreceived**; a healthy connector,
-installed operations, and an office definition are not evidence that a financial
-cycle has happened.
+- **member admission** requires a witnessed admission path tied to the invoking
+  sponsor, enterprise, or verified participant subject; the MetroPlat runtime does
+  not expose unwitnessed bootstrap admission;
+- **enterprise proposal** is bound to the sponsoring enterprise; unsponsored
+  first-roster bootstrap is not a routine runtime action;
+- **distribution voting** is bound to the member account named by the vote.
+
+The other six installed verbs are protocol-close candidates, not automatically safe
+clerk powers. The audit found remaining precondition work around **when a cycle may
+be tallied**, **how total directed yield becomes authoritative before an append-only
+split**, and **what reconciliation evidence must exist before public disclosure**.
+
+So the current instruction is **do not seat the old nine-verb clerk**. 561 Group
+Operations' earlier authority question remains useful, but its safe answer now has
+to split participant intent from mechanical protocol execution and harden the
+remaining close/split/disclosure prerequisites first. The first real admission →
+vote → close → reconciliation → disclosure loop remains **unreceived**; a healthy
+connector and installed operations are not evidence that a financial cycle has
+happened.
 
 Ask Zelo **“what is Tidepool's current status?”** or any ordinary Tidepool question.
 Zelo should state the observation time and current blocker, then route the question
