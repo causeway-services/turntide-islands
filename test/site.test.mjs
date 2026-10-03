@@ -96,7 +96,7 @@ test('Turntide public governance describes the DAO as current and human-agent ac
   assert.match(governance, /Discord, this website, Tidepool, bots, schedulers,\s+financial pools, and provider systems are instruments and projections/u);
   assert.doesNotMatch(governance, /planned DAO/u);
   assert.match(join, /Turntide itself is a DAO/u);
-  assert.match(join, /Discord arrival does not by itself assign\s+governance weight/u);
+  assert.match(join, /Discord arrival does not by itself assign\s*(?:>\s*)?governance weight/u);
   assert.doesNotMatch(join, /doesn't enroll you in a paid membership, a token, a DAO/u);
 });
 
