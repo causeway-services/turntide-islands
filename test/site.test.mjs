@@ -438,8 +438,8 @@ test('public Use Turntide states dated Tidepool runtime readiness', async () => 
   assert.match(guide, /Tidepool Protocol Clerk/u);
   assert.match(guide, /currently \*\*vacant\*\*/u);
   assert.match(guide, /first real admission[\s\S]*?loop remains \*\*unreceived\*\*/u);
-  assert.match(guide, /561\s+Group Operations owes the answer/u);
-  assert.match(guide, /runtime-receivability and Membership-v2 admission requests are\s+also refined and awaiting Operations' promise/u);
+  assert.match(guide, /prior\s+nine-verb closure is \*\*too broad\*\*/u);
+  assert.match(guide, /do not seat the old nine-verb clerk/u);
   assert.match(guide, /later live receipt supersedes the dated projection/u);
 });
 
@@ -495,10 +495,11 @@ test('public Use Turntide teaches quiet non-ranking proposal intake review', asy
 test('public Use Turntide reflects the live Tidepool execution-authority handoff', async () => {
   const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
   assert.match(guide, /currently \*\*vacant\*\*, with \*\*zero seats\*\*/u);
-  assert.match(guide, /not political\s+or financial discretion/u);
-  assert.match(guide, /561\s+Group Operations owes the answer/u);
-  assert.match(guide, /runtime-receivability and Membership-v2 admission requests are\s+also refined and awaiting Operations' promise/u);
-  assert.match(guide, /healthy connector,\s+installed operations, and an office definition are not evidence/u);
+  assert.match(guide, /prior\s+nine-verb closure is \*\*too broad\*\*/u);
+  assert.match(guide, /distribution voting\*\* is bound to the member account/u);
+  assert.match(guide, /other six installed verbs are protocol-close candidates/u);
+  assert.match(guide, /do not seat the old nine-verb clerk/u);
+  assert.match(guide, /healthy\s+connector and installed operations are not evidence/u);
 });
 
 
@@ -519,4 +520,15 @@ test('public Use Turntide explains typed decision procedures', async () => {
   assert.match(guide, /structural governance acts/u);
   assert.match(guide, /has \*\*not\*\* enacted numeric voting weights/u);
   assert.match(guide, /Tidepool membership, distribution voting, principal, yield/u);
+});
+
+
+test('public Use Turntide teaches the Tidepool participant/clerk authority split', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /member admission\*\* requires a witnessed admission path tied to the invoking/u);
+  assert.match(guide, /enterprise proposal\*\* is bound to the sponsoring enterprise/u);
+  assert.match(guide, /distribution voting\*\* is bound to the member account/u);
+  assert.match(guide, /when a cycle may\s+be tallied/u);
+  assert.match(guide, /total directed yield becomes authoritative/u);
+  assert.match(guide, /reconciliation evidence must exist before public disclosure/u);
 });
