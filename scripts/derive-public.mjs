@@ -30,7 +30,7 @@ const terrainResearch = 'duluth-garden-drainage';
 const terrainSource = path.resolve(site, '../../data/research', terrainResearch);
 const terrainPublic = path.join(pub, 'research', terrainResearch);
 await mkdir(terrainPublic, { recursive: true });
-for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'extract-terrain.py']) {
+for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'extract-terrain.py', 'rainfall-atlas14.csv']) {
   await copyFile(path.join(terrainSource, name), path.join(terrainPublic, name));
 }
 

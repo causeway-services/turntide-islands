@@ -79,6 +79,39 @@ figure; it makes no elevation corrections or drainage simulation. MnGeo's
 describes source limitations, absence of warranty, and redistribution
 conditions. Grid spacing is not a claim of site-specific survey accuracy.
 
+# Precipitation-frequency context for the same marker
+
+On 2026-10-04, the [NOAA point query](https://hdsc.nws.noaa.gov/cgi-bin/new/fe_text.csv?lat=46.807297&lon=-92.0899378&type=pf&data=depth&units=metric&series=pds)
+returned **NOAA Atlas 14 Volume 8 Version 2** estimates for latitude
+46.807297, longitude -92.0899378. The [saved complete CSV](/research/duluth-garden-drainage/rainfall-atlas14.csv)
+retains the source's metric precipitation depths, partial-duration series,
+all durations and recurrence intervals, 90% confidence bounds and retrieval
+time. These four entries illustrate the table; they do not select a design
+storm for a garden.
+
+| Duration | Average recurrence interval | Estimated depth | Source's 90% confidence bounds |
+| --- | --- | --- | --- |
+| 60 minutes | 2 years | 30 mm | 24–37 mm |
+| 60 minutes | 10 years | 44 mm | 35–55 mm |
+| 24 hours | 2 years | 68 mm | 57–80 mm |
+| 24 hours | 10 years | 100 mm | 84–119 mm |
+
+NOAA's [frequency definitions](https://www.weather.gov/owp/hdsc_faqs)
+distinguish partial-duration **average recurrence intervals** from
+annual-maximum **annual exceedance probabilities**. A recurrence interval
+is an average between qualifying events, not a calendar schedule. The
+confidence bounds describe uncertainty in the frequency estimate, not the
+range of depths in the next storm. Neither the estimate nor its bounds
+describe an observed storm at this garden.
+
+Source credit: Perica and colleagues (2013), [NOAA Atlas 14, Volume 8,
+Version 2.0: Precipitation-Frequency Atlas of the United States, Midwestern
+States](https://www.weather.gov/media/owp/oh/hdsc/docs/Atlas14_Volume8.pdf),
+NOAA National Weather Service. Repeat the linked point query to retrieve a
+current response. This historical frequency product is context for a local
+question; it supplies no drainage route, contributing area, soil infiltration,
+runoff volume, future-climate projection, or site sizing decision.
+
 # What a useful drainage screening still needs
 
 The City has a [completed stormwater management
@@ -103,8 +136,9 @@ considered.
 
 # Evidence and next decision
 
-- **Evidence state:** one reproducible catchment intersection and a saved,
-  reproducible terrain extract with a figure. No completed drainage
+- **Evidence state:** one reproducible catchment intersection, a saved terrain
+  extract with a figure, and a saved NOAA point-frequency estimate with its
+  uncertainty bounds. No completed drainage
   simulation, human source review,
   field observation, trial, or witnessed adaptation outcome.
 - **Vault work:** the [source check in `#receipts`](https://discord.com/channels/1184863861065658419/1519620773436854353/1553967627196571658)

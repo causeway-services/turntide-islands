@@ -57,8 +57,10 @@ selected location. An estimate can help frame a design question; it is not a
 record of a storm at the site or proof that a proposed garden can safely receive
 runoff. A local answer still needs an observed drainage path, site conditions,
 an appropriate local design guide, and a human decision about any trial. No
-location has been selected and no rainfall estimate has been calculated for
-this Turntide question. Share only a broad locality in public Discord; discuss
+intervention site has been selected. The [[duluth-garden-drainage|Duluth
+desktop record]] supplies an AI-prepared point-frequency estimate for a public
+garden-program marker, with its source and confidence bounds; it records no
+observed local storm. Share only a broad locality in public Discord; discuss
 exact site details privately with a consenting organizer if a trial is proposed.
 
 # Evidence and outcome

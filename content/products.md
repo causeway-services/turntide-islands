@@ -41,8 +41,10 @@ message as publication permission. It is an agent-prepared research note,
 not a completed local trial or a member contribution.
 
 The [[duluth-garden-drainage|Duluth garden drainage record]] checks one
-garden-program map point against a public watershed layer and names what that
-intersection cannot answer. A provider request
+garden-program map point against a public watershed layer, supplies a terrain
+map with downloadable data, and preserves NOAA precipitation-frequency
+estimates with their uncertainty. These are AI-prepared desktop inputs;
+drainage paths and site suitability remain unverified. A provider request
 is open for a bounded screening; no work has been awarded.
 
 # Signals and public publishing
@@ -51,8 +53,9 @@ The rain-garden record shows one working route for a relevant signal: a cited
 public source can frame a community question, then a reviewer can check its
 meaning and limits in the Knowledge Vault before the public record changes.
 It links [NOAA precipitation frequency estimates](https://hdsc.nws.noaa.gov/pfds/)
-as possible United States design context. No location-specific estimate or
-observed storm has been admitted for this question. General news intake does
+as United States context. The Duluth desktop record now supplies an estimate
+for the public garden-program marker; no observed local storm or field result
+is recorded. General news intake does
 not substitute for local observations or a site protocol.
 
 Published pages can be followed through the site's [RSS feed](/feed.rss.xml),
