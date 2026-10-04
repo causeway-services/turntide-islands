@@ -23,6 +23,17 @@ for (const [from, to, keep] of [
   for (const name of (await readdir(path.join(content, from))).filter(keep)) await copyFile(path.join(content, from, name), path.join(pub, to, name));
 }
 
+// Publish this public-data observation with its page; readers need no repository
+// account. Keep the original research files authoritative and copy only these
+// explicitly public files, rather than exposing the community's data directory.
+const terrainResearch = 'duluth-garden-drainage';
+const terrainSource = path.resolve(site, '../../data/research', terrainResearch);
+const terrainPublic = path.join(pub, 'research', terrainResearch);
+await mkdir(terrainPublic, { recursive: true });
+for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'extract-terrain.py']) {
+  await copyFile(path.join(terrainSource, name), path.join(terrainPublic, name));
+}
+
 const mark = await readFile(path.join(content, 'expressions/emoji/turntide.svg'));
 const png = (size) => sharp(mark, { density: 72 * size / 128 * 4 }).resize(size, size).png().toBuffer();
 await writeFile(path.join(pub, 'apple-touch-icon.png'), await sharp(await png(160)).extend({ top: 10, bottom: 10, left: 10, right: 10, background: '#0F2A3D' }).png().toBuffer());

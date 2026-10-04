@@ -1,6 +1,7 @@
 ---
 title: What can maps tell us about drainage near a Duluth garden?
 date-created: 2026-09-28
+date-modified: 2026-10-04
 type: record
 status: active
 tags:
@@ -38,7 +39,47 @@ gives publication date **11/01/2023** and attribution requirements. This
 locates the program's marker in a mapped broad catchment. It does not show
 which nearby surface, pipe, or roof drains toward the garden.
 
-# What a useful screening still needs
+# A terrain window available without City GIS access
+
+On 2026-10-04, an AI-prepared extraction read a **400 by 400 metre window**
+around the same marker from MnGeo's **Statewide Seamless 0.5m Lidar DEM,
+Minnesota, 2025**. The [second-generation lidar access page](https://mn.gov/mngeo/gis-data-and-maps/info-by-topic/elevation/lidar/lidar-gen2.jsp)
+provides public raster access independently of the City's GIS login. The
+[catalog item `dem_5_51_m`](https://stac.gisdata.mn.gov/collections/minnesota-100km-sections-DEM-0.5m/items/dem_5_51_m)
+identifies the source Cloud Optimized GeoTIFF. Reading only its window avoids
+downloading the advertised 54.85 GiB tile.
+
+![Elevation map of a 400 metre window around the unverified garden-program marker. Higher terrain appears to the west and lower terrain to the east. This is terrain only, with no drainage paths or garden boundary drawn.](/images/duluth-garden-terrain.png)
+
+The saved extract contains 800 by 800 cells at the native 0.5 metre spacing,
+with **640,000 valid cells and no missing cells**. Its elevation range is
+253.13–326.32 metres. The raster's horizontal reference is NAD83(2011) / UTM
+zone 15N, and its vertical reference is NAVD88, in metres. The catalog reports
+Geoid09 and a publication date of 2025-11-24; that date is not a verified
+acquisition date for this garden. The figure shows lower ground east of the
+marker within this window. That is a terrain observation, not evidence that
+any roof, road, pipe, or garden drains along a particular route.
+
+Download the [small GeoTIFF](/research/duluth-garden-drainage/terrain.tif),
+[source catalog response](/research/duluth-garden-drainage/source-item.json),
+[extraction metadata](/research/duluth-garden-drainage/extraction.json) and
+[Python reproducer](/research/duluth-garden-drainage/extract-terrain.py)
+directly from this site. Open `terrain.tif` in a GIS application to examine the
+same cells. To make another extract, install Python with `rasterio`, `pyproj`,
+`numpy` and `matplotlib`, then run `python extract-terrain.py OUTPUT_DIRECTORY`.
+`extraction.json` records the exact raster window, bounds, software versions,
+source links and SHA-256 hashes. Repeating against a changed source can give
+a different result; the saved extract preserves this observation.
+
+Source credit: Minnesota Geospatial Information Office and Minnesota
+Department of Natural Resources, **Statewide Seamless 0.5m Lidar DEM,
+Minnesota, 2025**. This derivative clips the raster and renders an elevation
+figure; it makes no elevation corrections or drainage simulation. MnGeo's
+[distribution statement](https://www.mngeo.state.mn.us/chouse/disclaimer.html)
+describes source limitations, absence of warranty, and redistribution
+conditions. Grid spacing is not a claim of site-specific survey accuracy.
+
+# What a useful drainage screening still needs
 
 The City has a [completed stormwater management
 plan](https://duluthmn.gov/public-works-utilities/stormwater/city-of-duluth-stormwater-management-plan/)
@@ -49,9 +90,10 @@ folders returned `Token Required` on 2026-09-28. An [older City utility map
 service](https://maps.duluthmn.gov/prodags/rest/services/TrakITservices/UtilitiesDLH/MapServer)
 responded publicly and lists storm-system layers; its currency, completeness,
 terms, and fitness for this question have not been established. A provider
-should verify accessible elevation and imagery, garden boundaries, storm
+should verify current imagery, garden boundaries, storm
 infrastructure, local flow paths, and the City's relevant plan findings before
-interpreting upstream relationships.
+interpreting upstream relationships. The terrain window above supplies an
+accessible elevation starting point; it does not supply those other facts.
 
 A catchment intersection is **not** a surface-flow model, hydrologic review,
 water-volume estimate, or permission to redirect runoff. The actual drainage
@@ -61,8 +103,9 @@ considered.
 
 # Evidence and next decision
 
-- **Evidence state:** conceived question with one reproducible public-data
-  intersection. No completed garden-scale simulation, human source review,
+- **Evidence state:** one reproducible catchment intersection and a saved,
+  reproducible terrain extract with a figure. No completed drainage
+  simulation, human source review,
   field observation, trial, or witnessed adaptation outcome.
 - **Vault work:** the [source check in `#receipts`](https://discord.com/channels/1184863861065658419/1519620773436854353/1553967627196571658)
   and [specific human review request in `#archive-desk`](https://discord.com/channels/1184863861065658419/1519620769695535264/1553967628790267995)
