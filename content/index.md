@@ -23,6 +23,21 @@ Knowledge Vault, evidence travels with the claims it supports, and the
 community's decisions are written down where anyone can read them. This site
 is where that public record is kept.
 
+# Start with a question and its evidence
+
+[[rain-garden-question|Where could a rain garden help?]] brings together
+public guidance, measured results from other places, and the facts a local
+answer still needs.
+
+The [[duluth-garden-drainage|Duluth garden record]] follows one public garden
+marker into a watershed map, a terrain map with downloadable data, and NOAA
+precipitation estimates with their uncertainty. You can read the sources and
+reuse the data here without a community account or a paid report.
+
+These are AI-prepared desktop records. They do not establish garden drainage,
+site suitability, or a completed local trial. The records name what is known,
+what remains unresolved, and how someone can contribute evidence.
+
 # Come ashore
 
 The islands are on Discord. [[join|Join Turntide Islands]], and you'll land
