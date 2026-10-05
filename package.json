@@ -4,8 +4,8 @@
   "type": "module",
   "description": "The public Turntide Islands site, built with VICTOR.",
   "dependencies": {
-    "@red-cup-engineering/static-site-publisher": "0.1.15",
-    "@red-cup-engineering/web-theming-service": "0.0.4"
+    "@red-cup-engineering/static-site-publisher": "workspace:*",
+    "@red-cup-engineering/web-theming-service": "workspace:*"
   },
   "devDependencies": {
     "sharp": "0.35.4",
