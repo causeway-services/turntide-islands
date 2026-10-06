@@ -74,7 +74,8 @@ test('Cloudflare serves the verified VICTOR release at the public hostname', asy
   assert.equal(wrangler.assets.directory, './dist');
   assert.equal(wrangler.assets.binding, 'ASSETS');
   assert.equal(wrangler.assets.run_worker_first, true);
-  assert.deepEqual(wrangler.routes, [{ pattern: 'turntide.561.group', custom_domain: true }]);
+  assert.ok(wrangler.routes.some((route) => route.pattern === 'turntide.561.group' && route.custom_domain === true));
+  assert.ok(wrangler.routes.some((route) => route.pattern === 'turntide-islands.561.group' && route.custom_domain === true));
 });
 
 test('the edge serves the VICTOR landing cell at the root URL', async () => {
@@ -531,4 +532,24 @@ test('public Use Turntide teaches the Tidepool participant/clerk authority split
   assert.match(guide, /when a cycle may\s+be tallied/u);
   assert.match(guide, /total directed yield becomes authoritative/u);
   assert.match(guide, /reconciliation evidence must exist before public disclosure/u);
+});
+
+test('Turntide Tidepool link follows the provider custom-domain configuration', async () => {
+  const products = await readFile(resolve(root, 'content', 'products.md'), 'utf8');
+  const tidepoolWrangler = JSON.parse(
+    await readFile(resolve(root, '..', 'pool.turntide.561.group', 'wrangler.jsonc'), 'utf8'),
+  );
+  const customRoute = tidepoolWrangler.routes?.find((route) => route.custom_domain === true);
+  assert.ok(customRoute?.pattern);
+  assert.ok(products.includes(`https://${customRoute.pattern}/`));
+  assert.doesNotMatch(products, /https:\/\/tidepool\.561\.group\//);
+  assert.match(products, /until deployment and\s+public observation are received/u);
+});
+
+test('the retired Turntide hostname redirects permanently to the canonical origin', async () => {
+  const worker = await readFile(resolve(root, 'worker.mjs'), 'utf8');
+  assert.match(worker, /url\.hostname === 'turntide-islands\.561\.group'/);
+  assert.match(worker, /canonical\.hostname = 'turntide\.561\.group'/);
+  assert.match(worker, /Response\.redirect\(canonical\.toString\(\), 308\)/);
+  assert.match(worker, /new URL\('\/index\/', url\)/);
 });
