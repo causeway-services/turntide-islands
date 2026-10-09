@@ -54,6 +54,8 @@ for how we run ourselves.
 
 # Around the harbor
 
+- [[archive|Public archive]] collects the durable public artifacts and the feeds
+  for following them.
 - [[events|Events]] lists what's on, what has ended, and how to propose a
   gathering of your own.
 - [[settlement|The settlement]] is the public account of how the community

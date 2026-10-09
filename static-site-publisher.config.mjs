@@ -13,6 +13,7 @@ export default {
     tufteTheme: turntidePresentation,
     menu: [
       { label: 'Home', href: '/' },
+      { label: 'Archive', href: '/archive/' },
       { label: 'Join', href: '/join/' },
       { label: 'The islands', href: '/islands/' },
       { label: 'Events', href: '/events/' },
