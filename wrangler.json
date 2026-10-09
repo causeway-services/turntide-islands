@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "turntide-islands-561-group",
+  "compatibility_date": "2026-08-29",
+  "workers_dev": false,
+  "preview_urls": false,
+  "main": "./worker.mjs",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "turntide.561.group",
+      "custom_domain": true
+    },
+    {
+      "pattern": "turntide-islands.561.group",
+      "custom_domain": true
+    }
+  ]
+}
