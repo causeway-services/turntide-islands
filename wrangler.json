@@ -15,6 +15,10 @@
     {
       "pattern": "turntide.561.group",
       "custom_domain": true
+    },
+    {
+      "pattern": "turntide-islands.561.group",
+      "custom_domain": true
     }
   ]
 }
