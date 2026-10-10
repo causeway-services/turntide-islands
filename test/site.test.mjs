@@ -553,3 +553,22 @@ test('the retired Turntide hostname redirects permanently to the canonical origi
   assert.match(worker, /Response\.redirect\(canonical\.toString\(\), 308\)/);
   assert.match(worker, /new URL\('\/index\/', url\)/);
 });
+
+test('the durable public archive reuses the existing publication feeds', async () => {
+  const archive = await readFile(resolve(root, 'content', 'archive.md'), 'utf8');
+  const index = await readFile(resolve(root, 'content', 'index.md'), 'utf8');
+  const products = await readFile(resolve(root, 'content', 'products.md'), 'utf8');
+  const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
+
+  assert.ok(config.includes("label: 'Archive', href: '/archive/'"));
+  assert.match(index, /\[\[archive\|/u);
+  assert.match(archive, /not a mirror of community chat/u);
+  assert.match(archive, /\/feed\.rss\.xml/u);
+  assert.match(archive, /\/feed\.atom\.xml/u);
+  assert.match(archive, /\/feed\.json/u);
+  assert.match(products, /\/feed\.rss\.xml/u);
+  assert.match(products, /\/feed\.atom\.xml/u);
+  assert.match(products, /\/feed\.json/u);
+  assert.match(archive, /\[\[rain-garden-question\|/u);
+  assert.match(archive, /\[\[duluth-garden-drainage\|/u);
+});
