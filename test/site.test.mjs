@@ -120,7 +120,7 @@ test('Products follows the current Discord onboarding carrier', async () => {
 
 test('Turntide public governance receives the host-independent ANT identity boundary', async () => {
   const institution = JSON.parse(await readFile(
-    resolve(root, '../../data/records/institution/turntide-islands.ant.json'),
+    resolve(root, '../../data/records/institution-records/turntide-islands.ant.json'),
     'utf8',
   ));
   const governance = await readFile(resolve(root, 'content', 'governance.md'), 'utf8');
@@ -151,11 +151,11 @@ test('Turntide public governance receives the host-independent ANT identity boun
 
 test('Turntide logical MetroPlat world remains distinct from ANT and deployment identity', async () => {
   const ant = JSON.parse(await readFile(
-    resolve(root, '../../data/records/institution/turntide-islands.ant.json'),
+    resolve(root, '../../data/records/institution-records/turntide-islands.ant.json'),
     'utf8',
   ));
   const binding = JSON.parse(await readFile(
-    resolve(root, '../../data/records/institution/turntide-islands.metroplat-world.json'),
+    resolve(root, '../../data/records/institution-records/turntide-islands.metroplat-world.json'),
     'utf8',
   ));
   const repository = repositoryRoot(root);
@@ -182,15 +182,15 @@ test('Turntide logical MetroPlat world remains distinct from ANT and deployment 
 
 test('Zelo civic mandate lowers governance friction without becoming sovereign', async () => {
   const mandate = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance/zelo-civic-steward.json'),
+    resolve(root, '../../data/records/governance-records/zelo-civic-steward.json'),
     'utf8',
   ));
   const routines = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance/civic-routines.json'),
+    resolve(root, '../../data/records/governance-records/civic-routines.json'),
     'utf8',
   ));
   const guild = JSON.parse(await readFile(
-    resolve(root, '../../data/records/discord-guild/turntide-islands.guild.json'),
+    resolve(root, '../../data/records/discord-guild-records/turntide-islands.guild.json'),
     'utf8',
   ));
   const governance = await readFile(resolve(root, 'content', 'governance.md'), 'utf8');
@@ -250,15 +250,15 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
 
 test('Turntide civic standing and state protocol make Zelo guidance non-inferential', async () => {
   const standing = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance/current-standing.json'),
+    resolve(root, '../../data/records/governance-records/current-standing.json'),
     'utf8',
   ));
   const protocol = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance/civic-action-protocol.json'),
+    resolve(root, '../../data/records/governance-records/civic-action-protocol.json'),
     'utf8',
   ));
   const mandate = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance/zelo-civic-steward.json'),
+    resolve(root, '../../data/records/governance-records/zelo-civic-steward.json'),
     'utf8',
   ));
 
@@ -304,7 +304,7 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
   const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
   const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
   const guild = JSON.parse(await readFile(
-    resolve(root, '../../data/records/discord-guild/turntide-islands.guild.json'),
+    resolve(root, '../../data/records/discord-guild-records/turntide-islands.guild.json'),
     'utf8',
   ));
 
@@ -339,11 +339,11 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
 
 test('Turntide routine patterns are advisory and place-aware', async () => {
   const patterns = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance/routine-pattern-library.json'),
+    resolve(root, '../../data/records/governance-records/routine-pattern-library.json'),
     'utf8',
   ));
   const mandate = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance/zelo-civic-steward.json'),
+    resolve(root, '../../data/records/governance-records/zelo-civic-steward.json'),
     'utf8',
   ));
 
@@ -372,7 +372,7 @@ test('Turntide routine patterns are advisory and place-aware', async () => {
 
 test('Governance Rock onboarding invites participation without implying standing', async () => {
   const guild = JSON.parse(await readFile(
-    resolve(root, '../../data/records/discord-guild/turntide-islands.guild.json'),
+    resolve(root, '../../data/records/discord-guild-records/turntide-islands.guild.json'),
     'utf8',
   ));
   const prompt = guild.onboarding.prompts.find((candidate) => /Governance Rock/u.test(candidate.title));
