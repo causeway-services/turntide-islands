@@ -7,7 +7,7 @@
 import { readFileSync } from 'node:fs';
 import { cssFontFamilyList } from '@red-cup-engineering/web-theming-service/design-tokens';
 
-const tokens = JSON.parse(readFileSync(new URL('../../data/records/design-tokens/turntide-islands.tokens.json', import.meta.url), 'utf8'));
+const tokens = JSON.parse(readFileSync(new URL('../../data/records/design-token-records/turntide-islands.tokens.json', import.meta.url), 'utf8'));
 export { tokens };
 
 const palette = Object.fromEntries(Object.entries(tokens.color.palette).map(([name, token]) => [name, token.$value.hex]));
