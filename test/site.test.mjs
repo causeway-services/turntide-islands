@@ -572,3 +572,33 @@ test('the durable public archive reuses the existing publication feeds', async (
   assert.match(archive, /\[\[rain-garden-question\|/u);
   assert.match(archive, /\[\[duluth-garden-drainage\|/u);
 });
+
+test('public Use Turntide explains executable civic-kernel conformance', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /How Zelo stays bounded/u);
+  assert.match(guide, /civic-kernel conformance law/u);
+  assert.match(guide, /delivery adapter, Discord permission, provider credential, or model update cannot\s+expand that set by itself/u);
+  assert.match(guide, /next-move nudge/u);
+  assert.match(guide, /one-nudge-per-artifact-state rule/u);
+});
+
+
+test('public Use Turntide teaches procedure floors and no convenience downgrade', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /Procedure cannot be downgraded for convenience/u);
+  assert.match(guide, /structural governance act/u);
+  assert.match(guide, /refuses?\s+to downgrade/u);
+  assert.match(guide, /refused below minimum/u);
+  assert.match(guide, /does not grant authority/u);
+});
+
+
+test('public Use Turntide explains independently readable delegation authority', async () => {
+  const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
+  assert.match(guide, /How Turntide proves a delegation is actually active/u);
+  assert.match(guide, /append-only public event history/u);
+  assert.match(guide, /delegated-clerical/u);
+  assert.match(guide, /standing ledger calls\s+Zelo an \*\*active delegated steward\*\*/u);
+  assert.match(guide, /does not invent a retroactive event/u);
+  assert.match(guide, /does not automatically revoke Zelo/u);
+});
