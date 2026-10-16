@@ -145,6 +145,73 @@ Tidepool membership, distribution voting, principal, yield, reconciliation
 settlement, custody, and financial execution are not a Turntide decision procedure.
 Zelo should route those matters to Tidepool's own financial authority instead.
 
+## Procedure cannot be downgraded for convenience
+
+Zelo now has a deterministic **procedure-floor classifier** for this question. It
+does not infer governance from vibes or choose whichever path is easiest. It reads
+typed facts about the authority domain and the consequences of the requested act,
+then returns the least-constrained procedure that is still constitutionally
+adequate.
+
+The safety rule is monotone:
+
+- a Tidepool financial matter routes outside Turntide decision authority;
+- changing standing, authority domains, the civic protocol, office powers,
+  decision procedures, institutional identity, or future governance rules always
+  requires a **structural governance act**;
+- new policy, contested matters, public integration, or community-facing service
+  boundaries require at least an **ordinary governance act**;
+- an enacted routine can supply prior authority only for an actual known routine
+  instance that stays inside its admitted boundary;
+- a record-grounded correction is available only for clerical/projection work with
+  checkable current-record evidence and no new policy;
+- a claimed delegation is **not** enough by itself. Until an independently readable
+  active-delegation carrier is available to the civic kernel, the classifier refuses
+  to downgrade an ordinary governance matter merely because a caller says “I was
+  delegated.”
+
+You can also ask Zelo to compare a requested procedure with the minimum. If the
+requested procedure is weaker than the consequence-derived floor, Zelo should say
+**refused below minimum**. Passing that comparison still does not grant authority;
+the selected procedure's own standing, proposal, execution, and receiving
+conditions remain separate.
+
+This is deliberately similar to capability and timelock systems: execution power
+is useful only when it cannot silently become proposal or constitutional power.
+
+## How Turntide proves a delegation is actually active
+
+A delegation is now intended to be independently readable, not something Zelo or a
+caller can establish by saying “I was delegated.”
+
+Turntide's modern delegation carrier is an append-only public event history. An
+activation event names the delegate, purpose, exact scope, granted actions, limits,
+review/expiry condition, revocation condition, receiving condition, grantor, and the
+**received enacted governance act** that authorized it. Later events can revoke,
+expire, or supersede the grant; they cannot silently edit the activation.
+
+Zelo derives current delegation state from those events. The derived registry is a
+read model, not another authority source. A clerical change can use the
+**delegated-clerical** decision procedure only when:
+
+- the named delegation is independently active in that event history;
+- the requested action is one of the activation's exact granted actions;
+- the requested scope exactly matches the delegated scope; and
+- the matter is otherwise clerical rather than structural, contested, or new policy.
+
+Even then, classification does not execute the work or waive the delegation's
+limits and receiving condition.
+
+There is an intentional migration exception today: the older standing ledger calls
+Zelo an **active delegated steward**, but the historical records predate the modern
+activation-event fields. Turntide does not invent a retroactive event just to make
+the records look tidy, and it does not automatically revoke Zelo either. Zelo should
+report that mismatch until governance explicitly restates, narrows, or replaces the
+delegation under the modern carrier.
+
+Ask Zelo **“what delegations are actually active?”**, **“show delegation
+delegation-id”**, or **“does this delegation cover this action and scope?”**
+
 # Use Zelo as a routine studio
 
 A routine is not just “something a bot could automate.” It is a repeated piece
@@ -385,6 +452,35 @@ Ask Zelo **“what is Tidepool's current status?”** or any ordinary Tidepool q
 Zelo should state the observation time and current blocker, then route the question
 to Turntide integration, Tidepool membership/governance, or Tidepool protocol
 execution as appropriate. A later live receipt supersedes the dated projection.
+
+# How Zelo stays bounded
+
+Zelo's civic authority is not just a prompt convention. Turntide keeps an enacted
+**civic-kernel conformance law** and an executable audit over the standing ledger,
+civic action protocol, Zelo mandate, routine catalog, and runtime declaration.
+
+The audit checks that every enacted routine has exactly one runtime binding, that
+the runtime does not invent orphan routines, that scheduled routines stay silent
+when nothing warrants a post, and that autonomous effects come from the admitted
+nonbinding effect set. It also checks the exact civic transitions Zelo may perform.
+
+At present those Zelo-performable transitions are deliberately narrow: answer a
+question; open discussion; form a draft proposal; contest an executed act when
+specific contradictory or missing evidence is named; advance a complete routine
+candidate to proposed; and clerically record that an already-expiring delegation
+has expired when its recorded condition is witnessed.
+
+A delivery adapter, Discord permission, provider credential, or model update cannot
+expand that set by itself. A new autonomous effect or Zelo-performable transition
+requires an explicit Turntide law change plus the corresponding protocol/runtime
+change. The conformance suite deliberately tests bad versions of the constitution
+to make sure those expansions fail closed.
+
+The same engineering pass repaired a real drift: **next-move nudge** was enacted as
+a daily routine but was not actually executed by the scheduled civic interpreter.
+It now runs with a quiet baseline and a one-nudge-per-artifact-state rule. Ask Zelo
+**“what needs a next move?”** to surface a bounded blocked step; Zelo should not
+repeat the same nudge until the artifact state or evidence changes.
 
 # How Zelo decides what to pay attention to
 
