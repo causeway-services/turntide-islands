@@ -62,3 +62,31 @@ test("editing the original publisher's source copy cannot silently change the pi
   assert.throws(() => projectStandingPathwayPublication(record, { sourceDigest: digest(altered) }),
     /enacted guidance/);
 });
+
+
+test("original Turntide Worker serves selected VICTOR linked-data bytes with the proper W3C media type", async () => {
+  const bytes = await readFile(original);
+  const record = JSON.parse(bytes.toString("utf8"));
+  const resource = projectStandingPathwayPublication(record, {sourceDigest:digest(bytes)}).linkedData;
+  const { default: worker } = await import("../worker.mjs");
+  const request = new Request("https://turntide.561.group/" + resource.path);
+  const served = [];
+  const assets = {fetch: async incoming => {
+    served.push(incoming);
+    return new Response(resource.body, {status:200,headers:{"content-type":"application/octet-stream"}});
+  }};
+  const response = await worker.fetch(request, {ASSETS:assets});
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("content-type"), "application/ld+json; charset=utf-8");
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(await response.text(), resource.body);
+  assert.deepEqual(served, [request]);
+  const missing = await worker.fetch(request, {ASSETS:{fetch: async () =>
+    new Response("not found", {status:404,headers:{"content-type":"text/plain"}})}});
+  assert.equal(missing.status, 404);
+  assert.equal(missing.headers.get("content-type"), "text/plain");
+  const unrelated = await worker.fetch(new Request("https://turntide.561.group/favicon.ico"), {
+    ASSETS:{fetch:async () => new Response("png-ish", {headers:{"content-type":"image/png"}})},
+  });
+  assert.equal(unrelated.headers.get("content-type"), "image/png");
+});
