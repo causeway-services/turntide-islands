@@ -20,6 +20,15 @@ const pub = path.join(site, 'public');
 const civicRoot = path.resolve(site, '../..');
 const civicPath = path.join(civicRoot, 'data/records/governance/standing-pathways.json');
 const civicBytes = await readFile(civicPath);
+// Source selection belongs to the publishing receiver. A newer or different
+// governance revision must be reviewed and deliberately pinned before it
+// becomes a public assertion under this URL; a live repo pointer is not enough.
+const EXPECTED_GOVERNANCE_BLOB = 'b8730793aa6f9aceb7f624f1cb0bc262335668d5';
+const actualBlob = createHash('sha1').update('blob ' + civicBytes.length + '\0')
+  .update(civicBytes).digest('hex');
+if (actualBlob !== EXPECTED_GOVERNANCE_BLOB) {
+  throw new TypeError('Turntide governance source revision changed; select an admitted source before publication');
+}
 const civicText = new TextDecoder('utf-8', { fatal: true }).decode(civicBytes);
 const sourceDigest = 'ni:///sha-256;' + createHash('sha256').update(civicBytes).digest('base64url');
 const { projectStandingPathwayPublication } =
