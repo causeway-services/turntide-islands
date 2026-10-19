@@ -24,13 +24,15 @@ questions, sources, projects, and place-based observations.
 and gathering proposal process. A gathering is confirmed only when a human
 organizer schedules it in Discord Events.
 
-# Knowledge Vault
+# Digital Garden
 
-Turntide's Discord has Knowledge Vault spaces for serious threading,
-briefings, archival work, and receipts. The intended product is durable,
-source-grounded knowledge that people can find and reuse beyond a chat thread.
+The Digital Garden is Turntide's shared, growing body of source-grounded
+knowledge: useful questions, briefings, field notes, reading paths and receipts
+that people can find and reuse beyond a chat thread. Start with the
+[[archive|public archive]], or [[join|join the community]] to bring a question
+or source to the conversation.
 The public record does not yet offer a browsable collection of admitted
-practice guides or a paid vault subscription. Ordinary Discord participation
+practice guides or a paid Digital Garden subscription. Ordinary Discord participation
 does not grant consent to republish a member's words. Bring a source or
 question to the community; any public rescue of conversation needs separate
 provenance and consent.
@@ -51,7 +53,7 @@ is open for a bounded screening; no work has been awarded.
 
 The rain-garden record shows one working route for a relevant signal: a cited
 public source can frame a community question, then a reviewer can check its
-meaning and limits in the Knowledge Vault before the public record changes.
+meaning and limits in the Digital Garden before the public record changes.
 It links [NOAA precipitation frequency estimates](https://hdsc.nws.noaa.gov/pfds/)
 as United States context. The Duluth desktop record now supplies an estimate
 for the public garden-program marker; no observed local storm or field result

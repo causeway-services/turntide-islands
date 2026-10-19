@@ -15,7 +15,7 @@ function repositoryRoot(from) {
 
 test('the site depends on VICTOR through the registry', async () => {
   const manifest = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
-  assert.equal(manifest.dependencies['@red-cup-engineering/static-site-publisher'], '0.1.15');
+  assert.equal(manifest.dependencies['@red-cup-engineering/static-site-publisher'], '0.1.18');
   assert.doesNotMatch(manifest.dependencies['@red-cup-engineering/static-site-publisher'], /^file:/);
   assert.doesNotMatch(manifest.dependencies['@red-cup-engineering/static-site-publisher'], /^workspace:/);
 });
@@ -79,10 +79,18 @@ test('Cloudflare serves the verified VICTOR release at the public hostname', asy
 });
 
 test('the edge serves the VICTOR landing cell at the root URL', async () => {
-  const worker = await readFile(resolve(root, 'worker.mjs'), 'utf8');
-  assert.match(worker, /url\.pathname === '\/'/);
-  assert.match(worker, /new URL\('\/index\/', url\)/);
-  assert.match(worker, /env\.ASSETS\.fetch/);
+  const { default: worker } = await import('../worker.mjs');
+  const request = new Request('https://turntide.561.group/?from=lesson');
+  const observed = [];
+  const response = await worker.fetch(request, { ASSETS: { fetch: async (input) => {
+    observed.push(input);
+    return new Response('The authored Digital Garden landing');
+  } } });
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), 'The authored Digital Garden landing');
+  assert.equal(observed.length, 1);
+  assert.equal(observed[0], request);
+  assert.equal(observed[0].url, 'https://turntide.561.group/?from=lesson');
 });
 
 
@@ -547,11 +555,12 @@ test('Turntide Tidepool link follows the provider custom-domain configuration', 
 });
 
 test('the retired Turntide hostname redirects permanently to the canonical origin', async () => {
-  const worker = await readFile(resolve(root, 'worker.mjs'), 'utf8');
-  assert.match(worker, /url\.hostname === 'turntide-islands\.561\.group'/);
-  assert.match(worker, /canonical\.hostname = 'turntide\.561\.group'/);
-  assert.match(worker, /Response\.redirect\(canonical\.toString\(\), 308\)/);
-  assert.match(worker, /new URL\('\/index\/', url\)/);
+  const { default: worker } = await import('../worker.mjs');
+  const response = await worker.fetch(new Request('https://turntide-islands.561.group/islands/?from=lesson'), {
+    ASSETS: { fetch: () => assert.fail('The retired hostname must redirect before asset delivery') },
+  });
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get('location'), 'https://turntide.561.group/islands/?from=lesson');
 });
 
 test('the durable public archive reuses the existing publication feeds', async () => {

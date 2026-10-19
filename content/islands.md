@@ -3,7 +3,7 @@ title: Chart of the islands
 date-created: 2026-10-02
 type: page
 status: active
-summary: A visitor's chart of the Turntide Islands Discord, from the Harbor where you land to the Chatter Isles, the Knowledge Vault, and Governance Rock.
+summary: A visitor's chart of the Turntide Islands Discord, from the Harbor where you land to the Chatter Isles, the Digital Garden, and Governance Rock.
 tags:
 - turntide-islands
 - community
@@ -57,9 +57,10 @@ When one of the community's own video channels publishes something, it lands
 on the island it's about, so a new lecture on mathematics turns up in
 `#academic-acantilado` and a new build in `#praxis-peninsula`.
 
-# ![](/emoji/vault.svg) The Knowledge Vault
+# ![](/emoji/vault.svg) The Digital Garden
 
-Discord forgets, but the Vault doesn't. `#tide-wire` carries our own news:
+Discord still labels these spaces **Knowledge Vault**; Digital Garden is the
+public name for the same durable knowledge work. `#tide-wire` carries our own news:
 stories from [Koios.News](https://koios.news), each one posted with its link
 so you can talk it over in its thread. A story that belongs to an island,
 such as a markets story, also turns up there. `#serious-threading` is for
@@ -67,7 +68,7 @@ slower threads and longer arguments. `#vault-briefings` carries briefings on cli
 breakdown. ![](/emoji/archive_desk.svg) `#archive-desk` is where useful
 conversations get rescued before they scroll away, and
 ![](/emoji/receipts.svg) `#receipts` keeps the source trails: links,
-citations, and evidence. What the Vault keeps is the raw material for this
+citations, and evidence. What the Digital Garden keeps is the raw material for this
 site's public record.
 
 # ![](/emoji/lighthouse.svg) Governance Rock

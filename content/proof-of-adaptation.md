@@ -18,7 +18,7 @@ the same kind of claim.
 # The proposed loop
 
 Signals and research enter a community intake; discussion develops questions;
-a durable vault retains sources and provenance; practices are turned into
+the Digital Garden retains sources and provenance; practices are turned into
 guides or trials; and witnessed results refine the next round of questions.
 The point is not to manufacture certainty. It is to make the evidentiary state
 of a claim visible and improve it through repeatable work.

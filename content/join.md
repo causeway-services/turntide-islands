@@ -26,7 +26,9 @@ Turntide Islands is open, free, and on Discord. This link always works:
    **Channels & Roles** at the top of the channel list whenever you want to
    change which islands you visit.
 
-The [[islands|chart of the islands]] shows what's where.
+The [[islands|chart of the islands]] shows what's where. Bring a question,
+a source or a field note to help grow the [[products|Digital Garden]], or
+start by exploring its [[archive|public archive]].
 
 # What it's like
 
