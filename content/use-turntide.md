@@ -227,7 +227,7 @@ community wants automation. Examples include:
   missing move is clarification, research, observation, discussion, or governance;
 - **Field Notes**: preserving valuable local observations without treating chat
   participation as publication consent;
-- the **Knowledge Vault**: rescuing source-linked conclusions and receipts;
+- the **Digital Garden**: rescuing source-linked conclusions and receipts;
 - **Solidarity Shoals**: opt-in follow-up so mutual-aid asks and offers can be
   updated or closed without inferring private circumstances;
 - the **Chatter Isles**: a material pulse only when genuinely new questions,
@@ -263,8 +263,8 @@ path for escalating work elsewhere, and the authority boundary Zelo must preserv
 For example, Question Quarry can turn uncertainty into clarification, research,
 observation, discussion, or governance. Solidarity Shoals can support opt-in
 mutual-aid status loops without inferring private need. The Chatter Isles can grow
-subject conversation into projects, evidence, or routine candidates. The Knowledge
-Vault can rescue durable claims and receipts without silently republishing member
+subject conversation into projects, evidence, or routine candidates. The Digital
+Garden can rescue durable claims and receipts without silently republishing member
 words. Governance Rock is where explicit civic state transitions live.
 
 Economy Estuary has an additional Tidepool boundary: Turntiders can discuss

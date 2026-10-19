@@ -27,7 +27,7 @@ conditions. It is intended to strengthen practical response, mutual learning,
 and the capacity to act together amid climate instability.
 
 Its proposed knowledge-refinement loop moves from signals and discussion to a
-durable knowledge vault, then to guides, trials, and new evidence. That loop
+durable Digital Garden, then to guides, trials, and new evidence. That loop
 is described in [[proof-of-adaptation|Proof of Adaptation]].
 
 The account above is drawn from the parent settlement's public definition and

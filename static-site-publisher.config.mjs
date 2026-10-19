@@ -3,6 +3,7 @@ import { tokens, turntidePresentation } from './turntide-presentation.mjs';
 
 export default {
   configVersion: 1,
+  home: 'index',
   site: {
     name: 'Turntide Islands',
     baseIri: 'https://turntide.561.group/',

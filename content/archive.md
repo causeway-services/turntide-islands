@@ -3,14 +3,15 @@ title: Public archive
 date-created: 2026-10-02
 type: page
 status: active
+section-index: true
 tags:
 - turntide-islands
 - archive
 - public-record
 ---
 
-This archive is the durable public record of work that Turntide Islands has
-intentionally admitted for publication. It is not a mirror of community chat or
+This archive is the public part of Turntide's [[products|Digital Garden]]:
+durable work intentionally admitted for publication. It is not a mirror of community chat or
 of private or semi-private conversation. Community material enters this
 archive only through a separate publication decision that preserves consent,
 attribution choices, and location/privacy boundaries.

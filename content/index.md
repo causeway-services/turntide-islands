@@ -19,7 +19,7 @@ sources to trust, and how to look after each other.
 
 Useful knowledge about adaptation is scattered, hard to check, and rarely
 paid for. So we keep receipts. A good conversation gets rescued into the
-Knowledge Vault, evidence travels with the claims it supports, and the
+Digital Garden, evidence travels with the claims it supports, and the
 community's decisions are written down where anyone can read them. This site
 is where that public record is kept.
 
@@ -38,6 +38,13 @@ These are AI-prepared desktop records. They do not establish garden drainage,
 site suitability, or a completed local trial. The records name what is known,
 what remains unresolved, and how someone can contribute evidence.
 
+# Grow the Digital Garden
+
+A useful question can become a note that someone else can return to. Explore
+the [[archive|public archive]], follow a source trail, or bring an observation
+to the community. The [[products|Digital Garden]] keeps that learning connected
+without turning a conversation into permission to publish it.
+
 # Come ashore
 
 The islands are on Discord. [[join|Join Turntide Islands]], and you'll land
@@ -49,7 +56,7 @@ islands you visit.
 Not sure where you'd fit? Look over the [[islands|chart of the islands]]
 first: the Mainland for introductions, questions, and field notes, the
 Chatter Isles for gardens, cooking, climate, scholarship, tech, and markets,
-the Knowledge Vault for evidence and our own news wire, and Governance Rock
+the Digital Garden for evidence and our own news wire, and Governance Rock
 for how we run ourselves.
 
 # Around the harbor
