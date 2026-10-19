@@ -5,9 +5,15 @@
 // as TUFTE custom properties, and this layer adds only the art palette, the
 // self-hosted faces (content/fonts, SIL OFL), and the shapes.
 import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { cssFontFamilyList } from '@red-cup-engineering/web-theming-service/design-tokens';
 
-const tokens = JSON.parse(readFileSync(new URL('../../data/records/design-token-records/turntide-islands.tokens.json', import.meta.url), 'utf8'));
+// Design tokens are authoritative in the original Turntide section's typed
+// DTCG design-tokens resource family. Do not select the stale Public Services
+// data/records/design-token-records snapshot or write a site-local copy.
+const sourceRoot = resolve(process.env.TURNTIDE_SOURCE_ROOT ?? resolve(import.meta.dirname, '../..'));
+const tokens = JSON.parse(readFileSync(resolve(sourceRoot,
+  'data/records/design-tokens/turntide-islands.tokens.json'), 'utf8'));
 export { tokens };
 
 const palette = Object.fromEntries(Object.entries(tokens.color.palette).map(([name, token]) => [name, token.$value.hex]));
