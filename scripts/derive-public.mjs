@@ -8,16 +8,19 @@
 import { copyFile, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import sharp from 'sharp';
 
 const site = path.resolve(import.meta.dirname, '..');
-const content = path.resolve(site, '../../content');
+// Existing integrated section mount remains the default, while an actual
+// independently released site may select its separately owned source root.
+const civicRoot = path.resolve(process.env.TURNTIDE_SOURCE_ROOT ?? path.join(site, '../..'));
+const content = path.join(civicRoot, 'content');
 const pub = path.join(site, 'public');
 
 // Select the original current Turntide governance owner, not an independently
 // copied site-local standing list. This site's original art/research producer
 // already requires the same mounted owning section via ../../content/data.
-const civicRoot = path.resolve(site, '../..');
 const civicPath = path.join(civicRoot, 'data/records/governance/standing-pathways.json');
 const civicBytes = await readFile(civicPath);
 // Source selection belongs to the publishing receiver. A newer or different
@@ -31,8 +34,8 @@ if (actualBlob !== EXPECTED_GOVERNANCE_BLOB) {
 }
 const civicText = new TextDecoder('utf-8', { fatal: true }).decode(civicBytes);
 const sourceDigest = 'ni:///sha-256;' + createHash('sha256').update(civicBytes).digest('base64url');
-const { projectStandingPathwayPublication } =
-  await import('../' + '../' + '../src/governance/receiving.mjs');
+const { projectStandingPathwayPublication } = await import(pathToFileURL(
+  path.join(civicRoot, 'src/governance/receiving.mjs')).href);
 const civicProjection = projectStandingPathwayPublication(JSON.parse(civicText), { sourceDigest });
 if (civicProjection.publicationAuthorized !== false ||
     civicProjection.authorityGranted !== false || civicProjection.count !== 4) {
@@ -61,7 +64,7 @@ for (const [from, to, keep] of [
 // account. Keep the original research files authoritative and copy only these
 // explicitly public files, rather than exposing the community's data directory.
 const terrainResearch = 'duluth-garden-drainage';
-const terrainSource = path.resolve(site, '../../data/research', terrainResearch);
+const terrainSource = path.join(civicRoot, 'data/research', terrainResearch);
 const terrainPublic = path.join(pub, 'research', terrainResearch);
 await mkdir(terrainPublic, { recursive: true });
 for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'extract-terrain.py', 'rainfall-atlas14.csv']) {
