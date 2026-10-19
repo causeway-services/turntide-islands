@@ -104,3 +104,16 @@ test("the original terrain reproduction file is present under source-owned scrip
   const builder = await readFile(resolve(site, "scripts/derive-public.mjs"), "utf8");
   assert.match(builder, /path\.join\(civicRoot, 'scripts\/extract-terrain\.py'\)/);
 });
+
+
+test("existing TUFTE presentation selects the actual source owner's DTCG tokens instead of old design-token-records", async () => {
+  const tokens = JSON.parse(await readFile(resolve(sourceRoot,
+    "data/records/design-tokens/turntide-islands.tokens.json"), "utf8"));
+  assert.equal(tokens.color.palette.navy.$type, "color");
+  assert.equal(tokens.color.palette.navy.$value.hex, "#0F2A3D");
+  assert.ok(Array.isArray(tokens.font.family.reading.$value));
+  const binding = await readFile(resolve(site, "turntide-presentation.mjs"), "utf8");
+  assert.match(binding, /TURNTIDE_SOURCE_ROOT/);
+  assert.match(binding, /data\/records\/design-tokens\/turntide-islands\.tokens\.json/);
+  assert.doesNotMatch(binding, /readFileSync\(new URL\('\.\.\/\.\.\/data\/records\/design-token-records/);
+});
