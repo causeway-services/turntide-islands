@@ -63,6 +63,14 @@ enacts a proposal, issues a vote, commissions Zelo, or makes a Tidepool
 payment. The source digest qualifies the bytes; installed service,
 independent public readback and actual participant receiving remain separate.
 
+The existing TUFTE presentation likewise selects the actual current **DTCG**
+2025.10 design tokens at the original owner's typed path
+`data/records/design-tokens/turntide-islands.tokens.json` through the same
+source-root selection, rather than the older
+`data/records/design-token-records/` snapshot. The source vocabulary retains
+color-space, hex/components and typed font families; no theme bytes are
+hand-authored into the public site to mask a wrong source selector.
+
 The existing terrain publication also now reads the recovered original
 Python reproducer from `scripts/extract-terrain.py` in that same source
 checkout. It is the exact original historical Git blob
