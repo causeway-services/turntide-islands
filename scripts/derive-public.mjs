@@ -6,12 +6,37 @@
 // the browser icons that VICTOR does not emit (/favicon.ico,
 // /apple-touch-icon.png, both requested by browsers unprompted).
 import { copyFile, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import sharp from 'sharp';
 
 const site = path.resolve(import.meta.dirname, '..');
 const content = path.resolve(site, '../../content');
 const pub = path.join(site, 'public');
+
+// Select the original current Turntide governance owner, not an independently
+// copied site-local standing list. This site's original art/research producer
+// already requires the same mounted owning section via ../../content/data.
+const civicRoot = path.resolve(site, '../..');
+const civicPath = path.join(civicRoot, 'data/records/governance/standing-pathways.json');
+const civicBytes = await readFile(civicPath);
+const civicText = new TextDecoder('utf-8', { fatal: true }).decode(civicBytes);
+const sourceDigest = 'ni:///sha-256;' + createHash('sha256').update(civicBytes).digest('base64url');
+const { projectStandingPathwayPublication } =
+  await import('../' + '../' + '../src/governance/receiving.mjs');
+const civicProjection = projectStandingPathwayPublication(JSON.parse(civicText), { sourceDigest });
+if (civicProjection.publicationAuthorized !== false ||
+    civicProjection.authorityGranted !== false || civicProjection.count !== 4) {
+  throw new TypeError('Public civic wayfinding cannot grant voting, delegation, or site publication');
+}
+const generatedPage = path.join(site, 'content', civicProjection.page.path);
+const generatorMarker = '<!-- GENERATED: original Turntide standing pathways; do not edit this derived page -->';
+let priorPage = null;
+try { priorPage = await readFile(generatedPage, 'utf8'); }
+catch (error) { if (error.code !== 'ENOENT') throw error; }
+if (priorPage !== null && !priorPage.includes(generatorMarker)) {
+  throw new TypeError('Refusing to overwrite an independently authored civic page');
+}
 
 await rm(pub, { recursive: true, force: true });
 for (const [from, to, keep] of [
@@ -33,6 +58,17 @@ await mkdir(terrainPublic, { recursive: true });
 for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'extract-terrain.py', 'rainfall-atlas14.csv']) {
   await copyFile(path.join(terrainSource, name), path.join(terrainPublic, name));
 }
+
+// The original VICTOR publisher builds this generated Markdown with the same
+// site/catalog/feed system it already uses for all other source-approved pages.
+if (priorPage !== civicProjection.page.body) {
+  await writeFile(generatedPage, civicProjection.page.body);
+}
+// JSON-LD is a derived machine resource, not a grant to subscribe, vote, or
+// invoke a bot. Its PROV-O NI source points to the exact original source bytes.
+const linkedFile = path.join(pub, civicProjection.linkedData.path);
+await mkdir(path.dirname(linkedFile), { recursive: true });
+await writeFile(linkedFile, civicProjection.linkedData.body);
 
 const mark = await readFile(path.join(content, 'expressions/emoji/turntide.svg'));
 const png = (size) => sharp(mark, { density: 72 * size / 128 * 4 }).resize(size, size).png().toBuffer();
