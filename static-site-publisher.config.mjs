@@ -21,6 +21,7 @@ export default {
       { label: 'The settlement', href: '/settlement/' },
       { label: 'Proof of Adaptation', href: '/proof-of-adaptation/' },
       { label: 'Use Turntide', href: '/use-turntide/' },
+      { label: 'Participate', href: '/participation-pathways/' },
       { label: 'Governance', href: '/governance/' },
     ],
   },
