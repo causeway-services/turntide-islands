@@ -28,7 +28,8 @@ test("the actual original governance source owns the useful public participation
     ["participate", "bounded-delegation", "broader-standing", "tidepool"]);
   assert.match(md, /W3C SKOS vocabulary/);
   assert.match(md, /source-declared civic pathways/i);
-  assert.match(md, /No.*governance.*power/i);
+  assert.match(md, /not acquire power/i);
+  assert.match(md, /cannot activate a delegation/i);
   assert.match(md, /Tidepool financial authority/);
   assert.ok(md.includes(digest(bytes)));
   assert.equal(projection.publicationAuthorized, false);
