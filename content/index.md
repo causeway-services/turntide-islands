@@ -71,6 +71,8 @@ for how we run ourselves.
   turning local practice into checked, shareable evidence.
 - [[governance|Governance]] separates the commitments that already stand from
   the directions we're still exploring.
+- [[participation-pathways|Ways to participate]] uses the current enacted
+  civic guide to explain the next step without inventing governance power.
 
 > [!note] An honest present tense
 > Turntide Islands today is a conversation and a public record. Membership is
