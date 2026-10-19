@@ -84,6 +84,12 @@ revoked, expire when their recorded condition is witnessed, or be superseded.
 
 # Taking on more responsibility
 
+The [[participation-pathways|current participation pathways]] are built directly
+from Turntide's enacted guide, including what each path produces, what
+requires separately recorded authority, how Zelo can help and a useful next
+move. This source-derived guide is informational, not a vote or delegation.
+
+
 Turntide does not use an automatic promotion ladder. Being around longer, posting
 more, getting reactions, holding a Discord role, working for a provider, or joining
 Tidepool does not silently turn into governance power.
