@@ -67,9 +67,14 @@ const terrainResearch = 'duluth-garden-drainage';
 const terrainSource = path.join(civicRoot, 'data/research', terrainResearch);
 const terrainPublic = path.join(pub, 'research', terrainResearch);
 await mkdir(terrainPublic, { recursive: true });
-for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'extract-terrain.py', 'rainfall-atlas14.csv']) {
+for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'rainfall-atlas14.csv']) {
   await copyFile(path.join(terrainSource, name), path.join(terrainPublic, name));
 }
+// The reproducible computation is executable source, not a data record.
+// Recover the original historical Python source from the owning section's
+// scripts/ (immutable historical blob b306af737df904b6cff3e070bd0a465d8543bcf7).
+await copyFile(path.join(civicRoot, 'scripts/extract-terrain.py'),
+  path.join(terrainPublic, 'extract-terrain.py'));
 
 // The original VICTOR publisher builds this generated Markdown with the same
 // site/catalog/feed system it already uses for all other source-approved pages.
