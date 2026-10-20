@@ -37,6 +37,27 @@ building the standalone site:
 
 The existing integrated site's two-parent mounted section is the fallback
 source root; `npm run build` must not silently substitute a site-local copy.
+
+The **full original site test suite** has an additional independent owner:
+the Turntide logical MetroPlat instance manifest named in
+`data/records/institution/turntide-islands.metroplat-world.json` is a
+**Group-owned** resource. An integrated checkout may locate it in its actual
+ancestor checkout. For a standalone release assay, explicitly select the
+separate real Group checkout holding the declared manifest:
+
+    TURNTIDE_SOURCE_ROOT=/absolute/path/to/turntide-islands-services-section \
+    TURNTIDE_GROUP_ROOT=/absolute/path/to/actual-561-group-checkout npm test
+
+The reader checks that exact declared path, refuses traversal/absent manifests
+and retains the original type, identity, and unhosted-deployment assertions.
+Neither a Turntide site checkout nor a copy of the manifest in site fixtures
+counts as Group receiving evidence. If the Group manifest has not survived
+repository extraction, that is an **unresolved upstream ownership/migration
+blocker**: restore/relocate the real authoritative resource and update the
+original source binding by its proper owner. Do not alter the assertions or
+claim the standalone suite passed. `TURNTIDE_GROUP_ROOT` is a test-evidence
+selector, not a second public publishing source.
+
 The build reads the original `data/records/governance/standing-pathways.json`
 and invokes that *same owner's* `src/governance/receiving.mjs` projection.
 The original guide is typed as `TurntideStandingPathwayGuide`; each pathway
