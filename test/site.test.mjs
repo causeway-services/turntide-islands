@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 import { test } from 'node:test';
 
@@ -14,11 +15,11 @@ const sourceRoot = resolve(process.env.TURNTIDE_SOURCE_ROOT ?? resolve(root, '..
  * explicit Group source root that contains those *same* authoritative bytes.
  * Do not fabricate a local mirror or skip the cross-institution assertion.
  */
-function originalGroupManifestPath(declaredPath) {
+function originalGroupManifestPath(declaredPath, explicitGroupRoot = process.env.TURNTIDE_GROUP_ROOT) {
   if (typeof declaredPath !== 'string' || !declaredPath || isAbsolute(declaredPath)) {
     throw new TypeError('Turntide must declare a relative Group instance manifest path');
   }
-  const selected = process.env.TURNTIDE_GROUP_ROOT?.trim();
+  const selected = typeof explicitGroupRoot === 'string' ? explicitGroupRoot.trim() : '';
   const candidates = [];
   if (selected) candidates.push(resolve(selected));
   else {
@@ -38,6 +39,24 @@ function originalGroupManifestPath(declaredPath) {
     'containing this declared path; a public site or Turntide service checkout ' +
     'is not independent proof of the Group manifest.');
 }
+
+test('the original Group resource selector uses a real specified checkout and refuses wrong carriers', async () => {
+  const dir = await mkdtemp(resolve(tmpdir(), 'turntide-group-source-'));
+  const recordPath = 'lib/emsenn/services/561-group/instance-receipt.json';
+  const absolute = resolve(dir, recordPath);
+  try {
+    await mkdir(dirname(absolute), { recursive: true });
+    await writeFile(absolute, '{"kind":"original-Group-instance"}\n');
+    assert.equal(originalGroupManifestPath(recordPath, dir), absolute);
+    for (const missing of [
+      'does-not-exist.json', '../elsewhere.json', '../../outside.json',
+      '/etc/passwd',
+    ]) assert.throws(() => originalGroupManifestPath(missing, dir));
+    assert.throws(() => originalGroupManifestPath(recordPath, resolve(dir, 'missing-checkout')));
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
 
 test('the site depends on VICTOR through the registry', async () => {
   const manifest = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
