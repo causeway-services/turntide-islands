@@ -25,6 +25,10 @@ test("the actual original governance source owns the useful public participation
   assert.equal(projection.page.path, "participation-pathways.md");
   assert.equal(projection.linkedData.path, "governance/standing-pathways.jsonld");
   assert.equal(graph["@graph"][0]["@type"], "skos:ConceptScheme");
+  const publicScheme = "https://turntide.561.group/" + projection.linkedData.path;
+  assert.equal(graph["@graph"][0]["@id"], publicScheme);
+  assert.deepEqual(graph["@graph"][0]["skos:hasTopConcept"],
+    record.pathways.map(row => publicScheme + "#" + row.id));
   assert.equal(graph["@graph"][0]["prov:wasDerivedFrom"], digest(bytes));
   assert.equal(graph["@graph"].length, 5);
   assert.deepEqual(graph["@graph"].slice(1).map(node => node["skos:notation"]),
