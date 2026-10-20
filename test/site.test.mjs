@@ -1,17 +1,42 @@
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { dirname, resolve } from 'node:path';
+import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 import { test } from 'node:test';
 
 const root = resolve(import.meta.dirname, '..');
 const sourceRoot = resolve(process.env.TURNTIDE_SOURCE_ROOT ?? resolve(root, '../..'));
 
-function repositoryRoot(from) {
-  for (let directory = resolve(from); directory !== dirname(directory); directory = dirname(directory)) {
-    if (existsSync(resolve(directory, 'pnpm-workspace.yaml'))) return directory;
+/**
+ * This legacy Group-level MetroPlat manifest is not owned by the separately
+ * checked-out Turntide section. In an integrated checkout, find the actual
+ * original manifest in an ancestor; in a standalone release assay, require an
+ * explicit Group source root that contains those *same* authoritative bytes.
+ * Do not fabricate a local mirror or skip the cross-institution assertion.
+ */
+function originalGroupManifestPath(declaredPath) {
+  if (typeof declaredPath !== 'string' || !declaredPath || isAbsolute(declaredPath)) {
+    throw new TypeError('Turntide must declare a relative Group instance manifest path');
   }
-  throw new Error('repository root not found');
+  const selected = process.env.TURNTIDE_GROUP_ROOT?.trim();
+  const candidates = [];
+  if (selected) candidates.push(resolve(selected));
+  else {
+    for (let directory = root; ; directory = dirname(directory)) {
+      candidates.push(directory);
+      if (directory === dirname(directory)) break;
+    }
+  }
+  for (const candidate of candidates) {
+    const target = resolve(candidate, declaredPath);
+    const inside = relative(candidate, target);
+    if (inside && inside !== '..' && !inside.startsWith('..' + sep) &&
+        !isAbsolute(inside) && existsSync(target)) return target;
+  }
+  throw new Error('Original Turntide Group instance manifest unavailable: ' +
+    declaredPath + '. Supply TURNTIDE_GROUP_ROOT as the original Group checkout ' +
+    'containing this declared path; a public site or Turntide service checkout ' +
+    'is not independent proof of the Group manifest.');
 }
 
 test('the site depends on VICTOR through the registry', async () => {
@@ -167,8 +192,7 @@ test('Turntide logical MetroPlat world remains distinct from ANT and deployment 
     resolve(sourceRoot, 'data/records/institution/turntide-islands.metroplat-world.json'),
     'utf8',
   ));
-  const repository = repositoryRoot(root);
-  const manifest = JSON.parse(await readFile(resolve(repository, binding.instanceManifest), 'utf8'));
+  const manifest = JSON.parse(await readFile(originalGroupManifestPath(binding.instanceManifest), 'utf8'));
 
   assert.equal(binding.type, 'TurntideMetroPlatWorldBinding');
   assert.equal(binding.status, 'declared-unhosted');
