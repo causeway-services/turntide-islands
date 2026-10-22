@@ -60,10 +60,10 @@ test('the Join page is the single public carrier for the Discord invite', async 
   assert.match(join, /separately witnessed community authorization/iu);
   // A visitor must be able to report a failed invitation without needing
   // the disputed Discord link. Filing a source issue cannot confer authority.
-  assert.match(join, /github\\.com\\/causeway-services\\/turntide-islands\\/issues\\/new/iu);
+  assert.match(join, /github\.com\/causeway-services\/turntide-islands\/issues\/new/iu);
   assert.match(join, /without entering Discord/iu);
   assert.match(join, /GitHub sign-in may be required/iu);
-  assert.match(join, /not\\*\\* an authorized DAO decision/iu);
+  assert.match(join, /not\*\* an authorized DAO decision/iu);
   for (const page of [index, events, products, drainage, rainGarden]) {
     assert.doesNotMatch(page, directInvite);
     assert.match(page, /\[\[join\|/);
