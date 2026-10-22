@@ -15,7 +15,7 @@ Turntide Islands is open, free, and on Discord. This is the invitation currently
 
 [Come ashore at Turntide Islands](https://discord.gg/xZHxzDz4zv)
 
-Discord invitations may change or expire. This public record does not yet include a current provider check identifying the invitation's destination guild or a separately witnessed community authorization of this exact code. If the invitation fails or leads to somewhere unexpected, do not assume it is valid: ask a recognized Turntide steward through an independently verified channel before joining.
+Discord invitations may change or expire. This public record does not yet include a current provider check identifying the invitation's destination guild or a separately witnessed community authorization of this exact code. If the invitation fails or leads somewhere unexpected, do not join on the strength of this page. You can [report a broken or suspicious invitation in Turntide's public website issue tracker](https://github.com/causeway-services/turntide-islands/issues/new) without entering Discord (GitHub sign-in may be required). This is a source-maintenance and community-support reporting path, **not** an authorized DAO decision, an authenticated guild invitation, or a promise that a steward has responded.
 
 # Landing
 
