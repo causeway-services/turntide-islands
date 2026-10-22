@@ -22,6 +22,8 @@ test('Turntide keeps a durable public-home source contract', async () => {
   assert.match(products, /\/feed\.atom\.xml/);
   assert.match(products, /\/feed\.json/);
   assert.match(join, /Ordinary messages and\s+participation are not consent/);
-  assert.equal(pkg.scripts.build, 'static-site-publisher build content dist --config=./static-site-publisher.config.mjs');
-  assert.equal(pkg.scripts.check, 'static-site-publisher check content --config=./static-site-publisher.config.mjs');
+  assert.equal(pkg.scripts.build, 'npm run derive && static-site-publisher build content dist --config=./static-site-publisher.config.mjs');
+  assert.equal(pkg.scripts.check, 'npm run derive && static-site-publisher check content --config=./static-site-publisher.config.mjs');
+  assert.equal(pkg.scripts.derive, 'node scripts/derive-public.mjs');
+  assert.match(config, /label: 'Participate', href: '\/participation-pathways\/'/);
 });

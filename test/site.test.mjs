@@ -1,17 +1,62 @@
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
-import { dirname, resolve } from 'node:path';
+import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 import { test } from 'node:test';
 
 const root = resolve(import.meta.dirname, '..');
+const sourceRoot = resolve(process.env.TURNTIDE_SOURCE_ROOT ?? resolve(root, '../..'));
 
-function repositoryRoot(from) {
-  for (let directory = resolve(from); directory !== dirname(directory); directory = dirname(directory)) {
-    if (existsSync(resolve(directory, 'pnpm-workspace.yaml'))) return directory;
+/**
+ * This legacy Group-level MetroPlat manifest is not owned by the separately
+ * checked-out Turntide section. In an integrated checkout, find the actual
+ * original manifest in an ancestor; in a standalone release assay, require an
+ * explicit Group source root that contains those *same* authoritative bytes.
+ * Do not fabricate a local mirror or skip the cross-institution assertion.
+ */
+function originalGroupManifestPath(declaredPath, explicitGroupRoot = process.env.TURNTIDE_GROUP_ROOT) {
+  if (typeof declaredPath !== 'string' || !declaredPath || isAbsolute(declaredPath)) {
+    throw new TypeError('Turntide must declare a relative Group instance manifest path');
   }
-  throw new Error('repository root not found');
+  const selected = typeof explicitGroupRoot === 'string' ? explicitGroupRoot.trim() : '';
+  const candidates = [];
+  if (selected) candidates.push(resolve(selected));
+  else {
+    for (let directory = root; ; directory = dirname(directory)) {
+      candidates.push(directory);
+      if (directory === dirname(directory)) break;
+    }
+  }
+  for (const candidate of candidates) {
+    const target = resolve(candidate, declaredPath);
+    const inside = relative(candidate, target);
+    if (inside && inside !== '..' && !inside.startsWith('..' + sep) &&
+        !isAbsolute(inside) && existsSync(target)) return target;
+  }
+  throw new Error('Original Turntide Group instance manifest unavailable: ' +
+    declaredPath + '. Supply TURNTIDE_GROUP_ROOT as the original Group checkout ' +
+    'containing this declared path; a public site or Turntide service checkout ' +
+    'is not independent proof of the Group manifest.');
 }
+
+test('the original Group resource selector uses a real specified checkout and refuses wrong carriers', async () => {
+  const dir = await mkdtemp(resolve(tmpdir(), 'turntide-group-source-'));
+  const recordPath = 'lib/emsenn/services/561-group/instance-receipt.json';
+  const absolute = resolve(dir, recordPath);
+  try {
+    await mkdir(dirname(absolute), { recursive: true });
+    await writeFile(absolute, '{"kind":"original-Group-instance"}\n');
+    assert.equal(originalGroupManifestPath(recordPath, dir), absolute);
+    for (const missing of [
+      'does-not-exist.json', '../elsewhere.json', '../../outside.json',
+      '/etc/passwd',
+    ]) assert.throws(() => originalGroupManifestPath(missing, dir));
+    assert.throws(() => originalGroupManifestPath(recordPath, resolve(dir, 'missing-checkout')));
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
 
 test('the site depends on VICTOR through the registry', async () => {
   const manifest = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
@@ -128,7 +173,7 @@ test('Products follows the current Discord onboarding carrier', async () => {
 
 test('Turntide public governance receives the host-independent ANT identity boundary', async () => {
   const institution = JSON.parse(await readFile(
-    resolve(root, '../../data/records/institution-records/turntide-islands.ant.json'),
+    resolve(sourceRoot, 'data/records/institution/turntide-islands.ant.json'),
     'utf8',
   ));
   const governance = await readFile(resolve(root, 'content', 'governance.md'), 'utf8');
@@ -159,15 +204,14 @@ test('Turntide public governance receives the host-independent ANT identity boun
 
 test('Turntide logical MetroPlat world remains distinct from ANT and deployment identity', async () => {
   const ant = JSON.parse(await readFile(
-    resolve(root, '../../data/records/institution-records/turntide-islands.ant.json'),
+    resolve(sourceRoot, 'data/records/institution/turntide-islands.ant.json'),
     'utf8',
   ));
   const binding = JSON.parse(await readFile(
-    resolve(root, '../../data/records/institution-records/turntide-islands.metroplat-world.json'),
+    resolve(sourceRoot, 'data/records/institution/turntide-islands.metroplat-world.json'),
     'utf8',
   ));
-  const repository = repositoryRoot(root);
-  const manifest = JSON.parse(await readFile(resolve(repository, binding.instanceManifest), 'utf8'));
+  const manifest = JSON.parse(await readFile(originalGroupManifestPath(binding.instanceManifest), 'utf8'));
 
   assert.equal(binding.type, 'TurntideMetroPlatWorldBinding');
   assert.equal(binding.status, 'declared-unhosted');
@@ -190,15 +234,15 @@ test('Turntide logical MetroPlat world remains distinct from ANT and deployment 
 
 test('Zelo civic mandate lowers governance friction without becoming sovereign', async () => {
   const mandate = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance-records/zelo-civic-steward.json'),
+    resolve(sourceRoot, 'data/records/governance/zelo-civic-steward.json'),
     'utf8',
   ));
   const routines = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance-records/civic-routines.json'),
+    resolve(sourceRoot, 'data/records/governance/civic-routines.json'),
     'utf8',
   ));
   const guild = JSON.parse(await readFile(
-    resolve(root, '../../data/records/discord-guild-records/turntide-islands.guild.json'),
+    resolve(sourceRoot, 'data/records/discord-guild/turntide-islands.guild.json'),
     'utf8',
   ));
   const governance = await readFile(resolve(root, 'content', 'governance.md'), 'utf8');
@@ -258,15 +302,15 @@ test('Zelo civic mandate lowers governance friction without becoming sovereign',
 
 test('Turntide civic standing and state protocol make Zelo guidance non-inferential', async () => {
   const standing = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance-records/current-standing.json'),
+    resolve(sourceRoot, 'data/records/governance/current-standing.json'),
     'utf8',
   ));
   const protocol = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance-records/civic-action-protocol.json'),
+    resolve(sourceRoot, 'data/records/governance/civic-action-protocol.json'),
     'utf8',
   ));
   const mandate = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance-records/zelo-civic-steward.json'),
+    resolve(sourceRoot, 'data/records/governance/zelo-civic-steward.json'),
     'utf8',
   ));
 
@@ -312,7 +356,7 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
   const guide = await readFile(resolve(root, 'content', 'use-turntide.md'), 'utf8');
   const config = await readFile(resolve(root, 'static-site-publisher.config.mjs'), 'utf8');
   const guild = JSON.parse(await readFile(
-    resolve(root, '../../data/records/discord-guild-records/turntide-islands.guild.json'),
+    resolve(sourceRoot, 'data/records/discord-guild/turntide-islands.guild.json'),
     'utf8',
   ));
 
@@ -347,11 +391,11 @@ test('Use Turntide exposes Zelo as a practical civic interface without granting 
 
 test('Turntide routine patterns are advisory and place-aware', async () => {
   const patterns = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance-records/routine-pattern-library.json'),
+    resolve(sourceRoot, 'data/records/governance/routine-pattern-library.json'),
     'utf8',
   ));
   const mandate = JSON.parse(await readFile(
-    resolve(root, '../../data/records/governance-records/zelo-civic-steward.json'),
+    resolve(sourceRoot, 'data/records/governance/zelo-civic-steward.json'),
     'utf8',
   ));
 
@@ -380,7 +424,7 @@ test('Turntide routine patterns are advisory and place-aware', async () => {
 
 test('Governance Rock onboarding invites participation without implying standing', async () => {
   const guild = JSON.parse(await readFile(
-    resolve(root, '../../data/records/discord-guild-records/turntide-islands.guild.json'),
+    resolve(sourceRoot, 'data/records/discord-guild/turntide-islands.guild.json'),
     'utf8',
   ));
   const prompt = guild.onboarding.prompts.find((candidate) => /Governance Rock/u.test(candidate.title));
