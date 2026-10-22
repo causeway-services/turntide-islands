@@ -115,3 +115,21 @@ test('independently authored page refuses before preparing any replacement', asy
   assert.equal(await optional(path.join(f.pub, 'old.dat')), 'PRIOR');
   await assertClean(f);
 });
+
+
+test('failed rollback keeps prior assets and the real exclusion for operator recovery', async t => {
+  const f = await fixture(t);
+  let priorTree;
+  await assert.rejects(receivePreparedPublicAssets({
+    ...f.opts, renamePath: async (from, to) => {
+      if (from === f.pub) { priorTree = to; return rename(from, to); }
+      if (to === f.doc) throw new Error('page promotion failed');
+      if (from === priorTree && to === f.pub) throw new Error('rollback promotion failed');
+      return rename(from, to);
+    },
+  }), AggregateError);
+  assert.equal(await optional(path.join(priorTree, 'old.dat')), 'PRIOR');
+  assert.equal(await optional(f.doc), f.page);
+  assert.ok((await readdir(f.root)).includes('public.derive.lock'),
+    'do not admit another build while a previous tree awaits reconciliation');
+});
