@@ -5,11 +5,12 @@
 // illustrations, content/fonts the self-hosted faces, and the turntide emoji
 // the browser icons that VICTOR does not emit (/favicon.ico,
 // /apple-touch-icon.png, both requested by browsers unprompted).
-import { copyFile, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import sharp from 'sharp';
+import { receivePreparedPublicAssets } from './public-asset-transaction.mjs';
 
 const site = path.resolve(import.meta.dirname, '..');
 // Existing integrated section mount remains the default, while an actual
@@ -50,47 +51,56 @@ if (priorPage !== null && !priorPage.includes(generatorMarker)) {
   throw new TypeError('Refusing to overwrite an independently authored civic page');
 }
 
-await rm(pub, { recursive: true, force: true });
-for (const [from, to, keep] of [
-  ['expressions/emoji', 'emoji', (name) => name.endsWith('.svg')],
-  ['images', 'images', () => true],
-  ['fonts', 'fonts', () => true],
-]) {
-  await mkdir(path.join(pub, to), { recursive: true });
-  for (const name of (await readdir(path.join(content, from))).filter(keep)) await copyFile(path.join(content, from, name), path.join(pub, to, name));
-}
+await receivePreparedPublicAssets({
+  publicDirectory: pub, generatedPage, expectedPage: priorPage,
+  nextPage: civicProjection.page.body, generatorMarker,
+  verifySource: async () => {
+    const currentSource = await readFile(civicPath);
+    if (!currentSource.equals(civicBytes)) {
+      throw new Error('Original governance source changed during derivation; publication refused');
+    }
+  },
+  prepare: async (stagedPublic) => {
+    for (const [from, to, keep] of [
+      ['expressions/emoji', 'emoji', (name) => name.endsWith('.svg')],
+      ['images', 'images', () => true],
+      ['fonts', 'fonts', () => true],
+    ]) {
+      await mkdir(path.join(stagedPublic, to), { recursive: true });
+      for (const name of (await readdir(path.join(content, from))).filter(keep)) await copyFile(path.join(content, from, name), path.join(stagedPublic, to, name));
+    }
 
-// Publish this public-data observation with its page; readers need no repository
-// account. Keep the original research files authoritative and copy only these
-// explicitly public files, rather than exposing the community's data directory.
-const terrainResearch = 'duluth-garden-drainage';
-const terrainSource = path.join(civicRoot, 'data/research', terrainResearch);
-const terrainPublic = path.join(pub, 'research', terrainResearch);
-await mkdir(terrainPublic, { recursive: true });
-for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'rainfall-atlas14.csv']) {
-  await copyFile(path.join(terrainSource, name), path.join(terrainPublic, name));
-}
-// The reproducible computation is executable source, not a data record.
-// Recover the original historical Python source from the owning section's
-// scripts/ (immutable historical blob b306af737df904b6cff3e070bd0a465d8543bcf7).
-await copyFile(path.join(civicRoot, 'scripts/extract-terrain.py'),
-  path.join(terrainPublic, 'extract-terrain.py'));
+    // Publish this public-data observation with its page; readers need no repository
+    // account. Keep the original research files authoritative and copy only these
+    // explicitly public files, rather than exposing the community's data directory.
+    const terrainResearch = 'duluth-garden-drainage';
+    const terrainSource = path.join(civicRoot, 'data/research', terrainResearch);
+    const terrainPublic = path.join(stagedPublic, 'research', terrainResearch);
+    await mkdir(terrainPublic, { recursive: true });
+    for (const name of ['terrain.tif', 'source-item.json', 'extraction.json', 'rainfall-atlas14.csv']) {
+      await copyFile(path.join(terrainSource, name), path.join(terrainPublic, name));
+    }
+    // The reproducible computation is executable source, not a data record.
+    // Recover the original historical Python source from the owning section's
+    // scripts/ (immutable historical blob b306af737df904b6cff3e070bd0a465d8543bcf7).
+    await copyFile(path.join(civicRoot, 'scripts/extract-terrain.py'),
+      path.join(terrainPublic, 'extract-terrain.py'));
 
-// The original VICTOR publisher builds this generated Markdown with the same
-// site/catalog/feed system it already uses for all other source-approved pages.
-if (priorPage !== civicProjection.page.body) {
-  await writeFile(generatedPage, civicProjection.page.body);
-}
-// JSON-LD is a derived machine resource, not a grant to subscribe, vote, or
-// invoke a bot. Its PROV-O NI source points to the exact original source bytes.
-const linkedFile = path.join(pub, civicProjection.linkedData.path);
-await mkdir(path.dirname(linkedFile), { recursive: true });
-await writeFile(linkedFile, civicProjection.linkedData.body);
+    // The original VICTOR publisher builds this generated Markdown with the same
+    // site/catalog/feed system it already uses for all other source-approved pages.
+    // JSON-LD is a derived machine resource, not a grant to subscribe, vote, or
+    // invoke a bot. Its PROV-O NI source points to the exact original source bytes.
+    const linkedFile = path.join(stagedPublic, civicProjection.linkedData.path);
+    await mkdir(path.dirname(linkedFile), { recursive: true });
+    await writeFile(linkedFile, civicProjection.linkedData.body);
 
-const mark = await readFile(path.join(content, 'expressions/emoji/turntide.svg'));
-const png = (size) => sharp(mark, { density: 72 * size / 128 * 4 }).resize(size, size).png().toBuffer();
-await writeFile(path.join(pub, 'apple-touch-icon.png'), await sharp(await png(160)).extend({ top: 10, bottom: 10, left: 10, right: 10, background: '#0F2A3D' }).png().toBuffer());
-await writeFile(path.join(pub, 'favicon.ico'), ico(await Promise.all([16, 32, 48].map(async (size) => ({ size, data: await png(size) })))));
+    const mark = await readFile(path.join(content, 'expressions/emoji/turntide.svg'));
+    const png = (size) => sharp(mark, { density: 72 * size / 128 * 4 }).resize(size, size).png().toBuffer();
+    await writeFile(path.join(stagedPublic, 'apple-touch-icon.png'), await sharp(await png(160)).extend({ top: 10, bottom: 10, left: 10, right: 10, background: '#0F2A3D' }).png().toBuffer());
+    await writeFile(path.join(stagedPublic, 'favicon.ico'), ico(await Promise.all([16, 32, 48].map(async (size) => ({ size, data: await png(size) })))));
+
+  },
+});
 
 /** An ICO container of PNG images (Windows Vista+, every current browser). */
 function ico(images) {
