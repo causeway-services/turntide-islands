@@ -99,3 +99,33 @@ checkout. It is the exact original historical Git blob
 regenerating the experiment or pretending to have performed a fresh terrain
 measurement. This repairs the hard failure caused by trying to copy the
 script from a non-existent `data/research` path.
+
+## Public-asset build safety and receiving
+
+The existing `npm run derive` now stages **all** copied art, research,
+SKOS JSON-LD and generated icons in a sibling `.public-stage-*` directory.
+It verifies that the exact admitted governance bytes and generated civic page
+have not changed, then promotes the complete directory and source-derived
+Markdown together with bounded rollback on ordinary failures. The generated
+page remains a VICTOR input, not independent civic authority. This does not
+create a separate publisher, release selector, or governance database.
+
+The sibling `public.derive.lock/` is an actual filesystem exclusion against
+**cooperating** simultaneous builds. A second build refuses; no inferred Actor
+Session, distributed fencing, or fabricated resource reservation is involved.
+A crash, forced kill, or failed rollback can leave a lock and `.public-stage-*
+.previous` prior-assets backup. **Do not automatically clear the lock or
+backup**: identify the owning process, inspect the full previous/new asset
+trees, independently reconcile any generated Markdown and release receipts,
+and restore safely through the real release custodian. Source bytes that moved
+or an independently edited page refuse promotion before touching the old tree.
+
+The two filesystem renames and the Markdown rename are not one atomic
+multi-path commit. The original release process must consume the completed
+`npm run derive && static-site-publisher build` result, never files while
+`derive` is running. Native tests in
+`test/public-asset-transaction.test.mjs` cover clean success, missing source,
+changed source, failed page rename, concurrent builds, independent author
+edits, first deployment and original-page protection. These unit receipts do
+**not** prove native installed VICTOR, original governance root selection,
+Cloudflare publication, or public reader acceptance.
