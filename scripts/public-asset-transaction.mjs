@@ -39,7 +39,7 @@ export async function receivePreparedPublicAssets({
   // mkdir is an actual filesystem exclusion among cooperating builders.
   await mkdir(lock);
   let stage = null, stagedPage = null, priorTree = null;
-  let movedPrior = false, movedNew = false, committed = false;
+  let movedPrior = false, movedNew = false, committed = false, rollbackFailed = false;
   try {
     const existing = await optionalDirectory(publicDirectory);
     const currentPage = await optionalText(generatedPage);
@@ -81,14 +81,18 @@ export async function receivePreparedPublicAssets({
       try { await renamePath(priorTree, publicDirectory); movedPrior = false; }
       catch (e) { rollbackErrors.push(e); }
     }
-    if (rollbackErrors.length) throw new AggregateError([error, ...rollbackErrors],
+    if (rollbackErrors.length) {
+      rollbackFailed = true;
+      throw new AggregateError([error, ...rollbackErrors],
       'Publication refused; previous assets require operator recovery at ' + priorTree);
+    }
     throw error;
   } finally {
     if (stage) await rm(stage, { recursive: true, force: true }).catch(() => {});
     if (stagedPage) await rm(stagedPage, { force: true }).catch(() => {});
     // Never remove a backup after a failed rollback. Success owns the backup.
     if (committed && movedPrior) await rm(priorTree, { recursive: true, force: true }).catch(() => {});
-    await rm(lock, { recursive: true, force: true });
+    // Failed rollback retains the REAL exclusion and backup for explicit recovery.
+    if (!rollbackFailed) await rm(lock, { recursive: true, force: true });
   }
 }
