@@ -4,3 +4,8 @@ node_modules/
 public/
 # Derived from original governance source at build-time, never hand-edited.
 content/participation-pathways.md
+
+# Original derive-public transactional staging/recovery only; never ship these.
+.public-stage-*/
+public.derive.lock/
+content/.participation-pathways.md.stage-*
