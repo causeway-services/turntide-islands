@@ -1,0 +1,16 @@
+{
+  "host": "turntide.561.group",
+  "name": "Turntide Islands",
+  "kind": "community",
+  "company": "causeway",
+  "description": "A small archipelago of people learning, practically and locally, to live well with climate weirding. A Discord community with a public guide, events and archive.",
+  "tagline": "A small archipelago of people learning, practically and locally, to live well with climate weirding.",
+  "root": "dist",
+  "static": "brand",
+  "sitemapFromExisting": true,
+  "pages": [
+    { "file": ["index.html", "index/index.html"], "path": "/", "canonical": true }
+  ],
+  "csp": "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+  "llms": "Turntide Islands is a small community of people learning, practically and locally, to live well with climate weirding. It is run on Discord, laid out as an archipelago of islands, and this site is its public guide. It is a Causeway Services community of the 561 Group.\n\n## How to join and use it\n\nRead how to come ashore on the Discord at https://turntide.561.group/join/. A visitor's chart of the islands is at https://turntide.561.group/islands/, and a practical guide to asking questions, making changes and using the assistant Zelo to navigate the Turntide DAO is at https://turntide.561.group/use-turntide/. Joining is free.\n\n## Pages\n\n- [Turntide Islands](https://turntide.561.group/): The community in brief, with recent writing.\n- [Join Turntide Islands](https://turntide.561.group/join/): How to come ashore on the Discord, and what to expect.\n- [Chart of the islands](https://turntide.561.group/islands/): The Harbor, the Chatter Isles, the Knowledge Vault and Governance Rock.\n- [Use Turntide](https://turntide.561.group/use-turntide/): Asking questions, making changes, and working with Zelo.\n- [Events](https://turntide.561.group/events/): Community programming.\n- [The settlement](https://turntide.561.group/settlement/): The settlement.\n- [Proof of Adaptation](https://turntide.561.group/proof-of-adaptation/): Evidence-based climate adaptation practice.\n- [Governance](https://turntide.561.group/governance/): How the community decides.\n- [Archive](https://turntide.561.group/archive/): Everything published, newest first.\n- [Search](https://turntide.561.group/search/): Search the site.\n\n## Feeds\n\n- [RSS](https://turntide.561.group/feed.rss.xml), [Atom](https://turntide.561.group/feed.atom.xml) and [JSON Feed](https://turntide.561.group/feed.json).\n\n## Publisher\n\nCauseway Services, the 561 Group's public-services company: https://services.561.group/"
+}

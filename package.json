@@ -12,7 +12,7 @@
     "wrangler": "4.123.0"
   },
   "scripts": {
-    "build": "npm run derive && static-site-publisher build content dist --config=./static-site-publisher.config.mjs",
+    "build": "npm run derive && static-site-publisher build content dist --config=./static-site-publisher.config.mjs && node scripts/apply-standards.mjs .",
     "check": "npm run derive && static-site-publisher check content --config=./static-site-publisher.config.mjs",
     "deploy": "npm run build && wrangler deploy",
     "serve": "npm run derive && static-site-publisher serve content --port=8561 --config=./static-site-publisher.config.mjs",
