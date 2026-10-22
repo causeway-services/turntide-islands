@@ -66,6 +66,10 @@ export async function receivePreparedPublicAssets({
     if (existing) { await renamePath(publicDirectory, priorTree); movedPrior = true; }
     await renamePath(stage, publicDirectory); movedNew = true;
     if (stagedPage) {
+      // Asset promotion can yield to an independent page editor. Refuse
+      // before replacing their page and restore the prior public assets.
+      if (await optionalText(generatedPage) !== currentPage)
+        throw new Error('Generated civic page changed during asset promotion; publication refused');
       await renamePath(stagedPage, generatedPage);
       stagedPage = null;
     }
