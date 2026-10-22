@@ -133,3 +133,18 @@ test('failed rollback keeps prior assets and the real exclusion for operator rec
   assert.ok((await readdir(f.root)).includes('public.derive.lock'),
     'do not admit another build while a previous tree awaits reconciliation');
 });
+
+test('late independent page edit during asset promotion is retained and old assets restored', async t => {
+  const f = await fixture(t);
+  await assert.rejects(receivePreparedPublicAssets({
+    ...f.opts, renamePath: async (from, to) => {
+      const result = await rename(from, to);
+      if (to === f.pub) await writeFile(f.doc, 'independent late edit');
+      return result;
+    },
+  }), /changed during asset promotion/);
+  assert.equal(await optional(path.join(f.pub, 'old.dat')), 'PRIOR');
+  assert.equal(await optional(path.join(f.pub, 'new.dat')), null);
+  assert.equal(await optional(f.doc), 'independent late edit');
+  await assertClean(f);
+});
