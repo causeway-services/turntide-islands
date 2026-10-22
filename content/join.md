@@ -11,9 +11,11 @@ tags:
 - discord
 ---
 
-Turntide Islands is open, free, and on Discord. This link always works:
+Turntide Islands is open, free, and on Discord. This is the invitation currently published on our Join page, not a guarantee that Discord will accept it:
 
 [Come ashore at Turntide Islands](https://discord.gg/xZHxzDz4zv)
+
+Discord invitations may change or expire. This public record does not yet include a current provider check identifying the invitation's destination guild or a separately witnessed community authorization of this exact code. If the invitation fails or leads to somewhere unexpected, do not assume it is valid: ask a recognized Turntide steward through an independently verified channel before joining.
 
 # Landing
 
