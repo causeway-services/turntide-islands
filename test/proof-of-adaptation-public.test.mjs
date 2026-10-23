@@ -5,16 +5,16 @@ import { test } from 'node:test';
 
 const root = resolve(import.meta.dirname, '..');
 
-test('PoA stays a proposal for recognizing local adaptations, not a whole-garden unit', async () => {
+test('PoA stays a cross-system priority; no single garden or Move is made its unit', async () => {
   const proof = await readFile(resolve(root, 'content/proof-of-adaptation.md'), 'utf8');
   const governance = await readFile(resolve(root, 'content/governance.md'), 'utf8');
 
-  assert.match(proof, /A whole garden, household or island is not the elementary unit of adaptation/u);
-  assert.match(proof, /adaptive transition at a source-qualified interface/u);
-  assert.match(proof, /possible, attempted, authorized, performed and independently received/u);
-  assert.match(proof, /three different candidate claims/u);
-  assert.match(proof, /A new attempt is not necessarily\s+an accepted result/u);
-  assert.match(proof, /not automatically learned\s+future adaptability/u);
+  assert.match(proof, /No universal atomic unit of adaptation has been established/u);
+  assert.match(proof, /source-qualified local adaptive transition/u);
+  assert.match(proof, /every ecological, collective, thermodynamic or\s+governance adaptation requires an agent Work ID/u);
+  assert.match(proof, /Three distinct \*examples\* of possible evidence claims/u);
+  assert.match(proof, /These cannot be inferred from each other/u);
+  assert.match(proof, /a garden do not substitute for those outcomes/u);
   assert.match(governance, /binding authority\*\* requires recorded standing or delegation/u);
   assert.match(proof, /No PoA token minting, sale, investment product, certified field trial,/u);
   assert.match(proof, /Community participation must remain useful\s+without a wallet/u);
@@ -34,14 +34,14 @@ test('friction, Landauer accounting and conflict remain separate, with adversari
   assert.match(proof, /Unobserved costs are unknown, never silently zero/u);
 });
 
-test('Duluth remains a source-screening negative control, never the PoA atomic case', async () => {
+test('Duluth remains a negative illustration and cannot capture all of PoA', async () => {
   const proof = await readFile(resolve(root, 'content/proof-of-adaptation.md'), 'utf8');
   const drainage = await readFile(resolve(root, 'content/duluth-garden-drainage.md'), 'utf8');
 
   assert.match(proof, /\[\[duluth-garden-drainage\|Duluth garden drainage source check\]\]/u);
   assert.match(proof, /It is useful preliminary\s+research, \*\*not\*\* evidence/u);
   assert.match(proof, /negative control/u);
-  assert.match(proof, /not the\s+elementary unit or required first PoA experiment/u);
+  assert.match(proof, /not a\s+required first experiment or an anchor for the rest of the PoA program/u);
   assert.match(drainage, /No completed drainage\s+simulation, human source review,\s+field observation, trial, or witnessed adaptation outcome/u);
   assert.match(proof, /Any real field intervention requires separate consent/u);
 });
