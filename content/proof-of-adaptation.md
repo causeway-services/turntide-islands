@@ -17,36 +17,47 @@ and supporting witnessed adaptation work. Its originating Turntide principle is
 conditions, and their communities may recognize what actually helped without
 selling them legitimacy or requiring a wallet.
 
-A whole garden, household or island is not the elementary unit of adaptation.
-Those are complex systems containing many relations, obstructions, local moves
-and sometimes conflicting adaptations. Counting one completed garden as one
-"proof" would discard most of what makes adaptation interesting.
+**No universal atomic unit of adaptation has been established.** A garden
+is an interacting ecological and social system. A logged Move is an
+instrumented local event. Neither can define the whole program by fiat.
+Adaptation may arise from changed constraints, new capabilities,
+reorganized relationships, living systems maintaining viability, collective
+conflict handling, or durable changes in what future actions remain possible.
+The legitimate observation and comparison units depend on the **specific
+source system and claim**. A single successful local response does not
+establish resilience of an entire institution or ecosystem.
 
-# Start with a local, witnessed difference
+# From original scientific sources to useful adaptive capacity
 
-A promising **research candidate**, not a proved universal definition, is an
-*adaptive transition at a source-qualified interface*: the system encounters
-a changed condition or constraint; its admissible responses are assessed; a
-particular **Move** is actually performed; and its consequences are witnessed
-against a declared goal, lawful comparator and environment. Repeated movements
-may form a **Trace**. A retrospective claim must preserve which alternatives
-were possible, attempted, authorized, performed and independently received.
+Turntide's intended output is not a pile of adaptation badges. It is an
+expanding capacity to notice changing conditions, generate and safely test
+possible responses, preserve useful distinctions, reduce needless losses,
+retain warranted protective constraints, teach/reuse what worked, and
+recognize and support contributions fairly. Relevant outcomes can occur in
+Lenticule scientific research, Red Cup reusable technology, Coesite practice,
+actual participant and agent experience, Causeway public services, or
+competent Turntide governance and lawful economic settlement. Different
+claims require different competent evidence and receivers. Source-authored
+plans, tests, fieldbooks or a garden do not substitute for those outcomes.
 
-The source-owned [Obsmetrologia Articulating Trace](https://github.com/lenticule-science/obsmetrologia/blob/main/Obsmetrologia/Articulation/Articulating/Trace.lean)
-gives a formal strict-finite Move/Step/Trace carrier. Its
-[obstruction-preserving adaptive-software research](https://github.com/lenticule-science/obsmetrologia/blob/main/docs/preprints/01-obstruction-preserving-adaptive-software.md)
-asks how a witnessed obstruction can *generate an admissible strategy space*
-and how closure might yield a Next Move. A trace carrier alone does not supply
-the environmental effect, cost, causal comparison, authority, or receiving
-needed for a real-world PoA claim.
+One *application* is a source-qualified local adaptive transition: an
+observed constraint and performed response whose effect can be compared
+under lawful, context-matched conditions. The source-owned
+[Obsmetrologia Articulating Trace](https://github.com/lenticule-science/obsmetrologia/blob/main/Obsmetrologia/Articulation/Articulating/Trace.lean)
+provides a strict-finite Move/Step/Trace carrier for some questions.
+[Obstruction-preserving adaptive-software research](https://github.com/lenticule-science/obsmetrologia/blob/main/docs/preprints/01-obstruction-preserving-adaptive-software.md)
+asks how source-observed obstructions generate admissible strategies.
+Neither instrument says every ecological, collective, thermodynamic or
+governance adaptation requires an agent Work ID or occurs as one Move.
 
-There are at least **three different candidate claims**, each requiring its
-own evidence: (1) a response or policy changed; (2) the changed response
-improved a specified outcome in context; (3) the system gained capacity to
-handle a subsequent relevant perturbation. A new attempt is not necessarily
-an accepted result. A productive workaround is not automatically learned
-future adaptability. Sometimes the correct response is to maintain a border
-or refusal rather than to remove it.
+Three distinct *examples* of possible evidence claims are: a response
+changed; it produced a better measured outcome in a qualified comparison;
+and the system gained capacity that transferred to later conditions.
+These cannot be inferred from each other. A protective refusal, preserved
+disagreement, or increased expenditure may be adaptive under the original
+acceptance and safety conditions. A universal scalar `adaptation score`
+would erase precisely the situational relationships and externalities
+that need to be witnessed.
 
 # Friction, entropy, Landauer and conflict
 
@@ -82,10 +93,11 @@ For the physical Landauer distinction, see
 These sources inform the investigation; they do not prove a universal PoA
 formula.
 
-# Start doing it: the Proof-of-Adaptation fieldbook
+# One optional case worksheet
 
-**[Use the local Proof-of-Adaptation fieldbook](/tools/proof-of-adaptation.html)**
-to describe a real constraint or perturbation, the original Work it affected,
+**[Try the private local-case fieldbook](/tools/proof-of-adaptation.html)**
+when the situation is a source-linked original Work or research episode.
+It can describe a real constraint or perturbation, the Work it affected,
 the response actually performed, any measured change and matched comparator,
 contradictory evidence, and effects on other people or systems. The fieldbook
 gives a concrete **next evidence move** and exports a portable JSON draft.
@@ -116,7 +128,7 @@ institution can improve without fitting a single uniform metric. That is
 why practical learning, contributor agency, reversibility and new
 observations matter more here than simply counting constructed things.
 
-# The smallest useful evidence packet
+# One evidence packet for a source-bound Work case
 
 For **one local claim**, a receiver would need a source and revision;
 the Actor or system and its actual scope; the encountered condition or
@@ -154,8 +166,8 @@ Turntide already has a
 reproducible terrain and rainfall-source data. It is useful preliminary
 research, **not** evidence that a rain garden was built, a runoff simulation
 was run, or adaptive benefit was measured. It is a *negative control* for
-incorrectly promoting a source review into a field-result claim—not the
-elementary unit or required first PoA experiment.
+incorrectly promoting a source review into a field-result claim, not a
+required first experiment or an anchor for the rest of the PoA program.
 
 # The historical evidence ladder and proposed economy
 
