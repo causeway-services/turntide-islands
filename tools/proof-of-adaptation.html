@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proof-of-Adaptation | Turntide Fieldbook</title>
+<style>
+:root{color-scheme:light;--ink:#16333d;--tide:#13677b;--bg:#f4f8f6;--paper:#fff;--edge:#b5ced0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,sans-serif}
+main{max-width:1000px;margin:auto;padding:2rem 1rem 4rem}h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:.4rem 0}h2{font-size:1.3rem}a{color:#0b5b72}
+small,.secondary{color:#45636b}.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+header{margin-bottom:1.5rem}.columns{display:grid;grid-template-columns:1.5fr 1fr;gap:1.2rem}.panel{background:var(--paper);border:1px solid var(--edge);border-radius:1rem;padding:1.3rem;margin-bottom:1rem}
+label{display:block;margin:.65rem 0;font-weight:600;font-size:.9rem}input,textarea,select{display:block;width:100%;font:inherit;color:var(--ink);background:white;border:1px solid #829b9d;border-radius:.45rem;padding:.55rem;margin-top:.2rem}
+textarea{min-height:90px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.buttons{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}button{background:var(--tide);color:white;padding:.65rem .95rem;border:0;border-radius:.55rem;cursor:pointer;font:inherit}button.secondary{background:#e7f0ee;color:var(--ink);border:1px solid var(--edge)}button:focus,input:focus,textarea:focus{outline:3px solid #dd9c41;outline-offset:2px}
+output{display:block;white-space:pre-wrap;word-break:break-word;background:#f0f7f5;border-left:4px solid var(--tide);padding:1rem;border-radius:.35rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.83rem;max-height:23rem;overflow:auto;background:#eaf1f0;border-radius:.55rem;padding:.9rem}
+.notice{font-size:.88rem;background:#fff4db;border-left:4px solid #b77822;padding:1rem;margin:.8rem 0}
+@media(max-width:760px){.columns,.pair{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="eyebrow">Turntide Islands · Local-only fieldbook</div><h1>Proof-of-Adaptation</h1>
+<p>Describe a change under real constraints, connect it to original Work and evidence, and find the <strong>next honest proof obligation</strong>. A garden, agent Turn, collective decision, or machine can all be contexts; none is a mandatory unit.</p>
+<div class="notice"><strong>Preparation, not certification.</strong> Nothing you enter is uploaded. The browser cannot authenticate witnesses, verify impacts, authorize governance, mint tokens, or grant financial benefits. Export a private draft and share only what you have the right and consent to disclose.</div>
+<p class="secondary">Read the <a href="/proof-of-adaptation/">program</a> or <a href="/join/">find Turntide's participation path</a>. No wallet is required.</p></header>
+<div class="columns">
+<section class="panel" aria-labelledby="formtitle"><h2 id="formtitle">Record a local adaptive episode</h2>
+<form id="draft">
+<label>Original Work or research identifier *<input name="workId" required placeholder="ni:///… or a source Work URL"></label>
+<label>Actor, observer, or system identifier *<input name="actorId" required placeholder="Your chosen source identity"></label>
+<div class="pair"><label>Goal identifier *<input name="goalId" required placeholder="One exact intended outcome"></label><label>Context / condition identifier *<input name="contextId" required placeholder="Which conditions applied?"></label></div>
+<label>What changed or resisted? *<select name="contactKind"><option value="obstruction">Constraint or obstruction</option><option value="perturbation">Changing conditions</option><option value="conflict">Conflict</option><option value="environmental-change">Environmental change</option></select></label>
+<label>Observed condition, in your own words<textarea name="contactNote" placeholder="What contacted the system? Whose constraints or needs matter?"></textarea></label>
+<label>Contact evidence identifier<input name="contactRef" placeholder="A source-owned event or original observation URI"></label>
+<label>What response was actually performed?<textarea name="moveNote" placeholder="Distinguish what happened from what was only planned"></textarea></label>
+<label>Performed Move source receipt<input name="moveRef" placeholder="Leave empty when no performed Move is witnessed"></label>
+<label>What effect was observed?<textarea name="outcomeNote" placeholder="Observed result; do not infer causality"></textarea></label>
+<label>Outcome evidence identifier<input name="outcomeRef" placeholder="A separately identified receiving/output source"></label>
+<label>Reported goal outcome<select name="outcomeState"><option value="unknown">Unknown / not observed</option><option value="met">Observed as met (not independently verified here)</option><option value="unmet">Not met</option><option value="mixed">Mixed</option></select></label>
+<div class="pair"><label>Evidence source or custodian<input name="source" placeholder="The actual source; not this page"></label><label>Evidence observation time<input name="at" type="datetime-local"></label></div>
+<h2>Optional matched comparison</h2><p class="secondary">An arithmetic comparison is not a causal proof. Keep units and conditions aligned.</p>
+<div class="pair"><label>Measure name<input name="metric" placeholder="E.g., independently accepted work time"></label><label>Unit<input name="unit" placeholder="E.g., minutes"></label><label>Baseline value<input name="baselineValue" type="number" step="any"></label><label>After value<input name="candidateValue" type="number" step="any"></label></div>
+<label>Better direction<select name="preferred"><option value="lower">Lower</option><option value="higher">Higher</option></select></label>
+<div class="pair"><label>Baseline source receipt<input name="baselineRef"></label><label>After source receipt<input name="candidateRef"></label></div>
+<label>Known conflicts or contradictory evidence (one per line)<textarea name="conflicts"></textarea></label>
+<label>Possible exported harms, risks or third-party impacts (one per line)<textarea name="harms"></textarea></label>
+<p class="secondary">A real assayer and authorized source adapter must independently receive claims; self-entered names, votes, or checkboxes cannot supply that authentication.</p>
+<div class="buttons"><button type="submit">Inspect the evidence</button><button type="button" id="save" class="secondary">Export private JSON draft</button></div>
+</form>
+</section>
+<section class="panel" aria-labelledby="reviewtitle"><h2 id="reviewtitle">What's actually supported?</h2><output id="status" aria-live="polite">Enter a source-linked case to see the next practical move.</output>
+<h2>Recommended next actions</h2><ol id="next"><li>Identify original Work and the actual change or observed constraint.</li></ol>
+<h2>Machine-readable inspection</h2><pre id="result">No case inspected.</pre>
+<label>Inspect an existing case JSON locally<input type="file" id="read" accept=".json,application/json"></label>
+<p class="secondary">This tool is an advisory evidence view. It retains contradictions rather than awarding a unitary score. Public release requires a separate privacy and rights review.</p>
+</section>
+</div>
+</main>
+<script type="module">
+import {assayAdaptation} from './assay.mjs';
+const form=document.getElementById('draft');
+const el=(id)=>document.getElementById(id);
+const bullets=(s)=>String(s||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+const stamp=(date)=> date ? new Date(date).toISOString() : null;
+const field=(d,key)=>String(d.get(key)||'').trim();
+let latest=null;
+function prepare(){
+ const d=new FormData(form), id=`local-proposal-${Date.now()}`;
+ const at=stamp(field(d,'at')),src=field(d,'source');
+ const ref=(key)=>field(d,key)&&at&&src?{id:field(d,key),source:src,observedAt:at}:null;
+ const x={type:'TurntideAdaptationCase',version:1,id,workId:field(d,'workId'),actorId:field(d,'actorId'),goalId:field(d,'goalId'),contextId:field(d,'contextId'),
+   contact:{kind:field(d,'contactKind'),receipt:ref('contactRef')},
+   move:{state:field(d,'moveRef')?'performed':'attempted',receipt:ref('moveRef')},
+   outcome:{state:field(d,'outcomeState'),receipt:ref('outcomeRef')},
+   measurements:[],conflicts:bullets(d.get('conflicts')),exportedHarms:bullets(d.get('harms')),
+   localNotes:{condition:field(d,'contactNote'),performedMove:field(d,'moveNote'),observedEffect:field(d,'outcomeNote')},
+   packetStatus:'untrusted-participant-preparation-only'};
+ if(field(d,'metric')){
+   const number=(key)=>field(d,key)!==''?Number(field(d,key)):null;
+   x.measurements.push({id:field(d,'metric'),kind:'cost',preferred:field(d,'preferred'),
+     baseline:{value:number('baselineValue'),unit:field(d,'unit'),goalId:x.goalId,contextId:x.contextId,receipt:ref('baselineRef')},
+     candidate:{value:number('candidateValue'),unit:field(d,'unit'),goalId:x.goalId,contextId:x.contextId,receipt:ref('candidateRef')}});
+ }
+ return x;
+}
+function inspect(record){
+ const result=assayAdaptation(record);latest=record;
+ el('status').textContent=`Evidence state: ${result.stage}. Accepted adaptation: ${result.claims.goalAccepted?'yes':'not established'}. Claimed outcome must be received by a separate assayer using original sources.`;
+ el('next').replaceChildren(...result.nextMoves.map(t=>{const li=document.createElement('li');li.textContent=t.replaceAll('-',' ');return li;}));
+ el('result').textContent=JSON.stringify(result,null,2);
+}
+form.addEventListener('submit',(event)=>{event.preventDefault();try{inspect(prepare());}catch(e){el('status').textContent=e.message;}});
+el('save').addEventListener('click',()=>{
+ try{
+  const record=latest||prepare();assayAdaptation(record); // structural check only
+  const blob=new Blob([JSON.stringify(record,null,2)+'\n'],{type:'application/json'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='poa-private-draft.json';a.click();URL.revokeObjectURL(url);
+ }catch(e){el('status').textContent=e.message;}
+});
+el('read').addEventListener('change',async event=>{
+ const file=event.target.files?.[0];if(!file)return;
+ try{const raw=JSON.parse(await file.text());inspect(raw);}catch(e){el('status').textContent=`Cannot inspect file: ${e.message}`;}
+});
+</script>
+</body>
+</html>
