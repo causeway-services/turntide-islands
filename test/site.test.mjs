@@ -52,6 +52,18 @@ test('the Join page is the single public carrier for the Discord invite', async 
   const directInvite = /https:\/\/discord\.gg\//;
 
   assert.match(join, new RegExp(invite));
+  // Public source identity is not live Discord acceptance or a permanent invite.
+  // Only the verified community/provider receiving path may upgrade that claim.
+  assert.doesNotMatch(join, /\b(?:always works|never expires|permanent invite|permanent invitation)\b/iu);
+  assert.match(join, /not a guarantee that Discord will accept it/iu);
+  assert.match(join, /current provider check identifying the invitation's destination guild/iu);
+  assert.match(join, /separately witnessed community authorization/iu);
+  // A visitor must be able to report a failed invitation without needing
+  // the disputed Discord link. Filing a source issue cannot confer authority.
+  assert.match(join, /github\.com\/causeway-services\/turntide-islands\/issues\/new/iu);
+  assert.match(join, /without entering Discord/iu);
+  assert.match(join, /GitHub sign-in may be required/iu);
+  assert.match(join, /not\*\* an authorized DAO decision/iu);
   for (const page of [index, events, products, drainage, rainGarden]) {
     assert.doesNotMatch(page, directInvite);
     assert.match(page, /\[\[join\|/);
