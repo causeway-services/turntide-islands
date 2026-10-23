@@ -82,6 +82,40 @@ For the physical Landauer distinction, see
 These sources inform the investigation; they do not prove a universal PoA
 formula.
 
+# Start doing it: the Proof-of-Adaptation fieldbook
+
+**[Use the local Proof-of-Adaptation fieldbook](/tools/proof-of-adaptation.html)**
+to describe a real constraint or perturbation, the original Work it affected,
+the response actually performed, any measured change and matched comparator,
+contradictory evidence, and effects on other people or systems. The fieldbook
+gives a concrete **next evidence move** and exports a portable JSON draft.
+It runs in your browser without a wallet, account, upload, or payment; a
+browser export is not a verified contribution or an automatically accepted
+claim. You decide whether and how to share its contents.
+
+The fieldbook's read-only evaluator is maintained in the original
+[Turntide service's adaptation source](https://github.com/causeway-services/turntide-islands-services-section/tree/main/src/adaptation).
+It is also usable by authorized agent tools or offline with
+`node src/adaptation/cli.mjs case.json`. Its public version **does not
+authenticate receipts**. An actual receiving adapter has to bind its
+verifier to trusted original source observations, with an assayer distinct
+from the performer. Even a successful independently received outcome is
+not automatically a scientific proof of causality or of future adaptability.
+
+The useful loop is bigger than a certificate: a witnessed contact informs
+an alternative response; a performed change produces outcomes; qualified
+receiving distinguishes improvement, harm and retained conflict; a lesson
+changes subsequent methods; later independent contexts test whether the
+new capacity transfers. Then Turntide can deliberate about recognition,
+support, and research funding through its existing DAO. An economic reward
+or future Proof-of-Adaptation token requires its own enacted rights and
+settlement, not a numerical score returned by this fieldbook.
+
+A local mechanism can succeed while the whole system fails; a whole
+institution can improve without fitting a single uniform metric. That is
+why practical learning, contributor agency, reversibility and new
+observations matter more here than simply counting constructed things.
+
 # The smallest useful evidence packet
 
 For **one local claim**, a receiver would need a source and revision;
