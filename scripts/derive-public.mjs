@@ -13,7 +13,19 @@ const site = path.resolve(import.meta.dirname, '..');
 const content = path.resolve(site, '../../content');
 const pub = path.join(site, 'public');
 
+// The browser fieldbook consumes the ORIGINAL Turntide adaptation assay from
+// its source-owning service section, not a copied algorithm or participant
+// inputs treated as evidence. Fail the build when the producer is missing.
+const sourceSection = process.env.TURNTIDE_SOURCE_ROOT
+  ? path.resolve(process.env.TURNTIDE_SOURCE_ROOT)
+  : path.resolve(site, '../..');
+const toolsDir = path.join(pub, 'tools');
+
+
 await rm(pub, { recursive: true, force: true });
+await mkdir(toolsDir, { recursive: true });
+await copyFile(path.join(sourceSection, 'src/adaptation/assay.mjs'), path.join(toolsDir, 'assay.mjs'));
+await copyFile(path.join(site, 'tools/proof-of-adaptation.html'), path.join(toolsDir, 'proof-of-adaptation.html'));
 for (const [from, to, keep] of [
   ['expressions/emoji', 'emoji', (name) => name.endsWith('.svg')],
   ['images', 'images', () => true],
