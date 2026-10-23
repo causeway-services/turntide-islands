@@ -13,7 +13,7 @@ test('PoA stays a proposal for recognizing local adaptations, not a whole-garden
   assert.match(proof, /adaptive transition at a source-qualified interface/u);
   assert.match(proof, /possible, attempted, authorized, performed and independently received/u);
   assert.match(proof, /three different candidate claims/u);
-  assert.match(proof, /A new attempt is not necessarily an accepted result/u);
+  assert.match(proof, /A new attempt is not necessarily\\s+an accepted result/u);
   assert.match(proof, /not necessarily learned\s+future adaptability/u);
   assert.match(governance, /binding authority\*\* requires recorded standing or delegation/u);
   assert.match(proof, /No PoA token minting, sale, investment product, certified field trial,/u);
