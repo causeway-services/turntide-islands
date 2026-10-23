@@ -11,106 +11,142 @@ tags:
 - proof-of-adaptation
 ---
 
-Proof of Adaptation (PoA) is a **proposal** for recognizing, checking, and
-supporting useful local adaptation work. It begins with a practical distinction:
-someone may propose a practice, describe doing it, document its execution,
-measure its effects, or replicate a result. Each is worth recording, but they
-are not interchangeable forms of evidence.
+Proof of Adaptation (PoA) is a **proposed** community system for recognizing
+and supporting witnessed adaptation work. Its originating Turntide principle is
+**recognition, not permission**: people may already be responding to changed
+conditions, and their communities may recognize what actually helped without
+selling them legitimacy or requiring a wallet.
 
-Turntide's older recognition thesis begins with people helping their community
-adapt and asking the community to recognize work that actually matters.
-Recognition is not permission to act and cannot be purchased into existence.
-The [August 2026 whitepaper draft](https://github.com/causeway-services/turntide-islands-services-section/blob/main/content/text/documents/articles/notes/2026/08/20/2026-08-20-note-on-proof-of-adaptation-whitepaper-draft.md)
-adds a witnessed field-trial and work-backed token proposal. Neither proposal
-has been activated as a token or field-trial program.
+A whole garden, household or island is not the elementary unit of adaptation.
+Those are complex systems containing many relations, obstructions, local moves
+and sometimes conflicting adaptations. Counting one completed garden as one
+"proof" would discard most of what makes adaptation interesting.
 
-# From a useful idea to evidence
+# Start with a local, witnessed difference
 
-The proposed community loop brings signals and research into discussion;
-preserves sources and provenance in a Digital Garden; develops guides,
-measurements, and candidate trials; and uses witnessed outcomes to improve
-later practice. Its purpose is to accumulate transferable knowledge without
-turning repetition or enthusiasm into proof.
+A promising **research candidate**, not a proved universal definition, is an
+*adaptive transition at a source-qualified interface*: the system encounters
+a changed condition or constraint; its admissible responses are assessed; a
+particular **Move** is actually performed; and its consequences are witnessed
+against a declared goal, lawful comparator and environment. Repeated movements
+may form a **Trace**. A retrospective claim must preserve which alternatives
+were possible, attempted, authorized, performed and independently received.
 
-The draft whitepaper proposes five evidence descriptions:
+The source-owned [Obsmetrologia Articulating Trace](https://github.com/lenticule-science/obsmetrologia/blob/main/Obsmetrologia/Articulation/Articulating/Trace.lean)
+gives a formal strict-finite Move/Step/Trace carrier. Its
+[obstruction-preserving adaptive-software research](https://github.com/lenticule-science/obsmetrologia/blob/main/docs/preprints/01-obstruction-preserving-adaptive-software.md)
+asks how a witnessed obstruction can *generate an admissible strategy space*
+and how closure might yield a Next Move. A trace carrier alone does not supply
+the environmental effect, cost, causal comparison, authority, or receiving
+needed for a real-world PoA claim.
 
-1. **Conceived:** a practice has been proposed; its efficacy has not been tested.
-2. **Simulated:** the practice has actually been assessed with a specified model,
-   scenario, inputs, and limitations. Merely reading maps or quoting a study
-   does not demonstrate a simulation.
-3. **Field-tested:** an intervention was actually performed with an accountable
-   protocol and observed results in a real setting. One trial does not establish
-   that the intervention caused all observed changes.
-4. **Replicated:** sufficiently comparable independent trials have produced
-   evidence that can be evaluated together, including disagreements.
-5. **Established:** an independently assessed body of evidence supports a
-   context-qualified recommendation, which can still be revised.
+There are at least **three different candidate claims**, each requiring its
+own evidence: (1) a response or policy changed; (2) the changed response
+improved a specified outcome in context; (3) the system gained capacity to
+handle a subsequent relevant perturbation. A new attempt is not necessarily
+an accepted result. A productive workaround is not automatically learned
+future adaptability. Sometimes the correct response is to maintain a border
+or refusal rather than to remove it.
 
-These are **proposed descriptions from a draft**, not enacted admission or
-certification levels. Evidence can be incomplete or contested at any stage.
-A source review is useful even when it fits none of the stronger claims above;
-a favorable model result is not field evidence; and multiple reports from the
-same trial are not independent replications.
+# Friction, entropy, Landauer and conflict
 
-# What would have to be witnessed
+These are distinct scientific questions, not interchangeable score labels.
 
-A serious trial record would identify the hazard and the people or ecosystem
-the work intends to benefit; the place and period insofar as they can be
-disclosed safely; the observed baseline; the actual intervention; the relevant
-measurements and their sources; and the observer and independent receiving
-method. A result also needs its limits: what comparison is available, what
-alternative explanations remain, which conditions may have changed, and
-whether the practice moved harm to somebody else.
+- **Friction:** what *excess burden* was incurred relative to a feasible,
+  independently received alternative under the same goal, rights, acceptance
+  quality and environment? An observed retry count is burden, not by itself
+  excess friction. Some friction is valuable protection, such as a gate
+  refusing an unauthorized operation.
+- **Entropy:** physical entropy, Shannon uncertainty and model-dependent
+  stochastic trajectory entropy production have different definitions and
+  observation requirements. Neither a longer trace nor a less-conflicted
+  record is automatically a thermodynamic measurement. Adaptation can require
+  additional energy dissipation in order to preserve reliability or safety.
+- **Landauer:** in a suitable *physical memory erasure* setup, the familiar
+  ideal bound for resetting one unbiased bit at temperature T is k_B T ln 2.
+  Obsmetrologia's `landauerBits` is **not** a joule meter: for a supplied
+  finite cover nerve, its current theorem gives the cohomological cycle rank
+  H¹ = |E| − (|V| − |C|). The bridge to actual recorded identifications or
+  experimentally dissipated heat must be established, not presumed.
+- **Conflict:** a source may carry contradictory observations, competing
+  needs, incompatible lawful requirements or different local interests.
+  A collapsed agreement that hides the conflict is not a successful
+  adaptation. A situated Move might preserve the disagreement, find a lawful
+  alternative, produce a new source distinction, or expose a genuinely
+  noncomposable set of local results.
 
-A witnessed installation establishes that installation occurred. It does **not**
-by itself establish a reduction in flooding, heat risk, injury, or future
-climate vulnerability. The affected hazard may not occur during the study
-period, or the observation may not support causal attribution. The record
-must be able to say this without assigning a zero or inventing a success.
+See [Lenticule Science's trace-friction and Turn-difficulty research](https://github.com/lenticule-science/obsmetrologia/pull/96).
+For the physical Landauer distinction, see
+[Bennett (2003)](https://doi.org/10.1016/S1355-2198(03)00039-X) and
+[Sagawa's thermodynamics-of-computation review](https://arxiv.org/abs/1311.1886).
+These sources inform the investigation; they do not prove a universal PoA
+formula.
 
-Participants and land stewards must control the publication of their private
-or site-specific contributions according to the applicable authority and
-consent terms. A report about a place is not permission to enter it, alter
-water flows, publish someone else's account, or sell sensitive locality data.
+# The smallest useful evidence packet
 
-# A real candidate: Duluth garden drainage
+For **one local claim**, a receiver would need a source and revision;
+the Actor or system and its actual scope; the encountered condition or
+obstruction; the goal and admissibility constraints; the candidate and
+performed Move; its before/after witnesses; the measured consequences and
+costs with units; a justified baseline or comparator; the remaining
+uncertainty and conflict; possible harms or exported burdens; and an
+independent receiving decision.
 
-The [[duluth-garden-drainage|Duluth garden drainage source check]] provides a
-reproducible catchment intersection, a bounded terrain extraction, and
-precipitation-frequency context. It is a genuine contribution to the
-**research and screening** stage.
+If only one performed trace is available, it may establish that a Move
+occurred. It ordinarily cannot establish optimality, reduced friction,
+causal benefit or generalized resilience without further comparison.
+Unobserved costs are unknown, never silently zero. Successful admission
+by a technical provider is not independent acceptance of community Work.
 
-It does **not** establish the garden's actual drainage path, a simulated
-rain-garden intervention, a verified site boundary, an authorized field trial,
-or a measured reduction in runoff. No PoA field-result claim or token reward
-can be derived from that record. A useful next advance would be an authorized
-site-specific protocol with appropriate expertise, baseline observations,
-explicit hazard and comparison conditions, and an independent receiver.
+A **micro-adaptation** might be an agent lawfully choosing a different
+execution route after a permission refusal, a living system changing one
+response to a local condition, or a community resolving one incompatible
+handoff. Each still needs its *own* receiving criterion. Success is not
+deduced merely because someone switched strategies. The retained protected
+refusal may be the desirable part of the result.
 
-This makes the record a concrete check against premature promotion: preserve
-the useful research, preserve the missing information as missing, and only
-recognize a stronger claim when its own evidence is received.
+# Composing local changes is another problem
 
-# Community recognition and economic support
+A garden can be a downstream testbed for many local interventions, but
+"the garden works" does not prove each intervention works. Likewise ten
+independently favorable Moves do not necessarily compose into a favorable
+system: water, energy, roles, costs and rights may interact. A locally
+efficient change can export harm to a neighbor, create conflict at another
+boundary, or reduce future adaptability. Aggregate recognition requires
+its own contextual evidence and constraints.
 
-The historical Turntide thesis proposed that members could vouch for adaptive
-work, deliberate on its value, and record a community decision to recognize or
-support it. That judgment must remain separate from claims that a physical
-intervention worked. A competent governing decision, a field observation, and
-a treasury payment are different records with different authorities.
+Turntide already has a
+[[duluth-garden-drainage|Duluth garden drainage source check]] with
+reproducible terrain and rainfall-source data. It is useful preliminary
+research, **not** evidence that a rain garden was built, a runoff simulation
+was run, or adaptive benefit was measured. It is a *negative control* for
+incorrectly promoting a source review into a field-result claim—not the
+elementary unit or required first PoA experiment.
 
-The later design proposes a proof-of-adaptation token earned for completed,
-witnessed work and data quality, rather than purchased as influence or marketed
-for appreciation. Whether any token or reward may be issued requires separate
-governance, custody, legal, contribution, anti-abuse, funding, and receiving
-decisions. Calling a token work-backed or non-speculative does not itself
-establish its legal classification.
+# The historical evidence ladder and proposed economy
 
-Useful community participation must remain possible without a wallet. No
-token minting, token sale, certification, trial funding, or new governance
-weight is announced here.
+The [August 2026 PoA whitepaper draft](https://github.com/causeway-services/turntide-islands-services-section/blob/main/content/text/documents/articles/notes/2026/08/20/2026-08-20-note-on-proof-of-adaptation-whitepaper-draft.md)
+describes ecological practices as **conceived, simulated, field-tested,
+replicated and established**. This is an application-specific proposal for
+reporting the quality of evidence, **not** a mathematical decomposition of
+adaptation or an enacted certification system. A witnessed installation and
+its actual environmental effects remain separate claims.
 
-For current decision authority and the distinction between participation and
-binding standing, read [[governance|Turntide governance]]. To bring a source,
-offer a correction, or discuss a candidate practice without claiming a proven
-result, see [[join|how to join Turntide]].
+The [earlier recognition thesis](https://github.com/causeway-services/turntide-islands-services-section/blob/main/content/text/documents/articles/notes/2026/08/29/2026-08-29-note-on-recognition-not-permission-and-work-shaped-governance.md)
+concerned community recognition of demonstrated work. The later whitepaper
+also proposes a work-backed token. Those are still proposals; they leave
+significant questions about who can recognize work, whether recognition
+transfers, how contribution differs from a marketable claim, and whether
+financial rewards can distort governance. A community recognition record,
+scientific effect claim, competent DAO decision, and economic settlement
+must not masquerade as each other.
+
+No PoA token minting, sale, investment product, certified field trial,
+new governance weight, or treasury expenditure is activated by this page.
+Any real field intervention requires separate consent, safety, authority,
+measurement and receiving. Community participation must remain useful
+without a wallet.
+
+For the current DAO and the distinction between participation and authority,
+see [[governance|governance]]. To bring evidence or contest a claim, see
+[[join|join Turntide]].
